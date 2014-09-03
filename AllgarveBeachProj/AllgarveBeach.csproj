@@ -96,7 +96,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AlgarveBeach\AlgarveBeach.csproj">
+    <ProjectReference Include="..\AlgarveBeachProj\AlgarveBeach.csproj">
       <Project>{e02f15c3-78c4-4350-94fb-9dadbb376265}</Project>
       <Name>AlgarveBeach</Name>
     </ProjectReference>

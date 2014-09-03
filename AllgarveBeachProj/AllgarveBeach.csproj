@@ -61,6 +61,7 @@
     <Content Include="defs.css" />
     <Content Include="HomeAdmin.aspx" />
     <Content Include="ProPraias.aspx" />
+    <Content Include="Regist.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +86,13 @@
     </Compile>
     <Compile Include="ProPraias.aspx.designer.cs">
       <DependentUpon>ProPraias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regist.aspx.cs">
+      <DependentUpon>Regist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regist.aspx.designer.cs">
+      <DependentUpon>Regist.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

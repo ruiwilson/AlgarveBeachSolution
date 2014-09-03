@@ -46,14 +46,14 @@ namespace AlgarveBeach
 
 
         //CARREGAR FREGUESIAS POR IDconcelho
-        public void CarregarFreguesiaIDcon(string IDconcelho)
+     /*   public void CarregarFreguesiaIDcon(string IDconcelho)
         {
             string[] campos = { "NomeFreguesia" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             string[] valores = aBD.LerTabelaCompletaCon(IDconcelho);
             this.NomeFreguesia = valores[0];
         }
-
+        */
 
         //Método responsável por actualizar um produto existente na base de dados
         public void ActualizarFreguesia(string IDfreguesia)

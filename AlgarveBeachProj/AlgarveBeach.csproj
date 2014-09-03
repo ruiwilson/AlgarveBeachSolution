@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcessoBD.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Concelho.cs" />
     <Compile Include="Freguesia.cs" />
     <Compile Include="GestaoPraias.cs" />

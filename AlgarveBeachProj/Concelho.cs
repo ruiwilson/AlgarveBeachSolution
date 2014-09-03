@@ -16,7 +16,7 @@ namespace AlgarveBeach
     {
         private int mIDconcelho;
         private string mNomeConcelho;
-        private string NomeDoPresidenteDeCamara;
+        private string NomeDaMulherDoPresidenteDeCamara;
 
 
         //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais

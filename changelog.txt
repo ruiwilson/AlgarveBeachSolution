@@ -1,0 +1,3 @@
+01/09/2014 - Implementou-se as classes, criou-se um CSS e ficaram a meio os metodos da classe que restringe a mostra de todas as praias
+02/09/2014 - Adicionou-se um novo projecto web à solução que já contem a página de administração, default(inicial) e a geral(Praias).
+"      "   - Já estão quase preenchidos todos os metodos relacionados com os eventos na área de administração, falta a parte dos eventos de modificar e apagar.

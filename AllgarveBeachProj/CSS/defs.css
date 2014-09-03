@@ -1,0 +1,84 @@
+/*INicio do CSS puro e duro lol xD assim manipula-se facilmente as coisas e faz-se uns efeitos..
+Como bem pediu, apliquei-me ao maximo neste ultimo trabalho lol xD*/
+
+body {
+	background:url("bodybg.jpg");
+}
+
+fieldset {
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.4);
+	padding: 0;
+	margin:0 auto;
+	width:80%;
+}
+table{
+	border-style: inset;
+}
+.container {
+	background: transparent;
+	height:100%;
+	width:100%;
+	padding: 0;
+	margin: 0 auto; 
+}
+
+.menu{
+list-style:none; 
+border:1px solid #c0c0c0; 
+float:left; 
+}
+.menu li{
+position:relative;
+float:left;
+border-right:1px solid #c0c0c0;
+}
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;
+}
+.menu li a:hover{
+background:#333;
+color:#fff;
+-moz-box-shadow:0 3px 10px 0 #CCC;
+-webkit-box-shadow:0 3px 10px 0 #ccc;
+text-shadow:0px 0px 5px transparent;
+}
+.menu li  ul{
+position:absolute;
+top:31px;
+right:10px;
+background-color:transparent;
+display:none;
+} 
+/*Exibir submenus ao pousar o rato no menu*/
+.menu li:hover ul, .menu li.over ul{display:block;}
+/*Ajustes nas posições dos submenus*/
+.menu li ul li{
+border:1px solid #c0c0c0;
+display:block;
+width:100px;
+}
+.rodape{
+	background:red;
+}
+.logo{
+text-shadow: 5px 5px 5px #000000;
+}
+
+footer {
+	margin:0;
+	height:10%;
+	width:100%;
+	background: #CCC49F;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+p{
+	padding-left:5px;
+	padding-right:3px;
+}
+ul{
+	text-align:center;
+	vertical-align: left;
+}
+a{
+	font-family:"calabria";
+}

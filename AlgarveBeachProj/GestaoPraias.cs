@@ -1,0 +1,217 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AlgarveBeach
+{
+    public class GestaoPraias
+    {
+        //CARREGAR CONCELHO ID
+        /*public Concelho[] CarregarConcelhoID(string nomeconcelho)
+        {
+            string[] campos = { "NomeConcelho" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabela("Concelho", "NomeConcelho", nomeconcelho);
+            Concelho[] arrConcelho = new Concelho[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Concelho c = new Concelho();
+
+                c.NomeConcelho = Convert.ToString(rw["NomeConcelho"]);
+
+                arrConcelho[i] = c;
+                i++;
+            }
+            return arrConcelho;
+        }*/
+
+        //Método para carregar CONSELHO       FUNCIONA!!!
+        public Concelho[] CarregarConcelho()
+        {
+            string[] campos = { "NomeConcelho" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaOrdem("Concelho", "NomeConcelho", "ASC");
+            Concelho[] arrConcelho = new Concelho[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Concelho c = new Concelho();
+
+                c.NomeConcelho = Convert.ToString(rw["NomeConcelho"]);
+
+                arrConcelho[i] = c;
+                i++;
+            }
+            return arrConcelho;
+        }
+
+        //Método para carregar Freguesia POR IDconcelho
+        public Concelho[] CarregarFreguesia(string IDconcelho)
+        {
+            
+            string[] campos = { "NomeFreguesia" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaCon("Freguesias");
+            Concelho[] arrConcelho = new Concelho[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Concelho c = new Concelho();
+
+                c.NomeConcelho = Convert.ToString(rw["NomeFreguesia"]);
+
+                arrConcelho[i] = c;
+                i++;
+            }
+            return arrConcelho;
+        }
+
+
+
+
+
+        //Método responsável por carregar os dados de todos as praias
+        public Praia[] CarregarPraia()
+        {
+            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompleta2("Praias");
+            Praia[] arrPraias = new Praia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Praia p = new Praia();
+
+                p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
+                p.NomePraia = rw["NomePraia"].ToString();
+                p.MoradaPraia = rw["Nomeproduto"].ToString();
+                p.ExtensaoPraia = Convert.ToInt16(rw["ExtensaoPraia"]);
+                p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
+                p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
+                p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+
+
+                arrPraias[i] = p;
+                i++;
+            }
+            return arrPraias;
+
+
+        }
+
+        //Método responsável por carregar as praias mais proximas de dado hotel
+        public Praia[] CarregarPraiaDistHotel(string IDcategoria)
+        {
+            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaOrdem("Produtos", "IDcategoria", IDcategoria);
+            Praia[] arrPraias = new Praia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Praia p = new Praia();
+
+                p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
+                p.NomePraia = rw["NomePraia"].ToString();
+                p.MoradaPraia = rw["Nomeproduto"].ToString();
+                p.ExtensaoPraia = Convert.ToInt16(rw["ExtensaoPraia"]);
+                p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
+                p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
+                p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+
+
+                arrPraias[i] = p;
+                i++;
+            }
+            return arrPraias;
+        }
+
+        //Método responsável por carregar as praias mais proximas de dado restaurante
+        public Praia[] CarregarPraiaDistRestaur(string IDcategoria)
+        {
+            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaOrdem("Produtos", "IDcategoria", IDcategoria);
+            Praia[] arrPraias = new Praia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Praia p = new Praia();
+
+                p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
+                p.NomePraia = rw["NomePraia"].ToString();
+                p.MoradaPraia = rw["Nomeproduto"].ToString();
+                p.ExtensaoPraia = Convert.ToInt16(rw["ExtensaoPraia"]);
+                p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
+                p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
+                p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+
+
+                arrPraias[i] = p;
+                i++;
+            }
+            return arrPraias;
+        }
+
+
+
+        //Método responsável por carregar os dados de todos os produtos de uma categoria ordenada pelo preço
+        public Praia[] CarregarProdutosCatPre(string IDcategoria, string Ordem)
+        {
+            string[] campos = { "IDcategoria", "Nomeproduto", "Precoproduto", "GastosEnvproduto" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaCatPre("Produtos", "IDcategoria", IDcategoria, "Precoproduto", Ordem);
+            Praia[] arrPraias = new Praia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Praia p = new Praia();
+
+                p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
+                p.NomePraia = rw["NomePraia"].ToString();
+                p.MoradaPraia = rw["Nomeproduto"].ToString();
+                p.ExtensaoPraia = Convert.ToInt16(rw["ExtensaoPraia"]);
+                p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
+                p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
+                p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+
+
+                arrPraias[i] = p;
+                i++;
+            }
+            return arrPraias;
+        }
+
+        //Método responsável por carregar os dados de todos os produtos ordenados pelo preço
+        /*public Praia[] CarregarProdutosPre(string Ordem)
+        {
+            string[] campos = { "IDcategoria", "Nomeproduto", "Precoproduto", "GastosEnvproduto" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaOrdem("Produtos", "Precoproduto", Ordem);
+            Praia[] arrPraias = new Praia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Praia p = new Praia();
+
+                p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
+                p.NomePraia = rw["NomePraia"].ToString();
+                p.MoradaPraia = rw["Nomeproduto"].ToString();
+                p.ExtensaoPraia = Convert.ToInt16(rw["ExtensaoPraia"]);
+                p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
+                p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
+                p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+
+
+                arrPraias[i] = p;
+                i++;
+            }
+            return arrPraias;
+
+        }*/
+    }
+}

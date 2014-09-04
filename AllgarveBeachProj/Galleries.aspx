@@ -47,10 +47,11 @@
 <p>Bandeira azul: Sim</p>
 <p>Serviços(-de 1Km): Restaurantes, cafés, camping, multibanco, lojas</p>
     <hr />
-<br />
-<br />
-<br />
-<br />
+    <p>Escreva já a sua opinião</p>
+    <asp:TextBox ID="ComentTesos" TextMode="multiline" Columns="50" Rows="5" runat="server" /></asp:TextBox>
+    <asp:Button ID="EnviarTesos" runat="server" Text="Enviar" OnClick="EnviarTesos_Click" />
+    <p>Comentários:</p>
+    <asp:Literal ID="lttesos" runat="server"></asp:Literal>
 	</form>
 </body>
 </html>

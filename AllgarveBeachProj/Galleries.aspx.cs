@@ -13,5 +13,15 @@ namespace AllgarveBeach
         {
 
         }
+
+        protected void EnviarTesos_Click(object sender, EventArgs e)
+        {
+   /*         if (Session.SessionID)
+            {
+            lttesos.Text += "<br>" + "Nick disse: " + ComentTesos.Text;
+            }
+            else+*/
+            lttesos.Text += "<br>Anónimo> " + ComentTesos.Text + " <" + System.DateTime.Today;
+        }
     }
 }

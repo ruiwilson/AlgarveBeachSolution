@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,17 +41,17 @@ namespace AlgarveBeach
         // Ler um ficheiro de texto
         private void btnRead_Click(object sender, EventArgs e)
         {
-            if (File.Exists(fileLoc))
+            if (System.IO.File.Exists(fileLoc))
             {
-                using (TextReader tr = new StreamReader(fileLoc))
+                using (System.IO.TextReader tr = new System.IO.StreamReader(fileLoc))
                 {
-                    MessageBox.Show(tr.ReadLine());
+                    System.Windows.Forms.MessageBox.Show(tr.ReadLine());
                 }
             }
         }
 
 
-        // Copy a Text File
+        // Copiar um ficheiro de texto
         private void btnCopy_Click(object sender, EventArgs e)
         {
             string fileLocCopy = @"d:\sample1.txt";
@@ -62,6 +63,27 @@ namespace AlgarveBeach
                 File.Copy(fileLoc, fileLocCopy);
             }
         }
+
+        // Mover um ficheiro de texto
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            // Create unique file name
+            string fileLocMove = @"d:\sample1" + System.DateTime.Now.Ticks + ".txt";
+            if (File.Exists(fileLoc))
+            {
+                File.Move(fileLoc, fileLocMove);
+            }
+        }
+
+        // Apagar um ficheirode texto
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(fileLoc))
+            {
+                File.Delete(fileLoc);
+            }
+        }
+
 
     }
 }

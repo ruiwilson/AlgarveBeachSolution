@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="defs.css" />
+    <Content Include="Galleries.aspx" />
     <Content Include="HomeAdmin.aspx" />
     <Content Include="ProPraias.aspx" />
     <Content Include="Regist.aspx" />
@@ -71,6 +72,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Galleries.aspx.cs">
+      <DependentUpon>Galleries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Galleries.aspx.designer.cs">
+      <DependentUpon>Galleries.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomeAdmin.aspx.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>

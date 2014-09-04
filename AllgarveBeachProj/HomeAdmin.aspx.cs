@@ -10,7 +10,7 @@ namespace AllgarveBeach
 {
     public partial class HomeAdmin : System.Web.UI.Page
     {
-        
+
         Restaurante novoRestaurante;//Métodos nas suas respectivas classes
         static Hospedagem novaHospedagem;
         static Praia novaPraia;
@@ -37,7 +37,7 @@ namespace AllgarveBeach
 
         protected void btnVerConc_Click(object sender, ImageClickEventArgs e)
         {
-            if(txtID.Text != "")
+            if (txtID.Text != "")
             {
 
                 novoConcelho.CarregarConcelho(txtID.Text);
@@ -106,7 +106,7 @@ namespace AllgarveBeach
         protected void btnInserirConc_Click(object sender, ImageClickEventArgs e)
         {
             novoConcelho = new Concelho(txtNomeConcelho.Text);
-            
+
             novoConcelho.InserirConcelho();
 
             MessageBox("Concelho inserido com sucesso!");
@@ -228,6 +228,6 @@ namespace AllgarveBeach
             novoRestaurante.ActualizarRestaurante(txtID.Text);
 
             MessageBox("Restaurante modificado com sucesso!");
-        }   
+        }
     }
 }

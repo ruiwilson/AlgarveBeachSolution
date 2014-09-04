@@ -19,18 +19,18 @@ namespace AllgarveBeach
         AlgarveBeach.Praia[] praia;
 
         //List<AlgarveBeach.Concelho> Concelhos = new List<AlgarveBeach.Concelho>();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           /* var conc37 = Concelhos.SingleOrDefault(c => c.IDconcelho == 37);
+            /* var conc37 = Concelhos.SingleOrDefault(c => c.IDconcelho == 37);
 
-            var ConcelhosOrdNome = Concelhos.OrderBy(x => x.NomeConcelho);
+             var ConcelhosOrdNome = Concelhos.OrderBy(x => x.NomeConcelho);
 
-            foreach (var Concelho in ConcelhosOrdNome)
-            {
+             foreach (var Concelho in ConcelhosOrdNome)
+             {
 
-            }*/
+             }*/
 
             GP1 = new AlgarveBeach.GestaoPraias();
             GP2 = new AlgarveBeach.GestaoPraias();
@@ -39,27 +39,27 @@ namespace AllgarveBeach
             con = new AlgarveBeach.Concelho();
             fre = new AlgarveBeach.Freguesia();
             pra = new AlgarveBeach.Praia();
-            
+
 
             if (!IsPostBack)
             {
                 DConcelho.Items.Add("Todos os Concelhos");
                 DFreguesia.Items.Add("Todas as Freguesias");
                 DPraia.Items.Add("Todas as Praias");
-                    //CONCELHO
-                    foreach (AlgarveBeach.Concelho c in concelho)
-                    {
-                        DConcelho.Items.Add(c.NomeConcelho);
-                    }
+                //CONCELHO
+                foreach (AlgarveBeach.Concelho c in concelho)
+                {
+                    DConcelho.Items.Add(c.NomeConcelho);
+                }
 
-                   
-                    //FREGUESIA
-                    /*foreach (AlgarveBeach.Freguesia f in freguesia)
-                    {
-                        DFreguesia.Items.Add(f.NomeFreguesia);
-                    }*/
 
-                   
+                //FREGUESIA
+                /*foreach (AlgarveBeach.Freguesia f in freguesia)
+                {
+                    DFreguesia.Items.Add(f.NomeFreguesia);
+                }*/
+
+
 
 
                 DHospedagem.Items.Add("0m-500m");
@@ -73,7 +73,7 @@ namespace AllgarveBeach
                 DTemperatura.Items.Add("<18°");
                 DTemperatura.Items.Add("18°-21°");
                 DTemperatura.Items.Add("21°-24°");
-                
+
                 DBandeira.Items.Add("Sim");
                 DBandeira.Items.Add("Não");
             }
@@ -89,7 +89,7 @@ namespace AllgarveBeach
             //Literal1.Text = Convert.ToString(id.IDconcelho);
             freguesia = GP2.CarregarFreguesia(Convert.ToString(con.IDconcelho));
 
-        
+
             foreach (AlgarveBeach.Freguesia f in freguesia)
             {
                 DFreguesia.Items.Add(f.NomeFreguesia);
@@ -111,12 +111,12 @@ namespace AllgarveBeach
             foreach (AlgarveBeach.Praia p in praia)
             {
                 DPraia.Items.Add(p.NomePraia);
-            }   
+            }
         }
 
         protected void DropDown_Praia(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void DropDown_Hospedagem(object sender, EventArgs e)

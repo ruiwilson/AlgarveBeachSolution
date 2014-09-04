@@ -23,7 +23,7 @@ namespace AlgarveBeach
         private int mAcessoSoBarco;
 
 
-               //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
+        //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
         public Praia()
         {
         }
@@ -37,7 +37,7 @@ namespace AlgarveBeach
             this.BandeiraAzul = BandeiraAzul;
             this.TemperaturaAgua = TemperaturaAgua;
             this.AcessoSoBarco = AcessoSoBarco;
-            
+
         }
 
         //Método responsável por carregar os dados de um produto existente na base de dados
@@ -77,7 +77,7 @@ namespace AlgarveBeach
         public string Caracteriza()
         {
             return "Esta praia chama-se " + this.NomePraia + " pertence à freguesia: " + this.IDfreguesia;
-            
+
         }
 
 

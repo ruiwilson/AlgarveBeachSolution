@@ -73,7 +73,7 @@ namespace AlgarveBeach
         //Método para carregar Freguesia POR IDconcelho
         public Freguesia[] CarregarFreguesia(string IDconcelho)
         {
-            
+
             string[] campos = { "NomeFreguesia" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             DataTable dt = aBD.LerTabelaCompletaCon(IDconcelho);

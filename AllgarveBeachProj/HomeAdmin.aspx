@@ -365,8 +365,6 @@
                     </tr>
                 </table>
             </fieldset><hr />
-        <p>
-            <asp:Literal ID="ltresultados" runat="server"></asp:Literal>
             <fieldset 
                 
                 
@@ -513,8 +511,6 @@
                     </table>
             </fieldset></p>
             
-    </form>
-    
     <br>
     <br>
     <br>
@@ -526,6 +522,15 @@
     </tr>
       </table>
     </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+            <asp:Literal ID="ltresultados" runat="server"></asp:Literal>
+            
+    </form>
+    
     <br>
 </body>
 </html>

@@ -47,12 +47,12 @@
 
             <tr>
                 <td>Concelho:
-                    <asp:DropDownList ID="DConcelho" runat="server" OnSelectedIndexChanged="DropDown_Concelho">
+                    <asp:DropDownList ID="DConcelho" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDown_Concelho">
                     </asp:DropDownList></td>
                  
                 <td>
                      Freguesia:
-                    <asp:DropDownList ID="DFreguesia" runat="server" OnSelectedIndexChanged="DropDown_Freguesia">
+                    <asp:DropDownList ID="DFreguesia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDown_Freguesia">
                      </asp:DropDownList></td>
                  
                 <td>

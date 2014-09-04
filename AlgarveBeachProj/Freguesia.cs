@@ -14,10 +14,9 @@ namespace AlgarveBeach
 {
     public class Freguesia
     {
-
+        private int mIDfreguesia;
         private int mIDconcelho;
         private string mNomeFreguesia;
-        private string NomeDoPresidenteDaJunta;
 
         //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
         public Freguesia()
@@ -44,16 +43,23 @@ namespace AlgarveBeach
             this.NomeFreguesia = valores[1];
         }
 
+        public void CarregarFreguesiaID(string nomefreguesia)
+        {
+            string[] campos = { "IDfreguesia" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            string[] valores = aBD.LerTabela("Freguesias", campos, "NomeFreguesia", nomefreguesia);
+            this.IDfreguesia = Convert.ToInt32(valores[0]);
+        }
 
         //CARREGAR FREGUESIAS POR IDconcelho
-     /*   public void CarregarFreguesiaIDcon(string IDconcelho)
+        /*public void CarregarFreguesiaIDcon(string IDconcelho)
         {
             string[] campos = { "NomeFreguesia" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             string[] valores = aBD.LerTabelaCompletaCon(IDconcelho);
             this.NomeFreguesia = valores[0];
-        }
-        */
+        }*/
+
 
         //Método responsável por actualizar um produto existente na base de dados
         public void ActualizarFreguesia(string IDfreguesia)
@@ -89,6 +95,12 @@ namespace AlgarveBeach
 
         //::::::::::::::::::::::Propriedades::::::::::::::::::::::::::::
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        public int IDfreguesia
+        {
+            get { return mIDfreguesia; }
+            set { mIDfreguesia = value; }
+        }
+
         public int IDconcelho
         {
             get { return mIDconcelho; }

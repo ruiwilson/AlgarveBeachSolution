@@ -49,25 +49,68 @@ namespace AlgarveBeach
             return arrConcelho;
         }
 
+        //Método para carregar FREGUESIA  POR ORDEM ASC(NOME)     FUNCIONA!!!
+        public Freguesia[] CarregarFreguesia()
+        {
+            string[] campos = { "IDconcelho", "NomeFreguesia" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaOrdem("Freguesias", "NomeFreguesia", "ASC");
+            Freguesia[] arrFreguesia = new Freguesia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Freguesia f = new Freguesia();
+
+                f.IDconcelho = Convert.ToInt32(rw["IDconcelho"]);
+                f.NomeFreguesia = Convert.ToString(rw["NomeFreguesia"]);
+
+                arrFreguesia[i] = f;
+                i++;
+            }
+            return arrFreguesia;
+        }
+
         //Método para carregar Freguesia POR IDconcelho
-        public Concelho[] CarregarFreguesia(string IDconcelho)
+        public Freguesia[] CarregarFreguesia(string IDconcelho)
         {
             
             string[] campos = { "NomeFreguesia" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
-            DataTable dt = aBD.LerTabelaCompletaCon("Freguesias");
-            Concelho[] arrConcelho = new Concelho[dt.Rows.Count];
+            DataTable dt = aBD.LerTabelaCompletaCon(IDconcelho);
+            Freguesia[] arrFreguesia = new Freguesia[dt.Rows.Count];
             int i = 0;
             foreach (DataRow rw in dt.Rows)
             {
-                Concelho c = new Concelho();
+                Freguesia f = new Freguesia();
 
-                c.NomeConcelho = Convert.ToString(rw["NomeFreguesia"]);
+                f.NomeFreguesia = Convert.ToString(rw["NomeFreguesia"]);
 
-                arrConcelho[i] = c;
+                arrFreguesia[i] = f;
                 i++;
             }
-            return arrConcelho;
+            return arrFreguesia;
+        }
+
+
+        //Método para carregar PRAIAS POR IDfreguesia
+        public Praia[] CarregarPraia(string IDfreguesia)
+        {
+
+            string[] campos = { "NomePraia" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaCon(IDfreguesia);
+            Praia[] arrPraia = new Praia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Praia p = new Praia();
+
+                p.NomePraia = Convert.ToString(rw["NomePraia"]);
+
+                arrPraia[i] = p;
+                i++;
+            }
+            return arrPraia;
         }
 
 

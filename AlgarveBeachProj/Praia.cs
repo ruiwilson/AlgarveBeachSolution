@@ -61,7 +61,7 @@ namespace AlgarveBeach
             string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", ".") };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
-            aBD.ActualizaTabela("Praias", campos, valores, "IDpraia", IDpraia);
+            aBD.ActualizaTabela("Praia", campos, valores, "IDpraia", IDpraia);
         }
 
         //Método responsável por inserir um novo produto na base de dados
@@ -70,7 +70,7 @@ namespace AlgarveBeach
             string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", ".") };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
-            aBD.InserirRegisto("Praias", campos, valores);
+            aBD.InserirRegisto("Praia", campos, valores);
         }
 
         //Método responsável pela caracterização do produto mostrando as suas propriedades básicas
@@ -85,7 +85,7 @@ namespace AlgarveBeach
         public void ApagarPraia(string IDpraia)
         {
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
-            aBD.ApagarRegisto("Praias", "IDpraia", IDpraia);
+            aBD.ApagarRegisto("Praia", "IDpraia", IDpraia);
         }
 
 

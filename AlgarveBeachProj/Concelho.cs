@@ -16,7 +16,6 @@ namespace AlgarveBeach
     {
         private int mIDconcelho;
         private string mNomeConcelho;
-        private string NomeDaMulherDoPresidenteDeCamara;
 
 
         //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
@@ -27,11 +26,9 @@ namespace AlgarveBeach
         public Concelho(string NomeConcelho)
         {
             this.NomeConcelho = NomeConcelho;
-
-
         }
 
-        //Método responsável por carregar os dados de um produto existente na base de dados
+        //Método responsável por carregar os dados de um produto existente na base de dados CARREGA OS CONCELHOS AO FAZER LOAD
         public void CarregarConcelho(string IDconcelho)
         {
             string[] campos = { "NomeConcelho" };

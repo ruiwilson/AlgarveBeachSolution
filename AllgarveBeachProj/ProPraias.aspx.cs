@@ -153,16 +153,24 @@ namespace AllgarveBeach
 
                 foreach (AlgarveBeach.Praia p in praiateste)
                 {
-                    Literal1.Text = Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br><br><br>");
+                    Literal1.Text = Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br>Hospedagem: " + p.Hospedagem + "<br>Restaurante: " + p.Restaurante + "<br><br><br>");
                 }
             }
             else
             {
+                
                 praiateste = GP4.CarregarPraia();
 
                 foreach (AlgarveBeach.Praia p in praiateste)
                 {
-                    Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br><br><br>");
+                    if(p.Hospedagem==1 && p.Restaurante==1)
+                        Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br>Hospedagem: Sim"  + "<br>Restaurante: Sim" + "<br><br><br>");
+                    if(p.Hospedagem==1 && p.Restaurante!=1)
+                        Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br>Hospedagem: Sim" + "<br>Restaurante: Não" + "<br><br><br>");
+                    if (p.Hospedagem != 1 && p.Restaurante == 1)
+                        Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br>Hospedagem: Não" + "<br>Restaurante: Sim" + "<br><br><br>");
+                    if (p.Hospedagem != 1 && p.Restaurante != 1)
+                        Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br>Hospedagem: Não" + "<br>Restaurante: Não" + "<br><br><br>");
                 }
             }
 

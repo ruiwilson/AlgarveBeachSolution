@@ -123,7 +123,7 @@ namespace AllgarveBeach
 
         protected void btnInserirPraia_Click(object sender, ImageClickEventArgs e)
         {
-            novaPraia = new Praia(Convert.ToInt32(txtFregPraia.Text), txtNomePraia.Text, txtMoradaPraia.Text, Convert.ToInt32(txtExtenPraia.Text), Convert.ToInt16(txtBandAzul.Text), Convert.ToInt16(txtTempAgua.Text), Convert.ToInt16(txtSoBarco.Text));
+            novaPraia = new Praia(Convert.ToInt32(txtFregPraia.Text), txtNomePraia.Text, txtMoradaPraia.Text, Convert.ToInt32(txtExtenPraia.Text), Convert.ToInt16(txtBandAzul.Text), Convert.ToInt16(txtTempAgua.Text), Convert.ToInt16(txtSoBarco.Text), Convert.ToInt16(txtPHospedagem.Text), Convert.ToInt16(txtPRestaurante.Text));
 
             novaPraia.InserirPraia();
 
@@ -206,7 +206,7 @@ namespace AllgarveBeach
         protected void btnModPraia_Click(object sender, ImageClickEventArgs e)
         {
 
-            novaPraia = new Praia(Convert.ToInt32(txtFregPraia.Text), txtNomePraia.Text, txtMoradaPraia.Text, Convert.ToInt32(txtExtenPraia.Text), Convert.ToInt16(txtBandAzul.Text), Convert.ToInt16(txtTempAgua.Text), Convert.ToInt16(txtSoBarco.Text));
+            novaPraia = new Praia(Convert.ToInt32(txtFregPraia.Text), txtNomePraia.Text, txtMoradaPraia.Text, Convert.ToInt32(txtExtenPraia.Text), Convert.ToInt16(txtBandAzul.Text), Convert.ToInt16(txtTempAgua.Text), Convert.ToInt16(txtSoBarco.Text), Convert.ToInt16(txtPHospedagem.Text), Convert.ToInt16(txtPRestaurante.Text));
             novaPraia.ActualizarPraia(txtID.Text);
 
             MessageBox("Praia modificada com sucesso!");

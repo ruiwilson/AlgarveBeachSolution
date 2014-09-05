@@ -116,7 +116,7 @@ namespace AlgarveBeach
         public Praia[] CarregarPraiaTeste(string IDpraia)
         {
 
-            string[] campos = { "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            string[] campos = { "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             DataTable dt = aBD.LerTabelaCompletaConTeste1(campos, "Praia", "IDpraia", IDpraia);
             Praia[] arrPraia = new Praia[dt.Rows.Count];
@@ -131,6 +131,8 @@ namespace AlgarveBeach
                 p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
                 p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
                 p.AcessoSoBarco = Convert.ToInt16(rw["TemperaturaAgua"]);
+                p.Hospedagem = Convert.ToInt16(rw["Hospedagem"]);
+                p.Restaurante = Convert.ToInt16(rw["Restaurante"]);
 
                 arrPraia[i] = p;
                 i++;
@@ -145,7 +147,7 @@ namespace AlgarveBeach
         //Método responsável por carregar os dados de todos as praias
         public Praia[] CarregarPraia()
         {
-            string[] campos = { /*"IDfreguesia", */"NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            string[] campos = { /*"IDfreguesia", */"NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             DataTable dt = aBD.LerTabelaCompletaConTeste2(campos, "Praia");
             Praia[] arrPraias = new Praia[dt.Rows.Count];
@@ -161,6 +163,8 @@ namespace AlgarveBeach
                 p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
                 p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
                 p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+                p.Hospedagem = Convert.ToInt16(rw["Hospedagem"]);
+                p.Restaurante = Convert.ToInt16(rw["Restaurante"]);
 
 
                 arrPraias[i] = p;

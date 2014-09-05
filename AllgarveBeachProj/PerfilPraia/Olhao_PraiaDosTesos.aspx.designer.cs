@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AllgarveBeach {
+namespace AllgarveBeach.PerfilPraia {
     
     
-    public partial class Galleries {
+    public partial class Olhao_PraiaDosTesos {
         
         /// <summary>
         /// form1 control.

@@ -12,58 +12,30 @@ namespace AlgarveBeach
     {
 
        public void CriarComentarioFile(string DirPath,string comentario)
-       {
-       /*    string path = @"c:\temp\MyTest.txt";
-
-           try
-           {
-
-               // Delete the file if it exists. 
-               if (File.Exists(path))
-               {
-                   // Note that no lock is put on the 
-                   // file and the possibility exists 
-                   // that another process could do 
-                   // something with it between 
-                   // the calls to Exists and Delete.
-                   File.AppendAllLines(path);
-               }
-
-               // Create the file. 
-               using (FileStream fs = File.Create(path))
-               {
-                   Byte[] info = new UTF8Encoding(true).GetBytes(comentario);
-                   // Add some information to the file.
-                   fs.Write(info, 0, info.Length);
-               }
-
-               // Open the stream and read it back. 
-               using (StreamReader sr = File.OpenText(path))
-               {
-                   string s = "";
-                   while ((s = sr.ReadLine()) != null)
-                   {
-                       Console.WriteLine(s);
-                   }
-               }
-           }
-
-           catch (Exception Ex)
-           {
-               Console.WriteLine(Ex.ToString());
-           }*/
-
-
-           // 1: Write single line to new file
-          // using (StreamWriter writer = new StreamWriter("C:\\temp\\log.txt", true))
-
-              
+       {    
                using (StreamWriter writer = new StreamWriter(DirPath, true))
                {
                    writer.WriteLine(comentario);
                }
-           
+       }
 
+       public void LerComentarios(string DirPath)
+       {
+           // The files used in this example are created in the topic 
+           // How to: Write to a Text File. You can change the path and 
+           // file name to substitute text files of your own. 
+
+           // Example #1 
+           // Read the file as one string. 
+           // string text = System.IO.File.ReadAllText(DirPath);
+
+           // Display the file contents to the console. Variable text is a string.
+           //   System.Console.WriteLine("Contents of WriteText.txt = {0}", text);
+
+           // Example #2 
+           // Read each line of the file into a string array. Each element 
+           // of the array is one line of the file. 
+           string[] lines = System.IO.File.ReadAllLines(DirPath);
        }
 
     }

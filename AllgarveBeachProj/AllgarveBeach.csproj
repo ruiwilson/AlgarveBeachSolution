@@ -61,6 +61,7 @@
     <Content Include="defs.css" />
     <Content Include="Galleries.aspx" />
     <Content Include="HomeAdmin.aspx" />
+    <Content Include="PerfilPraia\Olhao_PraiaDosTesos.aspx" />
     <Content Include="ProPraias.aspx" />
     <Content Include="Regist.aspx" />
     <Content Include="Web.config" />
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="HomeAdmin.aspx.designer.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilPraia\Olhao_PraiaDosTesos.aspx.cs">
+      <DependentUpon>Olhao_PraiaDosTesos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPraia\Olhao_PraiaDosTesos.aspx.designer.cs">
+      <DependentUpon>Olhao_PraiaDosTesos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProPraias.aspx.cs">

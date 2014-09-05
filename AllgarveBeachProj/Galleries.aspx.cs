@@ -27,11 +27,16 @@ namespace AllgarveBeach
             else+*/
             lttesos.Text += "<br>Data: " + System.DateTime.Today + "<br>Anónimo> " + ComentTesos.Text + " <<br><hr>";
 
-            FileStream sw = File.Create("C://temp//tesos//coment.txt");
 
-
+            System.IO.Directory.CreateDirectory("C://temp//tesos");
             f.CriarComentarioFile("C://temp//tesos//coment.txt",lttesos.Text);
             lttesos.Text = "";
+        }
+
+        protected void CheckVerComTesos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckVerComTesos.Checked)
+                lttesos.Text = "TOMA";
         }
     }
 }

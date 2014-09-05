@@ -41,7 +41,51 @@
 		<li><img src="http://static.panoramio.com/photos/large/48979565.jpg" alt="Praia dos tesos" />
 	</ul>
 <p>Dimensão: 300 metros</p>
-<p>Bandeira azul: Sim</p>
+
+
+<asp:Table runat="server" BackColor="LightCyan">
+    <asp:TableRow>
+        <asp:TableCell><img src="/icons/bazul.jpg" />Bandeira azul:</asp:TableCell>
+        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
+        <asp:TableCell>Chuveiros:</asp:TableCell>
+        <asp:TableCell>Não</asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
+        <asp:TableCell>Acesso pedonal fácil:</asp:TableCell>
+        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
+        <asp:TableCell>Acesso deficientes:</asp:TableCell>
+        <asp:TableCell>Sim</asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
+        <asp:TableCell>Parking gratuito:</asp:TableCell>
+        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
+        <asp:TableCell>Restaurante(-500metros):</asp:TableCell>
+        <asp:TableCell>Sim</asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
+        <asp:TableCell>Permite animais:</asp:TableCell>
+        <asp:TableCell>Não</asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
+        <asp:TableCell>Aluguer de toldos:</asp:TableCell>
+        <asp:TableCell>Não</asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
+        <asp:TableCell>Nadador salvador:</asp:TableCell>
+        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
+        <asp:TableCell>Área de guarda-sóis:</asp:TableCell>
+        <asp:TableCell>Não</asp:TableCell>
+    </asp:TableRow>
+    <asp:TableRow>
+        <asp:TableCell>Serviços:</asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
+        <asp:TableCell>Bar</asp:TableCell>
+        <asp:TableCell>WC</asp:TableCell>
+    </asp:TableRow>
+</asp:Table>
 <p>Serviços(-de 1Km): Restaurantes, cafés, camping, multibanco, lojas</p>
     <hr size='1'/>
     <p>Escreva já a sua opinião</p>

@@ -52,6 +52,7 @@ Ficheiros f = new Ficheiros();
             btnvertesos.Visible = false;
 
             string path = "C://temp//tesos//coment.txt";
+            
             if (!string.IsNullOrEmpty(path))
             {
                 string[] readText = File.ReadAllLines(path);

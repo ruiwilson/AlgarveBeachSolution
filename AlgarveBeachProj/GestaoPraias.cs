@@ -98,7 +98,7 @@ namespace AlgarveBeach
 
             string[] campos = { "NomePraia" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
-            DataTable dt = aBD.LerTabelaCompletaCon(IDfreguesia);
+            DataTable dt = aBD.LerTabelaCompletaConTeste("NomePraia", "Praia", "IDfreguesia", IDfreguesia);
             Praia[] arrPraia = new Praia[dt.Rows.Count];
             int i = 0;
             foreach (DataRow rw in dt.Rows)

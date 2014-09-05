@@ -32,5 +32,11 @@ namespace AllgarveBeach
             f.CriarComentarioFile("C://temp//tesos//coment.txt",lttesos.Text);
             lttesos.Text = "";
         }
+
+        protected void CheckVerComTesos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckVerComTesos.Checked)
+                lttesos.Text = "TOMA";
+        }
     }
 }

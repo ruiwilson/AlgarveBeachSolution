@@ -50,8 +50,20 @@
     <p>Escreva já a sua opinião</p>
     <asp:TextBox ID="ComentTesos" TextMode="multiline" Columns="50" Rows="5" runat="server" /></asp:TextBox>
     <asp:Button ID="EnviarTesos" runat="server" Text="Enviar" OnClick="EnviarTesos_Click" />
+    <br />
+    <br />
+    <br />
+        <div align="center">
+            <asp:CheckBox ID="CheckVerComTesos" runat="server" OnCheckedChanged="CheckVerComTesos_CheckedChanged" />
+        </div>
+    <br />
     <p>Comentários:</p>
     <asp:Literal ID="lttesos" runat="server"></asp:Literal>
+
+	<br />
+    <div align="center">
+    </div>
+    <br />
 
 	</form>
 </body>

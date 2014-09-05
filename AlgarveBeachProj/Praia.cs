@@ -14,6 +14,7 @@ namespace AlgarveBeach
 {
     public class Praia
     {
+        private int mIDpraia;
         private int mIDfreguesia;
         private string mNomePraia;
         private string mMoradaPraia;
@@ -55,6 +56,14 @@ namespace AlgarveBeach
             this.AcessoSoBarco = Convert.ToInt16(valores[6]);
         }
 
+        public void CarregarPraiaID(string nomepraia)
+        {
+            string[] campos = { "IDpraia" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            string[] valores = aBD.LerTabela("Praia", campos, "NomePraia", nomepraia);
+            this.IDpraia = Convert.ToInt32(valores[0]);
+        }
+
         //Método responsável por actualizar um produto existente na base de dados
         public void ActualizarPraia(string IDpraia)
         {
@@ -92,6 +101,12 @@ namespace AlgarveBeach
 
         //::::::::::::::::::::::Propriedades::::::::::::::::::::::::::::
         //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        public int IDpraia
+        {
+            get { return mIDpraia; }
+            set { mIDpraia = value; }
+        }
+
         public int IDfreguesia
         {
             get { return mIDfreguesia; }

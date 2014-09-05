@@ -30,7 +30,7 @@
         <div style="text-align:center;">
         <img class="bottom" src="/CSS/praia1.jpg" width="700" height="300"  />
         <img class="top" src="/CSS/praia2.jpg" width="700" height="300" />
-            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+            
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
         </div>
 
@@ -94,6 +94,15 @@
         </tr>
     </table>
         
+        <br /><br /><br />
+
+        <table>
+            <tr>
+                <td>
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                </td>
+            </tr>
+        </table>
         
 
     </div>

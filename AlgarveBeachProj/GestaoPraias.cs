@@ -113,6 +113,31 @@ namespace AlgarveBeach
             return arrPraia;
         }
 
+        public Praia[] CarregarPraiaTeste(string IDpraia)
+        {
+
+            string[] campos = { "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            DataTable dt = aBD.LerTabelaCompletaConTeste1(campos, "Praia", "IDpraia", IDpraia);
+            Praia[] arrPraia = new Praia[dt.Rows.Count];
+            int i = 0;
+            foreach (DataRow rw in dt.Rows)
+            {
+                Praia p = new Praia();
+
+                p.NomePraia = Convert.ToString(rw["NomePraia"]);
+                p.MoradaPraia = Convert.ToString(rw["MoradaPraia"]);
+                p.ExtensaoPraia = Convert.ToInt32(rw["ExtensaoPraia"]);
+                p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
+                p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
+                p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+
+                arrPraia[i] = p;
+                i++;
+            }
+            return arrPraia;
+        }
+
 
 
 

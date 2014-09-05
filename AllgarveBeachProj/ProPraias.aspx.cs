@@ -12,11 +12,12 @@ namespace AllgarveBeach
         AlgarveBeach.Concelho con;
         AlgarveBeach.Freguesia fre;
         AlgarveBeach.Praia pra;
-        AlgarveBeach.GestaoPraias GP1, GP2, GP3;
+        AlgarveBeach.GestaoPraias GP1, GP2, GP3, GP4;
 
         AlgarveBeach.Concelho[] concelho;
         AlgarveBeach.Freguesia[] freguesia;
         AlgarveBeach.Praia[] praia;
+        AlgarveBeach.Praia[] praiateste;
 
         //List<AlgarveBeach.Concelho> Concelhos = new List<AlgarveBeach.Concelho>();
 
@@ -35,6 +36,7 @@ namespace AllgarveBeach
             GP1 = new AlgarveBeach.GestaoPraias();
             GP2 = new AlgarveBeach.GestaoPraias();
             GP3 = new AlgarveBeach.GestaoPraias();
+            GP4 = new AlgarveBeach.GestaoPraias();
             concelho = GP1.CarregarConcelho();
             con = new AlgarveBeach.Concelho();
             fre = new AlgarveBeach.Freguesia();
@@ -141,18 +143,18 @@ namespace AllgarveBeach
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-            /*DFreguesia.Items.Clear();//ELIMINA TODOS OS ITEMS NA DropDown DFreguesias
-            id.CarregarConcelhoID(Convert.ToString(DConcelho.SelectedItem));
-
-            Literal1.Text = Convert.ToString(id.IDconcelho);
-            freguesia = con1.CarregarFreguesia(Convert.ToString(Literal1.Text));
+            
+            pra.CarregarPraiaID(Convert.ToString(DPraia.SelectedItem));
 
             
-                foreach (AlgarveBeach.Freguesia f in freguesia)
-                {
-                    DFreguesia.Items.Add(f.NomeFreguesia);
-                }*/
+            praiateste = GP4.CarregarPraiaTeste(Convert.ToString(pra.IDpraia));
+
+
+            foreach (AlgarveBeach.Praia p in praiateste)
+            {
+                Literal1.Text=Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " +p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco);
+            }
+            
         }
     }
 }

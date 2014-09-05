@@ -146,6 +146,32 @@ namespace AlgarveBeach
 
                 }
 
+                public DataTable LerTabelaCompletaConTeste2(string[] Campo, string Tabela)
+                {
+
+                    string[] arrResultadoPesquisa = new string[Campo.Length];
+                    string SelectList = "";
+                    for (int i = 0; i < Campo.Length; i++)
+                    {
+                        SelectList += Campo[i];
+                        if (i != Campo.Length - 1) { SelectList += ", "; }
+                    }
+
+                    string strSelect = "SELECT " + SelectList + " FROM " + Tabela + ";";
+                    //string strSelect = "SELECT Freguesias.NomeFreguesia FROM Freguesias INNER JOIN  ON Freguesias.IDconcelho = Concelho.IDconcelho WHERE Concelho.NomeConcelho = '" + ValorChave + "';";
+                    this.sqlLigacao.Open();
+                    SqlDataAdapter da = new SqlDataAdapter(strSelect, sqlLigacao);
+
+                    DataTable dt = new DataTable();
+
+                    da.Fill(dt);
+
+                    sqlLigacao.Close();
+
+                    return dt;
+
+                }
+
 
                 //LerTabelaCompleta por categoria ordenada por preço
 

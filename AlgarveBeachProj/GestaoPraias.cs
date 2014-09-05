@@ -130,7 +130,7 @@ namespace AlgarveBeach
                 p.ExtensaoPraia = Convert.ToInt32(rw["ExtensaoPraia"]);
                 p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
                 p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
-                p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
+                p.AcessoSoBarco = Convert.ToInt16(rw["TemperaturaAgua"]);
 
                 arrPraia[i] = p;
                 i++;
@@ -145,18 +145,18 @@ namespace AlgarveBeach
         //Método responsável por carregar os dados de todos as praias
         public Praia[] CarregarPraia()
         {
-            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            string[] campos = { /*"IDfreguesia", */"NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
-            DataTable dt = aBD.LerTabelaCompleta2("Praias");
+            DataTable dt = aBD.LerTabelaCompletaConTeste2(campos, "Praia");
             Praia[] arrPraias = new Praia[dt.Rows.Count];
             int i = 0;
             foreach (DataRow rw in dt.Rows)
             {
                 Praia p = new Praia();
 
-                p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
+              //p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
                 p.NomePraia = rw["NomePraia"].ToString();
-                p.MoradaPraia = rw["Nomeproduto"].ToString();
+                p.MoradaPraia = rw["MoradaPraia"].ToString();
                 p.ExtensaoPraia = Convert.ToInt16(rw["ExtensaoPraia"]);
                 p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
                 p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
@@ -170,7 +170,7 @@ namespace AlgarveBeach
 
 
         }
-
+        /*
         //Método responsável por carregar as praias mais proximas de dado hotel
         public Praia[] CarregarPraiaDistHotel(string IDcategoria)
         {

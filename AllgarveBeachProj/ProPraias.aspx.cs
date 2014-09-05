@@ -63,15 +63,17 @@ namespace AllgarveBeach
 
 
 
-
+                DHospedagem.Items.Add("Qualquer Distância");
                 DHospedagem.Items.Add("0m-500m");
                 DHospedagem.Items.Add("500m-1000m");
                 DHospedagem.Items.Add("1000m-2000m");
 
+                DRestaurante.Items.Add("Qualquer Distância");
                 DRestaurante.Items.Add("0m-500m");
                 DRestaurante.Items.Add("500m-1000m");
                 DRestaurante.Items.Add("1000m-2000m");
 
+                DTemperatura.Items.Add("Qualquer Temperatura");
                 DTemperatura.Items.Add("<18°");
                 DTemperatura.Items.Add("18°-21°");
                 DTemperatura.Items.Add("21°-24°");
@@ -143,18 +145,36 @@ namespace AllgarveBeach
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
-            pra.CarregarPraiaID(Convert.ToString(DPraia.SelectedItem));
+            if(DPraia.SelectedIndex!=0)
+            { 
+                pra.CarregarPraiaID(Convert.ToString(DPraia.SelectedItem));
 
-            
-            praiateste = GP4.CarregarPraiaTeste(Convert.ToString(pra.IDpraia));
+                praiateste = GP4.CarregarPraiaTeste(Convert.ToString(pra.IDpraia));
 
-
-            foreach (AlgarveBeach.Praia p in praiateste)
-            {
-                Literal1.Text=Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " +p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco);
+                foreach (AlgarveBeach.Praia p in praiateste)
+                {
+                    Literal1.Text = Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br><br><br>");
+                }
             }
-            
+            else
+            {
+                praiateste = GP4.CarregarPraia();
+
+                foreach (AlgarveBeach.Praia p in praiateste)
+                {
+                    Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br><br><br>");
+                }
+            }
+
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            if(DHospedagem.SelectedIndex==1)
+            {
+                pra.CarregarPraiaID(Convert.ToString(DPraia.SelectedItem));
+
+            }
         }
     }
 }

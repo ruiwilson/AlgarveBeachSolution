@@ -1,89 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System;
+using System.IO;
+using System.Text;
 
 namespace AlgarveBeach
 {
-    class Ficheiros
+   public class Ficheiros
     {
-        string fileLoc = @"c:\sample1.txt";
 
-        // Criar um ficheiro de texto
-        private void btnCreate_Click(object sender, EventArgs e)
-        {
-            FileStream fs = null;
-            if (!File.Exists(fileLoc))
-            {
-                using (fs = File.Create(fileLoc))
-                {
+       public void CriarComentarioFile(string DirPath,string comentario)
+       {
+       /*    string path = @"c:\temp\MyTest.txt";
 
-                }
-            }
-        }
+           try
+           {
+
+               // Delete the file if it exists. 
+               if (File.Exists(path))
+               {
+                   // Note that no lock is put on the 
+                   // file and the possibility exists 
+                   // that another process could do 
+                   // something with it between 
+                   // the calls to Exists and Delete.
+                   File.AppendAllLines(path);
+               }
+
+               // Create the file. 
+               using (FileStream fs = File.Create(path))
+               {
+                   Byte[] info = new UTF8Encoding(true).GetBytes(comentario);
+                   // Add some information to the file.
+                   fs.Write(info, 0, info.Length);
+               }
+
+               // Open the stream and read it back. 
+               using (StreamReader sr = File.OpenText(path))
+               {
+                   string s = "";
+                   while ((s = sr.ReadLine()) != null)
+                   {
+                       Console.WriteLine(s);
+                   }
+               }
+           }
+
+           catch (Exception Ex)
+           {
+               Console.WriteLine(Ex.ToString());
+           }*/
 
 
-        // Escrever num ficheiro de texto
-        private void btnWrite_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(fileLoc))
-            {
-                using (StreamWriter sw = new StreamWriter(fileLoc))
-                {
-                    sw.Write("Some sample text for the file");
-                }
-            }
-        }
+           // 1: Write single line to new file
+          // using (StreamWriter writer = new StreamWriter("C:\\temp\\log.txt", true))
 
+              
+               using (StreamWriter writer = new StreamWriter(DirPath, true))
+               {
+                   writer.WriteLine(comentario);
+               }
+           
 
-        // Ler um ficheiro de texto
-        private void btnRead_Click(object sender, EventArgs e)
-        {
-            if (System.IO.File.Exists(fileLoc))
-            {
-                using (System.IO.TextReader tr = new System.IO.StreamReader(fileLoc))
-                {
-                    System.Windows.Forms.MessageBox.Show(tr.ReadLine());
-                }
-            }
-        }
-
-
-        // Copiar um ficheiro de texto
-        private void btnCopy_Click(object sender, EventArgs e)
-        {
-            string fileLocCopy = @"d:\sample1.txt";
-            if (File.Exists(fileLoc))
-            {
-                // If file already exists in destination, delete it.
-                if (File.Exists(fileLocCopy))
-                    File.Delete(fileLocCopy);
-                File.Copy(fileLoc, fileLocCopy);
-            }
-        }
-
-        // Mover um ficheiro de texto
-        private void btnMove_Click(object sender, EventArgs e)
-        {
-            // Create unique file name
-            string fileLocMove = @"d:\sample1" + System.DateTime.Now.Ticks + ".txt";
-            if (File.Exists(fileLoc))
-            {
-                File.Move(fileLoc, fileLocMove);
-            }
-        }
-
-        // Apagar um ficheirode texto
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (File.Exists(fileLoc))
-            {
-                File.Delete(fileLoc);
-            }
-        }
-
+       }
 
     }
 }

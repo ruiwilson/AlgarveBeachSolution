@@ -1,9 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Olhao_PraiaDosTesos.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Olhao_PraiaDosTesos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Portimao_PraiaDoVau.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Portimao_PraiaDoVau" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Praia dos tesos (Fuseta)</title>
+    <title>Praia do Vau (Portimão)</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,18 +27,19 @@
     });
 </script>
 <br />
-    <h1>Olhão</h1>
+    <h1>Portimão</h1>
 <hr size='1'/>
-<p><b>Praia dos tesos(Fuseta)</b></p>
+<h3><b>Praia do Vau</b></h3>
 <br />
-<div align="center">
+ <div align="center">
 	<ul id="myGallery">
-		<li><img src="http://fotos.sapo.pt/FsY5SE2fzZQzc6QazBOJ/" alt="Praia dos tesos" />
-		<li><img src="http://3.bp.blogspot.com/_ndRSDl0GAtg/TEV-7oqRlZI/AAAAAAAABLQ/17NtAdOh4RM/s1600/004.JPG" alt="Praia dos tesos" />
-		<li><img src="http://2.bp.blogspot.com/_KyjCl24TcC4/TFs6l7eJoqI/AAAAAAAAAz0/rODuhXDWy2Q/s1600/DSCF0974.JPG" alt="Praia dos tesos" />
-		<li><img src="http://static.panoramio.com/photos/large/48979565.jpg" alt="Praia dos tesos" />
+		<li><img src="http://static.panoramio.com/photos/large/13937207.jpg" alt="Praia do vau" />
+		<li><img src="http://media-cdn.tripadvisor.com/media/photo-s/01/79/d5/95/praia-do-vau-beach.jpg" alt="Praia do vau" />
+		<li><img src="http://www.guiadacidade.pt/foto2/data/media/4/AlgarvePraiaVau2_resize.JPG" alt="Praia do vau" />
+		<li><img src="http://3.bp.blogspot.com/-DCzQu0-1x5A/UB_we5r0iRI/AAAAAAAAJ3U/Hq67Tjmka2c/s1600/11872324_1.jpg" alt="Praia do vau" />
 	</ul>
 <p>Dimensão: 300 metros</p>
+
 
 <asp:Table runat="server" BackColor="LightCyan">
     <asp:TableRow>
@@ -82,7 +84,7 @@
         <asp:TableCell>&nbsp&nbsp&nbspWC</asp:TableCell>
     </asp:TableRow>
 </asp:Table>
-    </div>
+     </div>
 <br />
     <hr size='1'/>
     <p>Escreva já a sua opinião</p>
@@ -104,3 +106,4 @@
 	</form>
 </body>
 </html>
+

@@ -1,25 +1,23 @@
-﻿using AlgarveBeach;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AlgarveBeach;
+using System.IO;
+using System.Text;
 
 namespace AllgarveBeach.PerfilPraia
 {
-    public partial class Olhao_PraiaDosTesos : System.Web.UI.Page
+    public partial class Albufeira_PraiaDaOura : System.Web.UI.Page
     {
-
-Ficheiros f = new Ficheiros();
+        Ficheiros novoficheiro = new Ficheiros();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnocultartesos.Visible = false;
-        }
 
+        }
         protected void EnviarTesos_Click(object sender, EventArgs e)
         {
             btnvertesos.Visible = true;
@@ -33,10 +31,10 @@ Ficheiros f = new Ficheiros();
              "<td style='text-align:left' bgcolor=#ccff00 align=center><b>Data: </b>" + System.DateTime.Today +
              "</tr><tr><td style='text-align:left' bgcolor=#cccccc align=center height='30' width='100%'>Anónimo> " + ComentTesos.Text + " </td></tr></table>";
 
-            
-            
-            System.IO.Directory.CreateDirectory("C://temp//tesos");
-            f.CriarComentarioFile("C://temp//tesos//coment.txt",lttesos.Text);
+
+
+            System.IO.Directory.CreateDirectory("C://temp//oura");
+            novoficheiro.CriarComentarioFile("C://temp//oura//coment.txt", lttesos.Text);
             lttesos.Text = "";
         }
 
@@ -51,8 +49,8 @@ Ficheiros f = new Ficheiros();
             btnocultartesos.Visible = true;
             btnvertesos.Visible = false;
 
-            string path = "C://temp//tesos//coment.txt";
-            
+            string path = "C://temp//oura//coment.txt";
+
             if (!string.IsNullOrEmpty(path))
             {
                 string[] readText = File.ReadAllLines(path);

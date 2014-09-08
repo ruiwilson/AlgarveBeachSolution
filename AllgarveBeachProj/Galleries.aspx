@@ -1,72 +1,121 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Galleries.aspx.cs" Inherits="AllgarveBeach.Galleries" %>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Showing pixel and tile coordinates</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+        var map;
+        var TILE_SIZE = 256;
+        var chicago = new google.maps.LatLng(37.11982, -8.558094);
 
-<!DOCTYPE html>
+        function bound(value, opt_min, opt_max) {
+            if (opt_min != null) value = Math.max(value, opt_min);
+            if (opt_max != null) value = Math.min(value, opt_max);
+            return value;
+        }
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+        function degreesToRadians(deg) {
+            return deg * (Math.PI / 180);
+        }
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+        function radiansToDegrees(rad) {
+            return rad / (Math.PI / 180);
+        }
 
-<!-- Second, add the Timer and Easing plugins -->
-<script type="text/javascript" src="../js/jquery.timers-1.2.js"></script>
-<script type="text/javascript" src="../js/jquery.easing.1.3.js"></script>
+        /** @constructor */
+        function MercatorProjection() {
+            this.pixelOrigin_ = new google.maps.Point(TILE_SIZE / 2,
+                TILE_SIZE / 2);
+            this.pixelsPerLonDegree_ = TILE_SIZE / 360;
+            this.pixelsPerLonRadian_ = TILE_SIZE / (2 * Math.PI);
+        }
 
-<!-- Third, add the GalleryView Javascript and CSS files -->
-<script type="text/javascript" src="../js/jquery.galleryview-3.0-dev.js"></script>
-<link type="text/css" rel="stylesheet" href="../css/jquery.galleryview-3.0-dev.css" />
+        MercatorProjection.prototype.fromLatLngToPoint = function (latLng,
+            opt_point) {
+            var me = this;
+            var point = opt_point || new google.maps.Point(0, 0);
+            var origin = me.pixelOrigin_;
 
-<!-- Lastly, call the galleryView() function on your unordered list(s) -->
-<script type="text/javascript">
-    $(function () {
-        $('#myGallery').galleryView();
-    });
-</script>
-</head>
-<body>
-<br />
-    <h1>Galeria das melhores praias algarvias</h1>
-<br />
-<br />
-<br />
-<br />
-<hr />
-<p><b>Praia dos tesos(Fuseta - Olhão)</b></p>
-<br />
-	<ul id="myGallery">
-		<li><img src="http://fotos.sapo.pt/FsY5SE2fzZQzc6QazBOJ/" alt="Praia dos tesos" />
-		<li><img src="http://3.bp.blogspot.com/_ndRSDl0GAtg/TEV-7oqRlZI/AAAAAAAABLQ/17NtAdOh4RM/s1600/004.JPG" alt="Praia dos tesos" />
-		<li><img src="http://2.bp.blogspot.com/_KyjCl24TcC4/TFs6l7eJoqI/AAAAAAAAAz0/rODuhXDWy2Q/s1600/DSCF0974.JPG" alt="Praia dos tesos" />
-		<li><img src="http://static.panoramio.com/photos/large/48979565.jpg" alt="Praia dos tesos" />
-	</ul>
-<p>Dimensão: 300 metros</p>
-<p>Bandeira azul: Sim</p>
-<p>Serviços(-de 1Km): Restaurantes, cafés, camping, multibanco, lojas</p>
-    <hr />
-    <p>Escreva já a sua opinião</p>
-    <asp:TextBox ID="ComentTesos" TextMode="multiline" Columns="50" Rows="5" runat="server" /></asp:TextBox>
-    <asp:Button ID="EnviarTesos" runat="server" Text="Enviar" OnClick="EnviarTesos_Click" />
-    <br />
-    <br />
-    <br />
-        <div align="center">
-            <asp:Button ID="btnvertesos" runat="server" Height="20px" CausesValidation="False" OnClick="btnvertesos_Click" Text="Ver comentários" />
-            <br />
-            <asp:Button ID="btnocultartesos" runat="server" Height="20px" CausesValidation="False" OnClick="btnocultartesos_Click" Text="Ocultar" Width="143px" />
-        </div>
-    <br />
-    <p>Comentários:</p>
-    <asp:Literal ID="lttesos" runat="server"></asp:Literal>
+            point.x = origin.x + latLng.lng() * me.pixelsPerLonDegree_;
 
-	<br />
-    <div align="center">
-    </div>
-    <br />
+            // Truncating to 0.9999 effectively limits latitude to 89.189. This is
+            // about a third of a tile past the edge of the world tile.
+            var siny = bound(Math.sin(degreesToRadians(latLng.lat())), -0.9999,
+                0.9999);
+            point.y = origin.y + 0.5 * Math.log((1 + siny) / (1 - siny)) *
+                -me.pixelsPerLonRadian_;
+            return point;
+        };
 
-	</form>
-</body>
+        MercatorProjection.prototype.fromPointToLatLng = function (point) {
+            var me = this;
+            var origin = me.pixelOrigin_;
+            var lng = (point.x - origin.x) / me.pixelsPerLonDegree_;
+            var latRadians = (point.y - origin.y) / -me.pixelsPerLonRadian_;
+            var lat = radiansToDegrees(2 * Math.atan(Math.exp(latRadians)) -
+                Math.PI / 2);
+            return new google.maps.LatLng(lat, lng);
+        };
+
+        function createInfoWindowContent() {
+            var numTiles = 1 << map.getZoom();
+            var projection = new MercatorProjection();
+            var worldCoordinate = projection.fromLatLngToPoint(chicago);
+            var pixelCoordinate = new google.maps.Point(
+                worldCoordinate.x * numTiles,
+                worldCoordinate.y * numTiles);
+            var tileCoordinate = new google.maps.Point(
+                Math.floor(pixelCoordinate.x / TILE_SIZE),
+                Math.floor(pixelCoordinate.y / TILE_SIZE));
+
+            return [
+              'Praia do Vau, PT',
+              'LatLng: ' + chicago.lat() + ' , ' + chicago.lng(),
+              'World Coordinate: ' + worldCoordinate.x + ' , ' +
+                worldCoordinate.y,
+              'Pixel Coordinate: ' + Math.floor(pixelCoordinate.x) + ' , ' +
+                Math.floor(pixelCoordinate.y),
+              'Tile Coordinate: ' + tileCoordinate.x + ' , ' +
+                tileCoordinate.y + ' at Zoom Level: ' + map.getZoom()
+            ].join('<br>');
+        }
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 18,
+                center: chicago,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            };
+
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+
+            var coordInfoWindow = new google.maps.InfoWindow();
+            coordInfoWindow.setContent(createInfoWindowContent());
+            coordInfoWindow.setPosition(chicago);
+            coordInfoWindow.open(map);
+
+            google.maps.event.addListener(map, 'zoom_changed', function () {
+                coordInfoWindow.setContent(createInfoWindowContent());
+                coordInfoWindow.open(map);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
 </html>

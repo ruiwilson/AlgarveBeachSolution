@@ -1,9 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Olhao_PraiaDosTesos.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Olhao_PraiaDosTesos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Albufeira_PraiaDaOura.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Albufeira_PraiaDaOura" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Praia dos tesos (Fuseta)</title>
+    <title>Praia da oura (Albufeira)</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,18 +27,19 @@
     });
 </script>
 <br />
-    <h1>Olhão</h1>
+    <h1>Albufeira</h1>
 <hr size='1'/>
-<p><b>Praia dos tesos(Fuseta)</b></p>
+<p><b>Praia da oura</b></p>
 <br />
-<div align="center">
+        <div align="center">
 	<ul id="myGallery">
-		<li><img src="http://fotos.sapo.pt/FsY5SE2fzZQzc6QazBOJ/" alt="Praia dos tesos" />
-		<li><img src="http://3.bp.blogspot.com/_ndRSDl0GAtg/TEV-7oqRlZI/AAAAAAAABLQ/17NtAdOh4RM/s1600/004.JPG" alt="Praia dos tesos" />
-		<li><img src="http://2.bp.blogspot.com/_KyjCl24TcC4/TFs6l7eJoqI/AAAAAAAAAz0/rODuhXDWy2Q/s1600/DSCF0974.JPG" alt="Praia dos tesos" />
-		<li><img src="http://static.panoramio.com/photos/large/48979565.jpg" alt="Praia dos tesos" />
+		<li><img src="http://static.panoramio.com/photos/large/51385448.jpg" alt="Praia da oura" />
+		<li><img src="http://estaticos.guiadacidade.pt/foto2/data/media/4/AlgarvePraiaOura1_resize.JPG" alt="Praia da oura" />
+		<li><img src="http://www.algarve-portal.com/objects/algarve/PraiaOura03_486.jpg" alt="Praia da oura" />
+		<li><img src="http://c10.quickcachr.fotos.sapo.pt/i/obc041e3b/6755363_bTRE4.jpeg" alt="Praia da oura" />
 	</ul>
 <p>Dimensão: 300 metros</p>
+
 
 <asp:Table runat="server" BackColor="LightCyan">
     <asp:TableRow>
@@ -82,7 +84,7 @@
         <asp:TableCell>&nbsp&nbsp&nbspWC</asp:TableCell>
     </asp:TableRow>
 </asp:Table>
-    </div>
+</div>
 <br />
     <hr size='1'/>
     <p>Escreva já a sua opinião</p>

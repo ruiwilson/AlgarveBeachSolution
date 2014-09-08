@@ -1,9 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Olhao_PraiaDosTesos.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Olhao_PraiaDosTesos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Albufeira_PraiaDaGale.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Albufeira_PraiaDaGale" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Praia dos tesos (Fuseta)</title>
+    <title>Praia da galé (Albufeira)</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,18 +27,19 @@
     });
 </script>
 <br />
-    <h1>Olhão</h1>
+    <h1>Albufeira</h1>
 <hr size='1'/>
-<p><b>Praia dos tesos(Fuseta)</b></p>
+<p><b>Praia da galé</b></p>
 <br />
-<div align="center">
+        <div align="center">
 	<ul id="myGallery">
-		<li><img src="http://fotos.sapo.pt/FsY5SE2fzZQzc6QazBOJ/" alt="Praia dos tesos" />
-		<li><img src="http://3.bp.blogspot.com/_ndRSDl0GAtg/TEV-7oqRlZI/AAAAAAAABLQ/17NtAdOh4RM/s1600/004.JPG" alt="Praia dos tesos" />
-		<li><img src="http://2.bp.blogspot.com/_KyjCl24TcC4/TFs6l7eJoqI/AAAAAAAAAz0/rODuhXDWy2Q/s1600/DSCF0974.JPG" alt="Praia dos tesos" />
-		<li><img src="http://static.panoramio.com/photos/large/48979565.jpg" alt="Praia dos tesos" />
+		<li><img src="http://2.bp.blogspot.com/-cPMtRPl64GY/UneZQVefcdI/AAAAAAAAAns/dGHFTlswjCc/s1600/NUMBER+ONE+BIKE++RENT+A+BIKE+IN+ALGARVE+CONTACT+US+Cycle+Hire+in+Loule+Vilamoura+quinta+do+Lago+Vale+do+Lobo+Dunas+Douradas+Vale+do+Garrao+Almancil+Albufeira+Olhos+de+Agua+Praia+da+Gale+Acoteias+Praia+da+Oura+Sao+Rafael+5.jpg" alt="Praia da galé" />
+		<li><img src="http://www.cdpreisen.de/UserFiles/Image/Algarve%20albufeira%20praia%20da%20gale02%20600.jpg" alt="Praia da galé" />
+		<li><img src="http://www.guiadacidade.pt/foto2/data/media/4/AlgarvePraiaGal1_resize.JPG" alt="Praia da galé" />
+		<li><img src="http://www.sol-domus.com/wp-content/uploads/2012/10/praia-gale.jpg" alt="Praia da galé" />
 	</ul>
 <p>Dimensão: 300 metros</p>
+
 
 <asp:Table runat="server" BackColor="LightCyan">
     <asp:TableRow>
@@ -82,7 +84,7 @@
         <asp:TableCell>&nbsp&nbsp&nbspWC</asp:TableCell>
     </asp:TableRow>
 </asp:Table>
-    </div>
+</div>
 <br />
     <hr size='1'/>
     <p>Escreva já a sua opinião</p>

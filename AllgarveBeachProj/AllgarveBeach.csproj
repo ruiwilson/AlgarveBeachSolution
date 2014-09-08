@@ -61,9 +61,16 @@
     <Content Include="defs.css" />
     <Content Include="Galleries.aspx" />
     <Content Include="HomeAdmin.aspx" />
+    <Content Include="PerfilPraia\Albufeira_PraiaDaGale.aspx" />
+    <Content Include="PerfilPraia\Albufeira_PraiaDaOura.aspx" />
+    <Content Include="PerfilPraia\Albufeira_PraiaSaoRafael.aspx" />
     <Content Include="PerfilPraia\Olhao_PraiaDosTesos.aspx" />
+    <Content Include="PerfilPraia\Portimao_PraiaDaRocha.aspx" />
+    <Content Include="PerfilPraia\Portimao_PraiaDoAlvor.aspx" />
+    <Content Include="PerfilPraia\Portimao_PraiaDoVau.aspx" />
     <Content Include="ProPraias.aspx" />
     <Content Include="Regist.aspx" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,12 +95,54 @@
     <Compile Include="HomeAdmin.aspx.designer.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PerfilPraia\Albufeira_PraiaDaGale.aspx.cs">
+      <DependentUpon>Albufeira_PraiaDaGale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPraia\Albufeira_PraiaDaGale.aspx.designer.cs">
+      <DependentUpon>Albufeira_PraiaDaGale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilPraia\Albufeira_PraiaDaOura.aspx.cs">
+      <DependentUpon>Albufeira_PraiaDaOura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPraia\Albufeira_PraiaDaOura.aspx.designer.cs">
+      <DependentUpon>Albufeira_PraiaDaOura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilPraia\Albufeira_PraiaSaoRafael.aspx.cs">
+      <DependentUpon>Albufeira_PraiaSaoRafael.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPraia\Albufeira_PraiaSaoRafael.aspx.designer.cs">
+      <DependentUpon>Albufeira_PraiaSaoRafael.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PerfilPraia\Olhao_PraiaDosTesos.aspx.cs">
       <DependentUpon>Olhao_PraiaDosTesos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PerfilPraia\Olhao_PraiaDosTesos.aspx.designer.cs">
       <DependentUpon>Olhao_PraiaDosTesos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilPraia\Portimao_PraiaDaRocha.aspx.cs">
+      <DependentUpon>Portimao_PraiaDaRocha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPraia\Portimao_PraiaDaRocha.aspx.designer.cs">
+      <DependentUpon>Portimao_PraiaDaRocha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilPraia\Portimao_PraiaDoAlvor.aspx.cs">
+      <DependentUpon>Portimao_PraiaDoAlvor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPraia\Portimao_PraiaDoAlvor.aspx.designer.cs">
+      <DependentUpon>Portimao_PraiaDoAlvor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilPraia\Portimao_PraiaDoVau.aspx.cs">
+      <DependentUpon>Portimao_PraiaDoVau.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPraia\Portimao_PraiaDoVau.aspx.designer.cs">
+      <DependentUpon>Portimao_PraiaDoVau.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProPraias.aspx.cs">

@@ -1,9 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Olhao_PraiaDosTesos.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Olhao_PraiaDosTesos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Portimao_PraiaDoAlvor.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Portimao_PraiaDoAlvor" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Praia dos tesos (Fuseta)</title>
+    <title>Praia do Alvor (Portimão)</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,18 +27,19 @@
     });
 </script>
 <br />
-    <h1>Olhão</h1>
+    <h1>Portimão</h1>
 <hr size='1'/>
-<p><b>Praia dos tesos(Fuseta)</b></p>
+<p><b>Praia do Alvor</b></p>
 <br />
-<div align="center">
+ <div align="center">
 	<ul id="myGallery">
-		<li><img src="http://fotos.sapo.pt/FsY5SE2fzZQzc6QazBOJ/" alt="Praia dos tesos" />
-		<li><img src="http://3.bp.blogspot.com/_ndRSDl0GAtg/TEV-7oqRlZI/AAAAAAAABLQ/17NtAdOh4RM/s1600/004.JPG" alt="Praia dos tesos" />
-		<li><img src="http://2.bp.blogspot.com/_KyjCl24TcC4/TFs6l7eJoqI/AAAAAAAAAz0/rODuhXDWy2Q/s1600/DSCF0974.JPG" alt="Praia dos tesos" />
-		<li><img src="http://static.panoramio.com/photos/large/48979565.jpg" alt="Praia dos tesos" />
+        <li><img src="http://www.cdpreisen.de/UserFiles/Image/Algarve%20alvor%20praia%20dos%203%20irmaos.jpg" alt="Praia do alvor" />
+		<li><img src="http://www.portugaltours.com.pt/userfiles/image/blog/alvor-praia.jpg" alt="Praia do alvor" />
+		<li><img src="http://www.ingrina.com/wp-content/uploads/2013/03/PRAIA_DE_ROCHA_BEACH.jpg" alt="Praia do alvor" />
+		<li><img src="http://newmedia.thomson.co.uk/live/vol/2/a8ab8d3d6f7ee169626e01f4fddeb3c2abb61e78/1080x608/web/EUROPEMEDITERRANEANPORTUGALALGARVEALVOR.jpg" alt="Praia do alvor" />
 	</ul>
 <p>Dimensão: 300 metros</p>
+
 
 <asp:Table runat="server" BackColor="LightCyan">
     <asp:TableRow>
@@ -81,8 +83,8 @@
         <asp:TableCell>&nbsp&nbsp&nbspBar</asp:TableCell>
         <asp:TableCell>&nbsp&nbsp&nbspWC</asp:TableCell>
     </asp:TableRow>
-</asp:Table>
-    </div>
+ </asp:Table>
+</div>
 <br />
     <hr size='1'/>
     <p>Escreva já a sua opinião</p>
@@ -104,3 +106,4 @@
 	</form>
 </body>
 </html>
+

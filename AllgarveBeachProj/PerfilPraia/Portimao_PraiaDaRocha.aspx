@@ -1,9 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Olhao_PraiaDosTesos.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Olhao_PraiaDosTesos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Portimao_PraiaDaRocha.aspx.cs" Inherits="AllgarveBeach.PerfilPraia.Portimao_PraiaDaRocha" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Praia dos tesos (Fuseta)</title>
+    <title>Praia da rocha (Portimão)</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -26,18 +27,19 @@
     });
 </script>
 <br />
-    <h1>Olhão</h1>
+    <h1>Portimão</h1>
 <hr size='1'/>
-<p><b>Praia dos tesos(Fuseta)</b></p>
+<p><b>Praia da rocha</b></p>
 <br />
-<div align="center">
+        <div align="center">
 	<ul id="myGallery">
-		<li><img src="http://fotos.sapo.pt/FsY5SE2fzZQzc6QazBOJ/" alt="Praia dos tesos" />
-		<li><img src="http://3.bp.blogspot.com/_ndRSDl0GAtg/TEV-7oqRlZI/AAAAAAAABLQ/17NtAdOh4RM/s1600/004.JPG" alt="Praia dos tesos" />
-		<li><img src="http://2.bp.blogspot.com/_KyjCl24TcC4/TFs6l7eJoqI/AAAAAAAAAz0/rODuhXDWy2Q/s1600/DSCF0974.JPG" alt="Praia dos tesos" />
-		<li><img src="http://static.panoramio.com/photos/large/48979565.jpg" alt="Praia dos tesos" />
+		<li><img src="http://upload.wikimedia.org/wikipedia/commons/7/7c/Praia_da_Rocha,_Portim%C3%A3o_2.jpg" alt="Praia da rocha" />
+		<li><img src="http://upload.wikimedia.org/wikipedia/commons/e/e2/Praia_da_Rocha,_Portim%C3%A3o_fisherman.jpg" alt="Praia da rocha" />
+		<li><img src="http://i1.trekearth.com/photos/99558/praia-da-rocha.jpg" alt="Praia da rocha" />
+		<li><img src="http://www.all-about-portugal.com/wp-content/uploads/2012/08/praia-da-rocha-portimao-algarve.jpg" alt="Praia da rocha" />
 	</ul>
 <p>Dimensão: 300 metros</p>
+
 
 <asp:Table runat="server" BackColor="LightCyan">
     <asp:TableRow>
@@ -82,7 +84,7 @@
         <asp:TableCell>&nbsp&nbsp&nbspWC</asp:TableCell>
     </asp:TableRow>
 </asp:Table>
-    </div>
+</div>
 <br />
     <hr size='1'/>
     <p>Escreva já a sua opinião</p>
@@ -104,3 +106,4 @@
 	</form>
 </body>
 </html>
+

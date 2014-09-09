@@ -26,8 +26,13 @@ namespace DbBeach.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+<<<<<<< HEAD
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAP-TSUNAMI\\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Securi" +
             "ty=True")]
+=======
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=VAIO-TSANTOS\\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Secur" +
+            "ity=True")]
+>>>>>>> origin/devTiago
         public string AlgarveBeachConnectionString {
             get {
                 return ((string)(this["AlgarveBeachConnectionString"]));

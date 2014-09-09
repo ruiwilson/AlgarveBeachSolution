@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DbBeach")]
+[assembly: AssemblyTitle("MyApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DbBeach")]
+[assembly: AssemblyProduct("MyApp")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,11 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-<<<<<<< HEAD
-[assembly: Guid("1b46495c-514c-49eb-b234-59729e4a058c")]
-=======
-[assembly: Guid("3f8d48e0-b65e-41be-a797-337c7621e60e")]
->>>>>>> origin/devTiago
+[assembly: Guid("3c49f18f-356f-43c0-a671-bfaec62ec0d2")]
 
 // Version information for an assembly consists of the following four values:
 //

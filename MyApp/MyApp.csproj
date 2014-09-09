@@ -4,19 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>{ACF3A318-E6A9-4FD4-A53F-3DA08A1746BD}</ProjectGuid>
-=======
-    <ProjectGuid>{3C723E68-E13B-44EC-A4B5-32B49E33DE50}</ProjectGuid>
->>>>>>> origin/devTiago
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{D31C8C3E-8013-4950-8400-5CC69411A0F2}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DbBeach</RootNamespace>
-    <AssemblyName>DbBeach</AssemblyName>
+    <RootNamespace>MyApp</RootNamespace>
+    <AssemblyName>MyApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,58 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Class1.cs" />
-    <Compile Include="DbBeach.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbBeach.dbml</DependentUpon>
-    </Compile>
-=======
-    <Compile Include="BaseDeDados.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDeDados.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Class1.cs" />
->>>>>>> origin/devTiago
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-<<<<<<< HEAD
-    <None Include="DbBeach.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DbBeach.designer.cs</LastGenOutput>
-=======
-    <None Include="BaseDeDados.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>BaseDeDados.designer.cs</LastGenOutput>
->>>>>>> origin/devTiago
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
-    <None Include="DbBeach.dbml.layout">
-      <DependentUpon>DbBeach.dbml</DependentUpon>
-=======
-    <None Include="BaseDeDados.dbml.layout">
-      <DependentUpon>BaseDeDados.dbml</DependentUpon>
->>>>>>> origin/devTiago
-    </None>
+    <ProjectReference Include="..\DbBeach\DbBeach.csproj">
+      <Project>{3c723e68-e13b-44ec-a4b5-32b49e33de50}</Project>
+      <Name>DbBeach</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

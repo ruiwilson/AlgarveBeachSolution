@@ -589,6 +589,24 @@ namespace AllgarveBeach {
         protected global::System.Web.UI.WebControls.TextBox txtSoBarco;
         
         /// <summary>
+        /// txtPHospedagem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPHospedagem;
+        
+        /// <summary>
+        /// txtPRestaurante control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPRestaurante;
+        
+        /// <summary>
         /// txtNomeFreg control.
         /// </summary>
         /// <remarks>

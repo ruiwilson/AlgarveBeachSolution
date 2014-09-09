@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AlgarveBeach" Class="BaseDeDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=VAIO-TSANTOS\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Security=True" SettingsObjectName="DbBeach.Properties.Settings" SettingsPropertyName="AlgarveBeachConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Concelho" Member="Concelho">
+    <Type Name="Concelho">
+      <Column Name="IDconcelho" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NomeConcelho" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="Concelho_Freguesias" Member="Freguesias" ThisKey="IDconcelho" OtherKey="IDconcelho" Type="Freguesias" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Praia" Member="Praia">
+    <Type Name="Praia">
+      <Column Name="IDpraia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDfreguesia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NomePraia" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MoradaPraia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ExtensaoPraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BandeiraAzul" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="TemperaturaAgua" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AcessoSoBarco" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Hospedagem" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Restaurante" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Classificacao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Praia_Restaurantes" Member="Restaurantes" ThisKey="IDpraia" OtherKey="IDpraia" Type="Restaurantes" />
+      <Association Name="Praia_Hospedagem" Member="Hospedagem1" ThisKey="IDpraia" OtherKey="IDpraia" Type="Hospedagem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Freguesias" Member="Freguesias">
+    <Type Name="Freguesias">
+      <Column Name="IDfreguesia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDconcelho" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NomeFreguesia" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Association Name="Concelho_Freguesias" Member="Concelho" ThisKey="IDconcelho" OtherKey="IDconcelho" Type="Concelho" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Restaurantes" Member="Restaurantes">
+    <Type Name="Restaurantes">
+      <Column Name="IDrest" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDpraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NomeRest" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MoradaRest" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DistanPraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Classificacao" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Praia_Restaurantes" Member="Praia" ThisKey="IDpraia" OtherKey="IDpraia" Type="Praia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hospedagem" Member="Hospedagem">
+    <Type Name="Hospedagem">
+      <Column Name="IDhospe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDpraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NomeHospe" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MoradaHospe" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DistanPraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Classificacao" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Camping" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Association Name="Praia_Hospedagem" Member="Praia" ThisKey="IDpraia" OtherKey="IDpraia" Type="Praia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Clientes" Member="Clientes">
+    <Type Name="Clientes">
+      <Column Name="IDcliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="PNome" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="UNome" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="EMail" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -11,7 +11,6 @@
         {
             top: 673px;
             left: 63px;
-            position: absolute;
             height: 70px;
             width: 904px;
         }
@@ -483,6 +482,20 @@
                             <asp:TextBox ID="txtSoBarco" runat="server" Width="89px"></asp:TextBox>
                         </td>
                     </tr>
+                                        <tr>
+                        <td>
+                            Hospedagem:</td>
+                        <td class="auto-style2">
+                            <asp:TextBox ID="txtPHospedagem" runat="server" Width="89px"></asp:TextBox>
+                        </td>
+                    </tr>
+                                        <tr>
+                        <td>
+                            Restaurante:</td>
+                        <td class="auto-style2">
+                            <asp:TextBox ID="txtPRestaurante" runat="server" Width="89px"></asp:TextBox>
+                        </td>
+                    </tr>
                     </table>
             </fieldset><fieldset 
                 
@@ -514,7 +527,11 @@
     <br>
     <br>
     <br>
-    <div class="footer">
+        
+       
+     
+         <br /><br /><br /><br />
+        <div class="footer">
       <table align='center' cellpadding='2' cellspacing='2'>
     <tr>
       <td bgcolor=#FFF align=center height="50" width="150"><marquee behavior="alternate" scrollamount="1"><font color="#66ffff">Voltar a Home</font></marquee></td>

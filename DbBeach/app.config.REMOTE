@@ -4,11 +4,7 @@
     </configSections>
     <connectionStrings>
         <add name="DbBeach.Properties.Settings.AlgarveBeachConnectionString"
-<<<<<<< HEAD
-            connectionString="Data Source=LAP-TSUNAMI\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Security=True"
-=======
             connectionString="Data Source=VAIO-TSANTOS\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Security=True"
->>>>>>> origin/devTiago
             providerName="System.Data.SqlClient" />
     </connectionStrings>
 </configuration>

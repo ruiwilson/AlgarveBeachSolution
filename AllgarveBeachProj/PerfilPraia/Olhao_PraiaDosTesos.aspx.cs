@@ -23,19 +23,19 @@ namespace AllgarveBeach.PerfilPraia
         protected void EnviarTesos_Click(object sender, EventArgs e)
         {
             btnvertesos.Visible = true;
-<<<<<<< HEAD
+
             /*         if (Session.SessionID)
                      {
                      lttesos.Text += "<br>" + "Nick disse: " + ComentTesos.Text;
                      }
                      else+*/
-=======
+
             /*if (Session.SessionID)
             {
             lttesos.Text += "<br>" + "Nick disse: " + ComentTesos.Text;
             }
             else+*/
->>>>>>> origin/devRui
+
 
             lttesos.Text += "<table text-align='left' border='1' width='100%'><tr>" +
              "<td style='text-align:left' bgcolor=#ccff00 align=center><b>Data: </b>" + System.DateTime.Today +
@@ -60,17 +60,17 @@ namespace AllgarveBeach.PerfilPraia
             btnvertesos.Visible = false;
 
             string path = "C://temp//tesos//coment.txt";
-<<<<<<< HEAD
+
             if (string.IsNullOrEmpty(path))
             {
                 System.IO.Directory.CreateDirectory("C://temp//tesos");
                 f.CriarComentarioFile("C://temp//tesos//coment.txt", lttesos.Text);
             }
             else
-=======
+
             
             if (!string.IsNullOrEmpty(path))
->>>>>>> origin/devRui
+
             {
                 string[] readText = File.ReadAllLines(path);
                 System.Text.StringBuilder strbuild = new StringBuilder();

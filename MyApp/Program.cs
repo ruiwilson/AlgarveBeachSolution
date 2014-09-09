@@ -15,7 +15,7 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            var ConnString=new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+           /* var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             Clientes NewCliente = new Clientes()
@@ -24,7 +24,7 @@ namespace MyApp
                 UNome = "Andrade",
                 Username = "Jnobre",
                 Password = "senha",
-                 EMail="julio.nobre@mail.com"
+                EMail = "julio.nobre@mail.com"
 
 
             };
@@ -45,11 +45,11 @@ namespace MyApp
             var TodosEmList = TodosOsClientes.ToList();
 
             TodosEmList.ForEach(x =>
-                {
-                    Console.WriteLine(x.PNome);
-                })
+            {
+                Console.WriteLine(x.PNome);
+            });
 
-            foreach(var Cliente in TodosOsClientes)
+            foreach (var Cliente in TodosOsClientes)
             {
                 Console.WriteLine(Cliente.PNome);
             }
@@ -57,7 +57,7 @@ namespace MyApp
 
             db.Clientes.DeleteAllOnSubmit(TodosOsClientes);
 
-
+             */
         }
     }
 }

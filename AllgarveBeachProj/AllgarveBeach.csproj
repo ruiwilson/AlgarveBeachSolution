@@ -61,6 +61,7 @@
     <Content Include="defs.css" />
     <Content Include="Galleries.aspx" />
     <Content Include="HomeAdmin.aspx" />
+    <Content Include="jquery.galleryview-3.0-dev.css" />
     <Content Include="PerfilPraia\Albufeira_PraiaDaGale.aspx" />
     <Content Include="PerfilPraia\Albufeira_PraiaDaOura.aspx" />
     <Content Include="PerfilPraia\Albufeira_PraiaSaoRafael.aspx" />

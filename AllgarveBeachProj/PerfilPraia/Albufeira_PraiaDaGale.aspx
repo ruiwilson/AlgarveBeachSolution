@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Praia da galé (Albufeira)</title>
 </head>
-<body>
+<body style="background-image:url(/images/beachbg.jpg)">
     <form id="form1" runat="server">
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

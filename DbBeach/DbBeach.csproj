@@ -4,11 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-<<<<<<< HEAD
-    <ProjectGuid>{ACF3A318-E6A9-4FD4-A53F-3DA08A1746BD}</ProjectGuid>
-=======
     <ProjectGuid>{3C723E68-E13B-44EC-A4B5-32B49E33DE50}</ProjectGuid>
->>>>>>> origin/devTiago
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DbBeach</RootNamespace>
@@ -44,21 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Compile Include="Class1.cs" />
-    <Compile Include="DbBeach.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbBeach.dbml</DependentUpon>
-    </Compile>
-=======
     <Compile Include="BaseDeDados.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseDeDados.dbml</DependentUpon>
     </Compile>
+    <Compile Include="BDQuery.cs" />
     <Compile Include="Class1.cs" />
->>>>>>> origin/devTiago
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -68,15 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-<<<<<<< HEAD
-    <None Include="DbBeach.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DbBeach.designer.cs</LastGenOutput>
-=======
     <None Include="BaseDeDados.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>BaseDeDados.designer.cs</LastGenOutput>
->>>>>>> origin/devTiago
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -86,16 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
-    <None Include="DbBeach.dbml.layout">
-      <DependentUpon>DbBeach.dbml</DependentUpon>
-=======
-    <None Include="BaseDeDados.dbml.layout">
-      <DependentUpon>BaseDeDados.dbml</DependentUpon>
->>>>>>> origin/devTiago
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

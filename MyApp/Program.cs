@@ -15,49 +15,56 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-           /* var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
-            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
+            //abrimos ligação
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+            //criamos via codigo um novo cliente
             Clientes NewCliente = new Clientes()
             {
-                PNome = "Rui",
-                UNome = "Andrade",
-                Username = "Jnobre",
-                Password = "senha",
-                EMail = "julio.nobre@mail.com"
+                PNome = "Tiago",
+                UNome = "Santos",
+                Username = "Tsantos",
+                Password = "senha2",
+                EMail = "tiago_santos@gmail.com"
 
 
             };
-
+            //inserimos virtualmente um novo cliente
             db.Clientes.InsertOnSubmit(NewCliente);
-
+            //inserimos efetivamente na base de dados esse mesmo cliente
             db.SubmitChanges();
 
+
+
+
+
+
+
+            //procuramos por um ou nenhum cliente, caso seja single tem de ser obrigatoriamente um
+            //o resultado, caso queiramos colecçao haveria de se por db.Clientes.Where etcetc..
             var TargetCliente = db.Clientes.SingleOrDefault(x => x.IDcliente == 2);
-
+            //Assim adicionariamos um x ao primeiro nome do cliente com idcliente=2
             TargetCliente.PNome += "x";
-
+            //inserimos efetivamente na base de dados as novas modificações
             db.SubmitChanges();
 
+            //lemos os dados de todos os clientes
             var TodosOsClientes = from c in db.Clientes
                                   select c;
-
+            //enviamos os resultados para uma lista para poder usar um foreach
             var TodosEmList = TodosOsClientes.ToList();
-
+            //assim apareceria na consola os primeiros nomes de todos os clientes
             TodosEmList.ForEach(x =>
             {
                 Console.WriteLine(x.PNome);
             });
 
-            foreach (var Cliente in TodosOsClientes)
-            {
-                Console.WriteLine(Cliente.PNome);
-            }
-
-
+            //assim apagariamso todos os clientes
             db.Clientes.DeleteAllOnSubmit(TodosOsClientes);
 
-             */
+             
         }
     }
 }

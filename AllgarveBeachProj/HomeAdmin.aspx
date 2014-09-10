@@ -9,10 +9,8 @@
     <style type="text/css">
         .footer
         {
-            top: 673px;
-            left: 63px;
             height: 70px;
-            width: 904px;
+            
         }
         .auto-style1 {
             height: 26px;
@@ -49,14 +47,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div align='center'><h1>Área de Administração<asp:Label ID="lblsession2" runat="server" Text="Ola"></asp:Label>
+
+    <div style="text-align:center"><h1>Área de Administração<asp:Label ID="lblsession2" runat="server" Text="Ola"></asp:Label>
             <asp:Label ID="lblsessao2" runat="server" Font-Bold="True" ForeColor="Red" 
                 Text="Ola"></asp:Label>
-        </div>
+    </div>
+        
     <div style="top: 70px; left: 10px; position: absolute; height: 167px; width: 1002px">
     <!-- Invenção estilo groupbox eheh T_~  aqui para a parte das promoções/descontos... -->
+
         <asp:panel ID="Panel1" runat="server">
-            <fieldset style="width:150px; top: 33px; left: 355px; position: absolute; height: 180px;">
+            <fieldset style="width:150px; top: 33px; left: 455px; position: absolute; height: 180px;">
                 <legend>
                     <h5>
                         Praias</h5>
@@ -100,7 +101,7 @@
                     </tr>
                 </table>
             </fieldset><fieldset 
-                style="width:150px; top: 31px; left: 183px; position: absolute; height: 180px;">
+                style="width:150px; top: 33px; left: 233px; position: absolute; height: 180px;">
                 <legend>
                     <h5>
                         Freguesias</h5>
@@ -144,7 +145,7 @@
                     </tr>
                 </table>
             </fieldset><fieldset 
-                style="width:150px; top: 40px; left: 13px; position: absolute; height: 180px;">
+                style="width:150px; top: 33px; left: 13px; position: absolute; height: 180px;">
                 <legend>
                     <h5>
                         Concelhos</h5>
@@ -188,37 +189,7 @@
                     </tr>
                 </table>
             </fieldset>
-            <fieldset 
-                
-                style="width:210px; top: 369px; left: -2px; position: absolute; height: 132px;">
-                <legend>
-                    <h5>
-                        Concelho</h5>
-                </legend>
-                <table style="width:80%;">
-                    <tr>
-                        <td class="auto-style1">
-                            Nome:</td>
-                        <td class="auto-style1">
-                            <asp:TextBox ID="txtNomeConcelho" runat="server" Width="88px"></asp:TextBox>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-
-            &nbsp;
-
-
-        </asp:panel>
-          &nbsp;</div>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
-        &nbsp;
-        <fieldset style="width:150px; top: 105px; left: 541px; position: absolute; height: 180px;">
+            <fieldset style="width:150px; top: 33px; left: 677px; position: absolute; height: 180px;">
                 <legend>
                     <h5>
                         Hospedagem</h5>
@@ -261,9 +232,10 @@
                         </td>
                     </tr>
                 </table>
-            </fieldset><fieldset style="width:150px; top: 100px; left: 706px; position: absolute; height: 180px;">
+            </fieldset>
+            <fieldset style="width:150px; top: 33px; left: 901px; position: absolute; height: 180px;">
                 <legend>
-                    <h5 style="top: 1px; left: 13px; position: absolute; height: 15px; width: 73px">
+                    <h5>
                         Restaurantes</h5>
                 </legend>
                 <table style="width:100%;">
@@ -304,14 +276,14 @@
                         </td>
                     </tr>
                 </table>
-            </fieldset></p>
-        <p>
-            &nbsp;</p>
-        <hr />
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
+            </fieldset>
+            <hr />
+
+            
+            </asp:panel>
+            </div>
+
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><hr />
         <p>
             <asp:Label ID="Label1" runat="server" Text="ID:"></asp:Label>
             <asp:TextBox ID="txtID" runat="server" Width="40px"></asp:TextBox>
@@ -323,111 +295,120 @@
             colocação do campo ID é desnecessária. Para visualizar coloca-se ID e carrega-se 
             no respectivo botão verificar).</p>
         <br />
-        <br />
+
+        <!-- METADE DE BAIXO DA PAGINA-->
+
+
+        <div style="width:100%; height:320px">        
             <fieldset 
-                
-                
-                
-                style="width:250px; top: 447px; left: 952px; position: absolute; height: 134px;">
+                style="width:170px; position:absolute; margin-left:20px; height: 70px;">
                 <legend>
                     <h5>
-                        Restaurantes
+                        Concelho</h5>
                 </legend>
                 <table style="width:100%;">
                     <tr>
-                        <td class="auto-style6">
-                            Praia+Prox:</td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="txtPraiaMaProxR" runat="server" Width="88px"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style7">
+                        <td class="auto-style1">
                             Nome:</td>
-                        <td class="auto-style5">
-                            <asp:TextBox ID="txtNomeRest" runat="server" Width="88px"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style7">
-                            Morada:</td>
-                        <td class="auto-style5">
-                            <asp:TextBox ID="txtMoradaRest" runat="server" Width="88px"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style6">
-                            Dist_Praia:</td>
-                        <td class="auto-style4">
-                            <asp:TextBox ID="txtDistPraiaRest" runat="server" Width="88px"></asp:TextBox>
+                        <td class="auto-style1">
+                            <asp:TextBox ID="txtNomeConcelho" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                 </table>
-            </fieldset><hr />
+            </fieldset>
+
             <fieldset 
-                
-                
-                
-                style="width:250px; top: 438px; left: 690px; position: absolute; height: 211px;">
+                style="width:210px; position:absolute; margin-left:250px; height: 160px;">
                 <legend>
                     <h5>
-                        Hospedagem
+                        Restaurantes</h5>
+                </legend>
+                <table style="width:100%;">
+                    <tr>
+                        <td class="auto-style6">
+                            Praia+Prox:</td>
+                        <td class="auto-style4">
+                            <asp:TextBox ID="txtPraiaMaProxR" runat="server" Width="100px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style7">
+                            Nome:</td>
+                        <td class="auto-style5">
+                            <asp:TextBox ID="txtNomeRest" runat="server" Width="100px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style7">
+                            Morada:</td>
+                        <td class="auto-style5">
+                            <asp:TextBox ID="txtMoradaRest" runat="server" Width="100px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style6">
+                            Dist_Praia:</td>
+                        <td class="auto-style4">
+                            <asp:TextBox ID="txtDistPraiaRest" runat="server" Width="100px"></asp:TextBox>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset
+ 
+                style="width:210px; position:absolute; margin-left:520px; height: 220px;">
+                <legend>
+                    <h5>
+                        Hospedagem</h5>
                 </legend>
                 <table style="width:100%;">
                     <tr>
                         <td class="auto-style6">
                             Praia+Prox:</td>
                         <td class="auto-style8">
-                            <asp:TextBox ID="txtPraiaMaProxH" runat="server" Width="88px"></asp:TextBox>
+                            <asp:TextBox ID="txtPraiaMaProxH" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style7">
                             Nome:</td>
                         <td class="auto-style9">
-                            <asp:TextBox ID="txtNomeHosp" runat="server" Width="88px"></asp:TextBox>
+                            <asp:TextBox ID="txtNomeHosp" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style7">
                             Morada:</td>
                         <td class="auto-style9">
-                            <asp:TextBox ID="txtMoradaHosp" runat="server" Width="88px"></asp:TextBox>
+                            <asp:TextBox ID="txtMoradaHosp" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style6">
                             Dist_Praia:</td>
                         <td class="auto-style8">
-                            <asp:TextBox ID="txtDistPraia" runat="server" Width="88px"></asp:TextBox>
+                            <asp:TextBox ID="txtDistPraia" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                                         <tr>
                         <td class="auto-style6">
                             Estrelas:</td>
                         <td class="auto-style8">
-                            <asp:TextBox ID="txtClassifHosp" runat="server" Width="88px"></asp:TextBox>
+                            <asp:TextBox ID="txtClassifHosp" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
-                                        <tr>
+                    <tr>
                         <td class="auto-style6">
                             É_Camping:</td>
                         <td class="auto-style8">
-                            <asp:TextBox ID="txtCampingHosp" runat="server" Width="88px"></asp:TextBox>
+                            <asp:TextBox ID="txtCampingHosp" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
-                                        <tr>
-                        <td class="auto-style6">
-                            &nbsp;</td>
-                        <td class="auto-style8">
-                            &nbsp;</td>
-                    </tr>
                 </table>
-            </fieldset><fieldset 
-                
-                
-            
-                style="width:234px; top: 437px; left: 448px; position: absolute; height: 222px;">
+            </fieldset>
+            <fieldset 
+     
+                style="width:210px; position:absolute; margin-left:790px; height: 305px;">
                 <legend>
                     <h5>
                         Praias</h5>
@@ -437,71 +418,70 @@
                         <td>
                             Fregesia:</td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtFregPraia" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtFregPraia" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style1">
                             Nome:</td>
                         <td class="auto-style3">
-                            <asp:TextBox ID="txtNomePraia" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtNomePraia" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style1">
                             Morada:</td>
                         <td class="auto-style3">
-                            <asp:TextBox ID="txtMoradaPraia" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtMoradaPraia" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Extensao:</td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtExtenPraia" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtExtenPraia" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Band_Azul:</td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtBandAzul" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtBandAzul" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Temp_Agua:</td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtTempAgua" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtTempAgua" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Só_Barco:</td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtSoBarco" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtSoBarco" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                                         <tr>
                         <td>
                             Hospedagem:</td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtPHospedagem" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtPHospedagem" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
-                                        <tr>
+                    <tr>
                         <td>
                             Restaurante:</td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtPRestaurante" runat="server" Width="89px"></asp:TextBox>
+                            <asp:TextBox ID="txtPRestaurante" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     </table>
-            </fieldset><fieldset 
+            </fieldset>
+            <fieldset 
                 
-                
-            
-                style="width:215px; top: 438px; left: 225px; position: absolute; height: 130px;">
+                style="width:210px; position:absolute; margin-left:1060px; height: 100px;">
                 <legend>
                     <h5>
                         Freguesias</h5>
@@ -511,26 +491,21 @@
                         <td>
                             Nome:</td>
                         <td>
-                            <asp:TextBox ID="txtNomeFreg" runat="server" Width="87px"></asp:TextBox>
+                            <asp:TextBox ID="txtNomeFreg" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             Concelho:</td>
                         <td>
-                            <asp:TextBox ID="txtconcelhFreg" runat="server" Width="88px"></asp:TextBox>
+                            <asp:TextBox ID="txtconcelhFreg" runat="server" Width="100px"></asp:TextBox>
                         </td>
                     </tr>
                     </table>
-            </fieldset></p>
-            
-    <br>
-    <br>
-    <br>
-        
-       
-     
-         <br /><br /><br /><br />
+            </fieldset>
+        </div>
+    <br />
+    
         <div class="footer">
       <table align='center' cellpadding='2' cellspacing='2'>
     <tr>
@@ -548,6 +523,6 @@
             
     </form>
     
-    <br>
+    <br />
 </body>
 </html>

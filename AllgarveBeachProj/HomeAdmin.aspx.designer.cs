@@ -265,15 +265,6 @@ namespace AllgarveBeach {
         protected global::System.Web.UI.WebControls.ImageButton btnVerConc;
         
         /// <summary>
-        /// txtNomeConcelho control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeConcelho;
-        
-        /// <summary>
         /// lblinserirHospe control.
         /// </summary>
         /// <remarks>
@@ -434,6 +425,15 @@ namespace AllgarveBeach {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtID;
+        
+        /// <summary>
+        /// txtNomeConcelho control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeConcelho;
         
         /// <summary>
         /// txtPraiaMaProxR control.

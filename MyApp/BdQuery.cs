@@ -71,7 +71,7 @@ namespace MyApp
             db.Connection.Close();
         }
 
-        public void InserirPraia(int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, Int16 BandeiraAzul, Int16 TemperaturaAgua, Int16 AcessoSoBarco, Int16 Hospedagem, Int16 Restaurante, int Classificacao)
+        public void InserirPraia(int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, Int16 BandeiraAzul, Int16 TemperaturaAgua, Int16 AcessoSoBarco, string Link)
         {
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
@@ -85,9 +85,7 @@ namespace MyApp
                 BandeiraAzul = BandeiraAzul,
                 TemperaturaAgua = TemperaturaAgua,
                 AcessoSoBarco = AcessoSoBarco,
-                Hospedagem = Hospedagem,
-                Restaurante = Restaurante,
-                Classificacao = Classificacao
+                Link = Link
 
             };
 
@@ -97,7 +95,7 @@ namespace MyApp
             db.Connection.Close();
         }
 
-        public void InserirHospedagem(int IDpraia, string NomeHospe, string MoradaHospe, int DistanPraia, Int16 Classificacao, Int16 Camping)
+        public void InserirHospedagem(int IDpraia, string NomeHospe, string MoradaHospe, int DistanPraia, Int16 Classificacao, Int16 Camping, string Link)
         {
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
@@ -109,7 +107,8 @@ namespace MyApp
                 MoradaHospe = MoradaHospe,
                 DistanPraia = DistanPraia,
                 Classificacao = Classificacao,
-                Camping = Camping
+                Camping = Camping,
+                Link=Link
 
             };
 
@@ -119,7 +118,7 @@ namespace MyApp
             db.Connection.Close();
         }
 
-        public void InserirRestaurante(int IDpraia, string NomeRest, string MoradaRest, int DistanPraia, Int16 Classificacao)
+        public void InserirRestaurante(int IDpraia, string NomeRest, string MoradaRest, int DistanPraia, string Link)
         {
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
@@ -130,7 +129,7 @@ namespace MyApp
                 NomeRest = NomeRest,
                 MoradaRest = MoradaRest,
                 DistanPraia = DistanPraia,
-                Classificacao = Classificacao
+                Link = Link
 
             };
 
@@ -254,7 +253,7 @@ namespace MyApp
             db.Connection.Close();
         }
 
-        public void EditarPraia(int IDpraia, int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, Int16 BandeiraAzul, Int16 TemperaturaAgua, Int16 AcessoSoBarco, Int16 Hospedagem, Int16 Restaurante, int Classificacao)
+        public void EditarPraia(int IDpraia, int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, Int16 BandeiraAzul, Int16 TemperaturaAgua, Int16 AcessoSoBarco, int VotoPos, int VotoNeg, string Link)
         {
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
@@ -268,15 +267,15 @@ namespace MyApp
             TargetPraia.BandeiraAzul = BandeiraAzul;
             TargetPraia.TemperaturaAgua = TemperaturaAgua;
             TargetPraia.AcessoSoBarco = AcessoSoBarco;
-            TargetPraia.Hospedagem = Hospedagem;
-            TargetPraia.Restaurante = Restaurante;
-            TargetPraia.Classificacao = Classificacao;
+            TargetPraia.VotoPos = VotoPos;
+            TargetPraia.VotoNeg = VotoNeg;
+            TargetPraia.Link = Link;
 
             db.SubmitChanges();
             db.Connection.Close();
         }
 
-        public void EditarHospedagem(int IDhospe, int IDpraia, string NomeHospe, string MoradaHospe, int DistanPraia, Int16 Classificacao, Int16 Camping)
+        public void EditarHospedagem(int IDhospe, int IDpraia, string NomeHospe, string MoradaHospe, int DistanPraia, Int16 Classificacao, Int16 Camping, int VotoPos, int VotoNeg, string Link)
         {
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
@@ -288,12 +287,15 @@ namespace MyApp
             TargetHospedagem.MoradaHospe = MoradaHospe;
             TargetHospedagem.DistanPraia = DistanPraia;
             TargetHospedagem.Classificacao = Classificacao;
+            TargetHospedagem.VotoPos = VotoPos;
+            TargetHospedagem.VotoNeg = VotoNeg;
+            TargetHospedagem.Link = Link;
 
             db.SubmitChanges();
             db.Connection.Close();
         }
 
-        public void EditarRestaurante(int IDrest, int IDpraia, string NomeRest, string MoradaRest, int DistanPraia, Int16 Classificacao)
+        public void EditarRestaurante(int IDrest, int IDpraia, string NomeRest, string MoradaRest, int DistanPraia, int VotoPos, int VotoNeg, string Link )
         {
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
@@ -304,7 +306,9 @@ namespace MyApp
             TargetRestaurante.NomeRest = NomeRest;
             TargetRestaurante.MoradaRest = MoradaRest;
             TargetRestaurante.DistanPraia = DistanPraia;
-            TargetRestaurante.Classificacao = Classificacao;
+            TargetRestaurante.VotoPos = VotoPos;
+            TargetRestaurante.VotoNeg = VotoNeg;
+            TargetRestaurante.Link = Link;
 
             db.SubmitChanges();
             db.Connection.Close();

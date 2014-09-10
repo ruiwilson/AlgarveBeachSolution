@@ -173,6 +173,10 @@
       <Project>{e02f15c3-78c4-4350-94fb-9dadbb376265}</Project>
       <Name>AlgarveBeach</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyApp\MyApp.csproj">
+      <Project>{d31c8c3e-8013-4950-8400-5cc69411a0f2}</Project>
+      <Name>MyApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

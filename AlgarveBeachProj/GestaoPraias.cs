@@ -33,7 +33,7 @@ namespace AlgarveBeach
         public Concelho[] CarregarConcelho()
         {
             string[] campos = { "NomeConcelho" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaOrdem("Concelho", "NomeConcelho", "ASC");
             Concelho[] arrConcelho = new Concelho[dt.Rows.Count];
             int i = 0;
@@ -53,7 +53,7 @@ namespace AlgarveBeach
         public Freguesia[] CarregarFreguesia()
         {
             string[] campos = { "IDconcelho", "NomeFreguesia" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaOrdem("Freguesias", "NomeFreguesia", "ASC");
             Freguesia[] arrFreguesia = new Freguesia[dt.Rows.Count];
             int i = 0;
@@ -75,7 +75,7 @@ namespace AlgarveBeach
         {
 
             string[] campos = { "NomeFreguesia" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaCon(IDconcelho);
             Freguesia[] arrFreguesia = new Freguesia[dt.Rows.Count];
             int i = 0;
@@ -97,7 +97,7 @@ namespace AlgarveBeach
         {
 
             string[] campos = { "NomePraia" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaConTeste("NomePraia", "Praia", "IDfreguesia", IDfreguesia);
             Praia[] arrPraia = new Praia[dt.Rows.Count];
             int i = 0;
@@ -117,7 +117,7 @@ namespace AlgarveBeach
         {
 
             string[] campos = { "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaConTeste1(campos, "Praia", "IDpraia", IDpraia);
             Praia[] arrPraia = new Praia[dt.Rows.Count];
             int i = 0;
@@ -148,7 +148,7 @@ namespace AlgarveBeach
         public Praia[] CarregarPraia()
         {
             string[] campos = { /*"IDfreguesia", */"NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaConTeste2(campos, "Praia");
             Praia[] arrPraias = new Praia[dt.Rows.Count];
             int i = 0;

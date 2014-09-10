@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MyApp;
 
 namespace AllgarveBeach
 {
     public partial class ProPraias : System.Web.UI.Page
     {
+        BdQuery query = new BdQuery();
         AlgarveBeach.Concelho con;
         AlgarveBeach.Freguesia fre;
         AlgarveBeach.Praia pra;
@@ -18,12 +20,12 @@ namespace AllgarveBeach
         AlgarveBeach.Freguesia[] freguesia;
         AlgarveBeach.Praia[] praia;
         AlgarveBeach.Praia[] praiateste;
+        
 
         //List<AlgarveBeach.Concelho> Concelhos = new List<AlgarveBeach.Concelho>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             /* var conc37 = Concelhos.SingleOrDefault(c => c.IDconcelho == 37);
 
              var ConcelhosOrdNome = Concelhos.OrderBy(x => x.NomeConcelho);
@@ -61,12 +63,10 @@ namespace AllgarveBeach
                     DFreguesia.Items.Add(f.NomeFreguesia);
                 }*/
 
-
-
                 DHospedagem.Items.Add("Qualquer Distância");
                 DHospedagem.Items.Add("0m-500m");
                 DHospedagem.Items.Add("500m-1000m");
-                DHospedagem.Items.Add("1000m-2000m");
+                DHospedagem.Items.Add("1000m-2000m"); 
 
                 DRestaurante.Items.Add("Qualquer Distância");
                 DRestaurante.Items.Add("0m-500m");
@@ -78,8 +78,8 @@ namespace AllgarveBeach
                 DTemperatura.Items.Add("18°-21°");
                 DTemperatura.Items.Add("21°-24°");
 
-                DBandeira.Items.Add("Sim");
                 DBandeira.Items.Add("Não");
+                DBandeira.Items.Add("Sim");             
             }
         }
 
@@ -178,11 +178,40 @@ namespace AllgarveBeach
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if(DHospedagem.SelectedIndex==1)
+          /*  if(DHospedagem.SelectedIndex==1)
             {
                 pra.CarregarPraiaID(Convert.ToString(DPraia.SelectedItem));
+            }*/
+            int hosp1 = 0, rest1 = 0, temp1 = 0, band1 = 0;
 
-            }
+            //Atribuimos valores para enviar para o metodo de busca da praia exacta
+            if (DHospedagem.SelectedIndex == 0) { hosp1 = 10000; }
+            if (DHospedagem.SelectedIndex == 1) { hosp1 = 501; }
+            if (DHospedagem.SelectedIndex == 2) { hosp1 = 1001; }
+            if (DHospedagem.SelectedIndex == 3) { hosp1 = 2001; }
+            if (DRestaurante.SelectedIndex == 0) { rest1 = 10000; }
+            if (DRestaurante.SelectedIndex == 1) { rest1 = 501; }
+            if (DRestaurante.SelectedIndex == 2) { rest1 = 1001; }
+            if (DRestaurante.SelectedIndex == 3) { rest1 = 2001; }
+            if (DTemperatura.SelectedIndex == 0) { temp1 = 40; }
+            if (DTemperatura.SelectedIndex == 1) { temp1 = 18; }
+            if (DTemperatura.SelectedIndex == 2) { temp1 = 21; }
+            if (DTemperatura.SelectedIndex == 3) { temp1 = 24; }
+            if (DBandeira.SelectedIndex == 0) { band1 = 0; }
+            if (DBandeira.SelectedIndex == 1) { band1 = 1; }
+
+            Literal1.Text += "<table align='center' border='1'><tr>" +
+        "<td bgcolor=rgb(255,255,255) align=center><b>Praia(nome)</b></td>" +
+        "<td bgcolor=rgb(255,255,255) align=center><b>Desc(Praia)</b></td>" +
+        "<td bgcolor=rgb(255,255,255) align=center><b>Restaurante</b></td>" +
+        "<td bgcolor=rgb(255,255,255) align=center><b>Desc(Rest.)</b></td>" +
+        "<td bgcolor=rgb(255,255,255) align=center><b>Tmp.Água(ºC)</b></td>" +
+        "<td bgcolor=rgb(255,255,255) align=center><b>Band.Azul</b></td></tr>";
+
+            Literal1.Text += query.VerPraiasComHospTempBand(1, hosp1, temp1, band1);
+
+            Literal1.Text += "</table>";
+
         }
     }
 }

@@ -32,7 +32,7 @@ namespace AlgarveBeach
         public void CarregarConcelho(string IDconcelho)
         {
             string[] campos = { "NomeConcelho" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             string[] valores = aBD.LerTabela("Concelho", campos, "IDconcelho", IDconcelho);
             this.NomeConcelho = valores[0];
         }
@@ -41,7 +41,7 @@ namespace AlgarveBeach
         public void CarregarConcelhoID(string nomeconcelho)
         {
             string[] campos = { "IDconcelho" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             string[] valores = aBD.LerTabela("Concelho", campos, "NomeConcelho", nomeconcelho);
             this.IDconcelho = Convert.ToInt32(valores[0]);
         }

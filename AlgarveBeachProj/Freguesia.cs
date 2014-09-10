@@ -37,7 +37,7 @@ namespace AlgarveBeach
         public void CarregarFreguesia(string IDfreguesia)
         {
             string[] campos = { "IDconcelho", "NomeFreguesia" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             string[] valores = aBD.LerTabela("Freguesias", campos, "IDfreguesia", IDfreguesia);
             this.IDconcelho = Convert.ToInt32(valores[0]);
             this.NomeFreguesia = valores[1];
@@ -46,7 +46,7 @@ namespace AlgarveBeach
         public void CarregarFreguesiaID(string nomefreguesia)
         {
             string[] campos = { "IDfreguesia" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             string[] valores = aBD.LerTabela("Freguesias", campos, "NomeFreguesia", nomefreguesia);
             this.IDfreguesia = Convert.ToInt32(valores[0]);
         }

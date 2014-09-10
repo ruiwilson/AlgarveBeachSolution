@@ -102,7 +102,6 @@
             <tr>
                 <td>
                     <asp:Literal ID="Literal1" runat="server"></asp:Literal><br />
-                    <asp:Literal ID="Literal2" runat="server"></asp:Literal>
                 </td>
             </tr>
 

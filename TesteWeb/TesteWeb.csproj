@@ -7,7 +7,11 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
+<<<<<<< HEAD
     <ProjectGuid>{C4106E9A-E336-4CB1-8EB3-6C0A912563E1}</ProjectGuid>
+=======
+    <ProjectGuid>{AFBF417C-068F-43A0-9A1B-19C033CB2F4D}</ProjectGuid>
+>>>>>>> origin/devTiago
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -57,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Admin.aspx" />
     <Content Include="PraiasComHosp.aspx" />
     <Content Include="TestForm.aspx" />
@@ -84,6 +89,19 @@
     </Compile>
     <Compile Include="TestForm.aspx.designer.cs">
       <DependentUpon>TestForm.aspx</DependentUpon>
+=======
+    <Content Include="TesteForm.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TesteForm.aspx.cs">
+      <DependentUpon>TesteForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TesteForm.aspx.designer.cs">
+      <DependentUpon>TesteForm.aspx</DependentUpon>
+>>>>>>> origin/devTiago
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -117,9 +135,15 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
+<<<<<<< HEAD
           <DevelopmentServerPort>55357</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:55291/</IISUrl>
+=======
+          <DevelopmentServerPort>51448</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51439/</IISUrl>
+>>>>>>> origin/devTiago
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -16,6 +16,9 @@ namespace MyApp
         static void Main(string[] args)
         {
 
+            JoinDuasTabelas();
+
+
             //abrimos ligação
             var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
             //indicamos a base de dados
@@ -65,6 +68,37 @@ namespace MyApp
             db.Clientes.DeleteAllOnSubmit(TodosOsClientes);
 
              
+        }
+
+        public static string JoinDuasTabelas()
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from p in db.Praia
+                         join h in db.Hospedagem on p.IDpraia equals h.IDpraia
+                         select new
+                         {
+                             NomeHospedagem = h.NomeHospe,
+                             NomePraia = p.NomePraia,
+                             DistanPraia = h.DistanPraia
+                         }).Where(x => x.DistanPraia < 500);
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeHospedagem + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.DistanPraia + "</td>";
+            }
+            return a;
         }
     }
 }

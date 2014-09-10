@@ -9,6 +9,9 @@
         table{ 
             width:100%;
         }
+        .ZonaVer{
+            float:right;
+        }
     </style>
 </head>
 <body>
@@ -16,39 +19,40 @@
     <div>
     
     </div>
-
-
         <asp:TextBox ID="pnome" runat="server"></asp:TextBox>
 &nbsp;primeiro nome<br />
-        <br />
+   <br />
         <asp:TextBox ID="unome" runat="server"></asp:TextBox>
 &nbsp;ultimo nome<br />
-        <br />
+   <br />
         <asp:TextBox ID="username" runat="server"></asp:TextBox>
 &nbsp;username<br />
-        <br />
+   <br />
         <asp:TextBox ID="password" runat="server"></asp:TextBox>
 &nbsp;password<br />
-        <br />
+   <br />
         <asp:TextBox ID="email" runat="server"></asp:TextBox>
 &nbsp;email<br />
         <asp:Button ID="brninserir" runat="server" OnClick="brninserir_Click" Text="Inserir" />
         <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Modificar" />
-        <br />
-        <br />
-        <br />
+   <br />
+   <br />
+   <br />
         Apagar Cliente<br />
-        <br />
-        <br />
+   <br />
+   <br />
         <asp:TextBox ID="IDcliente" runat="server"></asp:TextBox>
 &nbsp;ID do Cliente<br />
         <asp:Button ID="btnApagar" runat="server" OnClick="btnApagar_Click" Text="Apagar" />
-        <br />
-        <br />
-        <br />
-        <br />
+        <div class="ZonaVer">
+            <asp:Button ID="btnVer" runat="server" Online="btnVer_Click" Text="Ver clientes" OnClick="btnVer_Click" />
+        </div>
+   <br />
+   <br />
+   <br />
+   <br />
         <div style="width:100%;text-align:left;font-size:medium">
-        <asp:Literal ID="ltmostrar" runat="server"></asp:Literal>
+            <asp:Literal ID="ltmostrar" runat="server"></asp:Literal>
         </div>
     </form>
 </body>

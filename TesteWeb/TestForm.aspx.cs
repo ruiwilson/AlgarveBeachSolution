@@ -27,8 +27,9 @@ namespace TesteWeb
              "<td bgcolor=rgb(255,255,255) align=center><b>Password</b></td>" +
              "<td bgcolor=rgb(255,255,255) align=center><b>Email</b></td></tr>";
 
-            ltmostrar.Text += novaquery.ProcurarTodosClientes();
-
+           // ltmostrar.Text += novaquery.ProcurarTodosClientes();
+           //ltmostrar.Text += novaquery.VerPraiasComHotelDistancia(Convert.ToInt32(username.Text));
+            
             ltmostrar.Text += "</table>";
         }
 
@@ -55,6 +56,12 @@ namespace TesteWeb
         {
             novaquery.EditarCliente(Convert.ToInt32(IDcliente.Text),pnome.Text, unome.Text, username.Text, password.Text, email.Text);
             MessageBox("Cliente editado com sucesso!");
+        }
+
+        protected void btnVer_Click(object sender, EventArgs e)
+        {
+           // Response.Write("<script language='javascript'> window.open('Admin.aspx','','width=1020,Height=720,fullscreen=1,location=0,scrollbars=1,menubar=1,toolbar=1');</script>");
+            Response.Write("<script language='javascript'> window.open('PraiasComHosp.aspx','','width=1020,Height=720,fullscreen=1,location=0,scrollbars=1,menubar=1,toolbar=1');</script>");
         }
 
        

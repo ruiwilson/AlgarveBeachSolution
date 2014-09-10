@@ -182,7 +182,7 @@ namespace AllgarveBeach
             {
                 pra.CarregarPraiaID(Convert.ToString(DPraia.SelectedItem));
             }*/
-            int hosp1 = 0, rest = 0, temp1 = 0, band1 = 0;
+            int hosp1 = 0, rest1 = 0, temp1 = 0, band1 = 0;
 
             //Atribuimos valores para enviar para o metodo de busca da praia exacta
             if (DHospedagem.SelectedIndex == 0) { hosp1 = 10000; }

@@ -1,0 +1,15 @@
+AlgarveBeachProj/bin
+AlgarveBeachProj/obj
+AllgarveBeachProj/obj/
+AllgarveBeachProj/bin/
+DbBeach/bin/
+DbBeach/obj/
+MyApp/bin/
+MyApp/obj/
+TesteWeb/bin/
+TesteWeb/obj/
+<<<<<<< HEAD
+AlgarveBeach.v12.suo
+=======
+DbBeach/obj/
+>>>>>>> e9fb966d9c2ae0cc0fd279bded27ef39c171a54f

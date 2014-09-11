@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.375, 8.5" name="BaseDeDados">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BaseDeDados">
   <DataContextMoniker Name="/BaseDeDadosDataContext" />
   <nestedChildShapes>
     <classShape Id="b31acda1-bcd3-486f-a8f9-6247245b6589" absoluteBounds="4.125, 0.5, 2, 1.9631982421875">
@@ -27,43 +27,43 @@
         <classShapeMoniker Id="ce6d0479-57df-4358-a882-afc56dc0e6b9" />
       </nodes>
     </associationConnector>
-    <classShape Id="c9f8d0d8-b21e-46c8-a56e-8c912e36720a" absoluteBounds="4.125, 2.75, 2, 2.7324039713541666">
+    <classShape Id="f5d65027-665f-4e63-9360-a7475c4b1b1e" absoluteBounds="4.875, 3.375, 2, 2.7324039713541666">
       <DataClassMoniker Name="/BaseDeDadosDataContext/Hospedagem" />
       <nestedChildShapes>
-        <elementListCompartment Id="d00fc41e-7388-46f2-a70b-86c9d98476e6" absoluteBounds="4.14, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e3998876-ce78-4f3e-ae6e-e9ac009fac3c" absoluteBounds="4.89, 3.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="34141bd9-6eeb-4fb6-bd49-f7a25eba79d3" absoluteBounds="6.5, 1.375, 2, 2.9247054036458331">
+    <classShape Id="ea6222cb-8c1e-4f0a-b3bd-0b37abd02da3" absoluteBounds="7.875, 3.875, 2, 2.9247054036458331">
       <DataClassMoniker Name="/BaseDeDadosDataContext/Praia" />
       <nestedChildShapes>
-        <elementListCompartment Id="1e06dab4-a769-4f37-b361-d2472f462e81" absoluteBounds="6.5150000000000006, 1.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2247f1f5-a694-463e-8fd3-3fda3c10e35e" absoluteBounds="7.89, 4.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.5 : 3.52485270182292); (6.125 : 3.52485270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.875 : 4.99120198567708); (6.875 : 4.99120198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BaseDeDadosDataContext/Praia/Praia_Hospedagem" />
       <nodes>
-        <classShapeMoniker Id="34141bd9-6eeb-4fb6-bd49-f7a25eba79d3" />
-        <classShapeMoniker Id="c9f8d0d8-b21e-46c8-a56e-8c912e36720a" />
+        <classShapeMoniker Id="ea6222cb-8c1e-4f0a-b3bd-0b37abd02da3" />
+        <classShapeMoniker Id="f5d65027-665f-4e63-9360-a7475c4b1b1e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3.84375 : 3.5); (3.84375 : 2.60659912109375); (6.5 : 2.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.875 : 4.8862939453125); (2.875 : 6.4848046875); (7.875 : 6.4848046875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BaseDeDadosDataContext/Freguesias/Freguesias_Praia" />
       <nodes>
         <classShapeMoniker Id="ce6d0479-57df-4358-a882-afc56dc0e6b9" />
-        <classShapeMoniker Id="34141bd9-6eeb-4fb6-bd49-f7a25eba79d3" />
+        <classShapeMoniker Id="ea6222cb-8c1e-4f0a-b3bd-0b37abd02da3" />
       </nodes>
     </associationConnector>
-    <classShape Id="df941b82-5b16-437c-9e2e-1c06f5059c2f" absoluteBounds="9.125, 2.625, 2, 2.3478011067708335">
+    <classShape Id="532a8145-4576-46b5-a7fc-b87c4d3b125d" absoluteBounds="6.875, 0.75, 2, 2.3478011067708335">
       <DataClassMoniker Name="/BaseDeDadosDataContext/Restaurantes" />
       <nestedChildShapes>
-        <elementListCompartment Id="9535da22-9eaf-4d86-9691-7b7f2778ff77" absoluteBounds="9.14, 3.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="262bd2e7-b7e0-48f9-8513-de7c3b3feaa9" absoluteBounds="6.8900000000000006, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.5 : 3.46235270182292); (9.125 : 3.46235270182292)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.375 : 3.875); (8.375 : 3.09780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BaseDeDadosDataContext/Praia/Praia_Restaurantes" />
       <nodes>
-        <classShapeMoniker Id="34141bd9-6eeb-4fb6-bd49-f7a25eba79d3" />
-        <classShapeMoniker Id="df941b82-5b16-437c-9e2e-1c06f5059c2f" />
+        <classShapeMoniker Id="ea6222cb-8c1e-4f0a-b3bd-0b37abd02da3" />
+        <classShapeMoniker Id="532a8145-4576-46b5-a7fc-b87c4d3b125d" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

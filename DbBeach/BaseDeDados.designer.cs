@@ -618,17 +618,17 @@ namespace DbBeach
 		
 		private string _MoradaHospe;
 		
-		private int _DistanPraia;
+		private int _DistanPraiaH;
 		
 		private short _Classificacao;
 		
 		private System.Nullable<short> _Camping;
 		
-		private System.Nullable<int> _VotoPos;
+		private System.Nullable<int> _VotoPosH;
 		
-		private System.Nullable<int> _VotoNeg;
+		private System.Nullable<int> _VotoNegH;
 		
-		private string _HLink;
+		private string _LinkH;
 		
 		private EntityRef<Praia> _Praia;
 		
@@ -644,18 +644,18 @@ namespace DbBeach
     partial void OnNomeHospeChanged();
     partial void OnMoradaHospeChanging(string value);
     partial void OnMoradaHospeChanged();
-    partial void OnDistanPraiaChanging(int value);
-    partial void OnDistanPraiaChanged();
+    partial void OnDistanPraiaHChanging(int value);
+    partial void OnDistanPraiaHChanged();
     partial void OnClassificacaoChanging(short value);
     partial void OnClassificacaoChanged();
     partial void OnCampingChanging(System.Nullable<short> value);
     partial void OnCampingChanged();
-    partial void OnVotoPosChanging(System.Nullable<int> value);
-    partial void OnVotoPosChanged();
-    partial void OnVotoNegChanging(System.Nullable<int> value);
-    partial void OnVotoNegChanged();
-    partial void OnHLinkChanging(string value);
-    partial void OnHLinkChanged();
+    partial void OnVotoPosHChanging(System.Nullable<int> value);
+    partial void OnVotoPosHChanged();
+    partial void OnVotoNegHChanging(System.Nullable<int> value);
+    partial void OnVotoNegHChanged();
+    partial void OnLinkHChanging(string value);
+    partial void OnLinkHChanged();
     #endregion
 		
 		public Hospedagem()
@@ -748,22 +748,22 @@ namespace DbBeach
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DistanPraia", DbType="Int NOT NULL")]
-		public int DistanPraia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DistanPraiaH", DbType="Int NOT NULL")]
+		public int DistanPraiaH
 		{
 			get
 			{
-				return this._DistanPraia;
+				return this._DistanPraiaH;
 			}
 			set
 			{
-				if ((this._DistanPraia != value))
+				if ((this._DistanPraiaH != value))
 				{
-					this.OnDistanPraiaChanging(value);
+					this.OnDistanPraiaHChanging(value);
 					this.SendPropertyChanging();
-					this._DistanPraia = value;
-					this.SendPropertyChanged("DistanPraia");
-					this.OnDistanPraiaChanged();
+					this._DistanPraiaH = value;
+					this.SendPropertyChanged("DistanPraiaH");
+					this.OnDistanPraiaHChanged();
 				}
 			}
 		}
@@ -808,62 +808,62 @@ namespace DbBeach
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPos", DbType="Int")]
-		public System.Nullable<int> VotoPos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPosH", DbType="Int")]
+		public System.Nullable<int> VotoPosH
 		{
 			get
 			{
-				return this._VotoPos;
+				return this._VotoPosH;
 			}
 			set
 			{
-				if ((this._VotoPos != value))
+				if ((this._VotoPosH != value))
 				{
-					this.OnVotoPosChanging(value);
+					this.OnVotoPosHChanging(value);
 					this.SendPropertyChanging();
-					this._VotoPos = value;
-					this.SendPropertyChanged("VotoPos");
-					this.OnVotoPosChanged();
+					this._VotoPosH = value;
+					this.SendPropertyChanged("VotoPosH");
+					this.OnVotoPosHChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNeg", DbType="Int")]
-		public System.Nullable<int> VotoNeg
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNegH", DbType="Int")]
+		public System.Nullable<int> VotoNegH
 		{
 			get
 			{
-				return this._VotoNeg;
+				return this._VotoNegH;
 			}
 			set
 			{
-				if ((this._VotoNeg != value))
+				if ((this._VotoNegH != value))
 				{
-					this.OnVotoNegChanging(value);
+					this.OnVotoNegHChanging(value);
 					this.SendPropertyChanging();
-					this._VotoNeg = value;
-					this.SendPropertyChanged("VotoNeg");
-					this.OnVotoNegChanged();
+					this._VotoNegH = value;
+					this.SendPropertyChanged("VotoNegH");
+					this.OnVotoNegHChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HLink", DbType="VarChar(255)")]
-		public string HLink
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LinkH", DbType="VarChar(255)")]
+		public string LinkH
 		{
 			get
 			{
-				return this._HLink;
+				return this._LinkH;
 			}
 			set
 			{
-				if ((this._HLink != value))
+				if ((this._LinkH != value))
 				{
-					this.OnHLinkChanging(value);
+					this.OnLinkHChanging(value);
 					this.SendPropertyChanging();
-					this._HLink = value;
-					this.SendPropertyChanged("HLink");
-					this.OnHLinkChanged();
+					this._LinkH = value;
+					this.SendPropertyChanged("LinkH");
+					this.OnLinkHChanged();
 				}
 			}
 		}
@@ -945,11 +945,11 @@ namespace DbBeach
 		
 		private short _AcessoSoBarco;
 		
-		private System.Nullable<int> _VotoPos;
+		private System.Nullable<int> _VotoPosP;
 		
-		private System.Nullable<int> _VotoNeg;
+		private System.Nullable<int> _VotoNegP;
 		
-		private string _PLink;
+		private string _LinkP;
 		
 		private EntitySet<Hospedagem> _Hospedagem;
 		
@@ -977,12 +977,12 @@ namespace DbBeach
     partial void OnTemperaturaAguaChanged();
     partial void OnAcessoSoBarcoChanging(short value);
     partial void OnAcessoSoBarcoChanged();
-    partial void OnVotoPosChanging(System.Nullable<int> value);
-    partial void OnVotoPosChanged();
-    partial void OnVotoNegChanging(System.Nullable<int> value);
-    partial void OnVotoNegChanged();
-    partial void OnPLinkChanging(string value);
-    partial void OnPLinkChanged();
+    partial void OnVotoPosPChanging(System.Nullable<int> value);
+    partial void OnVotoPosPChanged();
+    partial void OnVotoNegPChanging(System.Nullable<int> value);
+    partial void OnVotoNegPChanged();
+    partial void OnLinkPChanging(string value);
+    partial void OnLinkPChanged();
     #endregion
 		
 		public Praia()
@@ -1157,62 +1157,62 @@ namespace DbBeach
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPos", DbType="Int")]
-		public System.Nullable<int> VotoPos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPosP", DbType="Int")]
+		public System.Nullable<int> VotoPosP
 		{
 			get
 			{
-				return this._VotoPos;
+				return this._VotoPosP;
 			}
 			set
 			{
-				if ((this._VotoPos != value))
+				if ((this._VotoPosP != value))
 				{
-					this.OnVotoPosChanging(value);
+					this.OnVotoPosPChanging(value);
 					this.SendPropertyChanging();
-					this._VotoPos = value;
-					this.SendPropertyChanged("VotoPos");
-					this.OnVotoPosChanged();
+					this._VotoPosP = value;
+					this.SendPropertyChanged("VotoPosP");
+					this.OnVotoPosPChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNeg", DbType="Int")]
-		public System.Nullable<int> VotoNeg
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNegP", DbType="Int")]
+		public System.Nullable<int> VotoNegP
 		{
 			get
 			{
-				return this._VotoNeg;
+				return this._VotoNegP;
 			}
 			set
 			{
-				if ((this._VotoNeg != value))
+				if ((this._VotoNegP != value))
 				{
-					this.OnVotoNegChanging(value);
+					this.OnVotoNegPChanging(value);
 					this.SendPropertyChanging();
-					this._VotoNeg = value;
-					this.SendPropertyChanged("VotoNeg");
-					this.OnVotoNegChanged();
+					this._VotoNegP = value;
+					this.SendPropertyChanged("VotoNegP");
+					this.OnVotoNegPChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PLink", DbType="VarChar(255)")]
-		public string PLink
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LinkP", DbType="VarChar(255)")]
+		public string LinkP
 		{
 			get
 			{
-				return this._PLink;
+				return this._LinkP;
 			}
 			set
 			{
-				if ((this._PLink != value))
+				if ((this._LinkP != value))
 				{
-					this.OnPLinkChanging(value);
+					this.OnLinkPChanging(value);
 					this.SendPropertyChanging();
-					this._PLink = value;
-					this.SendPropertyChanged("PLink");
-					this.OnPLinkChanged();
+					this._LinkP = value;
+					this.SendPropertyChanged("LinkP");
+					this.OnLinkPChanged();
 				}
 			}
 		}
@@ -1336,13 +1336,13 @@ namespace DbBeach
 		
 		private string _MoradaRest;
 		
-		private int _DistanPraia;
+		private int _DistanPraiaR;
 		
-		private System.Nullable<int> _VotoPos;
+		private System.Nullable<int> _VotoPosR;
 		
-		private System.Nullable<int> _VotoNeg;
+		private System.Nullable<int> _VotoNegR;
 		
-		private string _RLink;
+		private string _LinkR;
 		
 		private EntityRef<Praia> _Praia;
 		
@@ -1358,14 +1358,14 @@ namespace DbBeach
     partial void OnNomeRestChanged();
     partial void OnMoradaRestChanging(string value);
     partial void OnMoradaRestChanged();
-    partial void OnDistanPraiaChanging(int value);
-    partial void OnDistanPraiaChanged();
-    partial void OnVotoPosChanging(System.Nullable<int> value);
-    partial void OnVotoPosChanged();
-    partial void OnVotoNegChanging(System.Nullable<int> value);
-    partial void OnVotoNegChanged();
-    partial void OnRLinkChanging(string value);
-    partial void OnRLinkChanged();
+    partial void OnDistanPraiaRChanging(int value);
+    partial void OnDistanPraiaRChanged();
+    partial void OnVotoPosRChanging(System.Nullable<int> value);
+    partial void OnVotoPosRChanged();
+    partial void OnVotoNegRChanging(System.Nullable<int> value);
+    partial void OnVotoNegRChanged();
+    partial void OnLinkRChanging(string value);
+    partial void OnLinkRChanged();
     #endregion
 		
 		public Restaurantes()
@@ -1458,82 +1458,82 @@ namespace DbBeach
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DistanPraia", DbType="Int NOT NULL")]
-		public int DistanPraia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DistanPraiaR", DbType="Int NOT NULL")]
+		public int DistanPraiaR
 		{
 			get
 			{
-				return this._DistanPraia;
+				return this._DistanPraiaR;
 			}
 			set
 			{
-				if ((this._DistanPraia != value))
+				if ((this._DistanPraiaR != value))
 				{
-					this.OnDistanPraiaChanging(value);
+					this.OnDistanPraiaRChanging(value);
 					this.SendPropertyChanging();
-					this._DistanPraia = value;
-					this.SendPropertyChanged("DistanPraia");
-					this.OnDistanPraiaChanged();
+					this._DistanPraiaR = value;
+					this.SendPropertyChanged("DistanPraiaR");
+					this.OnDistanPraiaRChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPos", DbType="Int")]
-		public System.Nullable<int> VotoPos
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPosR", DbType="Int")]
+		public System.Nullable<int> VotoPosR
 		{
 			get
 			{
-				return this._VotoPos;
+				return this._VotoPosR;
 			}
 			set
 			{
-				if ((this._VotoPos != value))
+				if ((this._VotoPosR != value))
 				{
-					this.OnVotoPosChanging(value);
+					this.OnVotoPosRChanging(value);
 					this.SendPropertyChanging();
-					this._VotoPos = value;
-					this.SendPropertyChanged("VotoPos");
-					this.OnVotoPosChanged();
+					this._VotoPosR = value;
+					this.SendPropertyChanged("VotoPosR");
+					this.OnVotoPosRChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNeg", DbType="Int")]
-		public System.Nullable<int> VotoNeg
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNegR", DbType="Int")]
+		public System.Nullable<int> VotoNegR
 		{
 			get
 			{
-				return this._VotoNeg;
+				return this._VotoNegR;
 			}
 			set
 			{
-				if ((this._VotoNeg != value))
+				if ((this._VotoNegR != value))
 				{
-					this.OnVotoNegChanging(value);
+					this.OnVotoNegRChanging(value);
 					this.SendPropertyChanging();
-					this._VotoNeg = value;
-					this.SendPropertyChanged("VotoNeg");
-					this.OnVotoNegChanged();
+					this._VotoNegR = value;
+					this.SendPropertyChanged("VotoNegR");
+					this.OnVotoNegRChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RLink", DbType="VarChar(255)")]
-		public string RLink
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LinkR", DbType="VarChar(255)")]
+		public string LinkR
 		{
 			get
 			{
-				return this._RLink;
+				return this._LinkR;
 			}
 			set
 			{
-				if ((this._RLink != value))
+				if ((this._LinkR != value))
 				{
-					this.OnRLinkChanging(value);
+					this.OnLinkRChanging(value);
 					this.SendPropertyChanging();
-					this._RLink = value;
-					this.SendPropertyChanged("RLink");
-					this.OnRLinkChanged();
+					this._LinkR = value;
+					this.SendPropertyChanged("LinkR");
+					this.OnLinkRChanged();
 				}
 			}
 		}

@@ -32,12 +32,12 @@
       <Column Name="IDpraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NomeHospe" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MoradaHospe" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DistanPraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DistanPraiaH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Classificacao" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="Camping" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
-      <Column Name="VotoPos" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VotoNeg" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="HLink" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VotoPosH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VotoNegH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkH" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Association Name="Praia_Hospedagem" Member="Praia" ThisKey="IDpraia" OtherKey="IDpraia" Type="Praia" IsForeignKey="true" />
     </Type>
   </Table>
@@ -51,9 +51,9 @@
       <Column Name="BandeiraAzul" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="TemperaturaAgua" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="AcessoSoBarco" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="VotoPos" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VotoNeg" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PLink" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="VotoPosP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VotoNegP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkP" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Association Name="Praia_Hospedagem" Member="Hospedagem" ThisKey="IDpraia" OtherKey="IDpraia" Type="Hospedagem" />
       <Association Name="Praia_Restaurantes" Member="Restaurantes" ThisKey="IDpraia" OtherKey="IDpraia" Type="Restaurantes" />
       <Association Name="Freguesias_Praia" Member="Freguesias" ThisKey="IDfreguesia" OtherKey="IDfreguesia" Type="Freguesias" IsForeignKey="true" />
@@ -65,10 +65,10 @@
       <Column Name="IDpraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NomeRest" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="MoradaRest" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DistanPraia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="VotoPos" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="VotoNeg" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RLink" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="DistanPraiaR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VotoPosR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VotoNegR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LinkR" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Association Name="Praia_Restaurantes" Member="Praia" ThisKey="IDpraia" OtherKey="IDpraia" Type="Praia" IsForeignKey="true" />
     </Type>
   </Table>

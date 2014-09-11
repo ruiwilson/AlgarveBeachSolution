@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AlgarveBeach" Class="BaseDeDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=VAIO-TSANTOS\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Security=True" SettingsObjectName="DbBeach.Properties.Settings" SettingsPropertyName="AlgarveBeachConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAP-TSUNAMI\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Security=True" SettingsObjectName="DbBeach.Properties.Settings" SettingsPropertyName="AlgarveBeachConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Clientes" Member="Clientes">
     <Type Name="Clientes">
       <Column Name="IDcliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

@@ -51,7 +51,7 @@ namespace DbBeach
     #endregion
 		
 		public BaseDeDadosDataContext() : 
-				base(global::DbBeach.Properties.Settings.Default.AlgarveBeachConnectionString, mappingSource)
+				base(global::DbBeach.Properties.Settings.Default.AlgarveBeachConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

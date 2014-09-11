@@ -33,5 +33,16 @@ namespace DbBeach.Properties {
                 return ((string)(this["AlgarveBeachConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAP-TSUNAMI\\SQLEXPRESS;Initial Catalog=AlgarveBeach;Integrated Securi" +
+            "ty=True")]
+        public string AlgarveBeachConnectionString1 {
+            get {
+                return ((string)(this["AlgarveBeachConnectionString1"]));
+            }
+        }
     }
 }

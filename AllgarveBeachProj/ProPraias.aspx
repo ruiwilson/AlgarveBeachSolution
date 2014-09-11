@@ -98,7 +98,7 @@
         
         <br /><br /><br />
 
-        <table>
+        <table align="center">
             <tr>
                 <td>
                     <asp:Literal ID="Literal1" runat="server"></asp:Literal><br />

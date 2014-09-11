@@ -36,22 +36,22 @@ namespace DbBeach
     partial void InsertConcelho(Concelho instance);
     partial void UpdateConcelho(Concelho instance);
     partial void DeleteConcelho(Concelho instance);
-    partial void InsertRestaurantes(Restaurantes instance);
-    partial void UpdateRestaurantes(Restaurantes instance);
-    partial void DeleteRestaurantes(Restaurantes instance);
     partial void InsertFreguesias(Freguesias instance);
     partial void UpdateFreguesias(Freguesias instance);
     partial void DeleteFreguesias(Freguesias instance);
-    partial void InsertPraia(Praia instance);
-    partial void UpdatePraia(Praia instance);
-    partial void DeletePraia(Praia instance);
     partial void InsertHospedagem(Hospedagem instance);
     partial void UpdateHospedagem(Hospedagem instance);
     partial void DeleteHospedagem(Hospedagem instance);
+    partial void InsertPraia(Praia instance);
+    partial void UpdatePraia(Praia instance);
+    partial void DeletePraia(Praia instance);
+    partial void InsertRestaurantes(Restaurantes instance);
+    partial void UpdateRestaurantes(Restaurantes instance);
+    partial void DeleteRestaurantes(Restaurantes instance);
     #endregion
 		
 		public BaseDeDadosDataContext() : 
-				base(global::DbBeach.Properties.Settings.Default.AlgarveBeachConnectionString, mappingSource)
+				base(global::DbBeach.Properties.Settings.Default.AlgarveBeachConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -96,19 +96,19 @@ namespace DbBeach
 			}
 		}
 		
-		public System.Data.Linq.Table<Restaurantes> Restaurantes
-		{
-			get
-			{
-				return this.GetTable<Restaurantes>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Freguesias> Freguesias
 		{
 			get
 			{
 				return this.GetTable<Freguesias>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Hospedagem> Hospedagem
+		{
+			get
+			{
+				return this.GetTable<Hospedagem>();
 			}
 		}
 		
@@ -120,11 +120,11 @@ namespace DbBeach
 			}
 		}
 		
-		public System.Data.Linq.Table<Hospedagem> Hospedagem
+		public System.Data.Linq.Table<Restaurantes> Restaurantes
 		{
 			get
 			{
-				return this.GetTable<Hospedagem>();
+				return this.GetTable<Restaurantes>();
 			}
 		}
 	}
@@ -425,277 +425,6 @@ namespace DbBeach
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Restaurantes")]
-	public partial class Restaurantes : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IDrest;
-		
-		private int _IDpraia;
-		
-		private string _NomeRest;
-		
-		private string _MoradaRest;
-		
-		private int _DistanPraia;
-		
-		private System.Nullable<int> _VotoPos;
-		
-		private System.Nullable<int> _VotoNeg;
-		
-		private string _Link;
-		
-		private EntityRef<Praia> _Praia;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDrestChanging(int value);
-    partial void OnIDrestChanged();
-    partial void OnIDpraiaChanging(int value);
-    partial void OnIDpraiaChanged();
-    partial void OnNomeRestChanging(string value);
-    partial void OnNomeRestChanged();
-    partial void OnMoradaRestChanging(string value);
-    partial void OnMoradaRestChanged();
-    partial void OnDistanPraiaChanging(int value);
-    partial void OnDistanPraiaChanged();
-    partial void OnVotoPosChanging(System.Nullable<int> value);
-    partial void OnVotoPosChanged();
-    partial void OnVotoNegChanging(System.Nullable<int> value);
-    partial void OnVotoNegChanged();
-    partial void OnLinkChanging(string value);
-    partial void OnLinkChanged();
-    #endregion
-		
-		public Restaurantes()
-		{
-			this._Praia = default(EntityRef<Praia>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDrest", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IDrest
-		{
-			get
-			{
-				return this._IDrest;
-			}
-			set
-			{
-				if ((this._IDrest != value))
-				{
-					this.OnIDrestChanging(value);
-					this.SendPropertyChanging();
-					this._IDrest = value;
-					this.SendPropertyChanged("IDrest");
-					this.OnIDrestChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDpraia", DbType="Int NOT NULL")]
-		public int IDpraia
-		{
-			get
-			{
-				return this._IDpraia;
-			}
-			set
-			{
-				if ((this._IDpraia != value))
-				{
-					if (this._Praia.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIDpraiaChanging(value);
-					this.SendPropertyChanging();
-					this._IDpraia = value;
-					this.SendPropertyChanged("IDpraia");
-					this.OnIDpraiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomeRest", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string NomeRest
-		{
-			get
-			{
-				return this._NomeRest;
-			}
-			set
-			{
-				if ((this._NomeRest != value))
-				{
-					this.OnNomeRestChanging(value);
-					this.SendPropertyChanging();
-					this._NomeRest = value;
-					this.SendPropertyChanged("NomeRest");
-					this.OnNomeRestChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoradaRest", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string MoradaRest
-		{
-			get
-			{
-				return this._MoradaRest;
-			}
-			set
-			{
-				if ((this._MoradaRest != value))
-				{
-					this.OnMoradaRestChanging(value);
-					this.SendPropertyChanging();
-					this._MoradaRest = value;
-					this.SendPropertyChanged("MoradaRest");
-					this.OnMoradaRestChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DistanPraia", DbType="Int NOT NULL")]
-		public int DistanPraia
-		{
-			get
-			{
-				return this._DistanPraia;
-			}
-			set
-			{
-				if ((this._DistanPraia != value))
-				{
-					this.OnDistanPraiaChanging(value);
-					this.SendPropertyChanging();
-					this._DistanPraia = value;
-					this.SendPropertyChanged("DistanPraia");
-					this.OnDistanPraiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPos", DbType="Int")]
-		public System.Nullable<int> VotoPos
-		{
-			get
-			{
-				return this._VotoPos;
-			}
-			set
-			{
-				if ((this._VotoPos != value))
-				{
-					this.OnVotoPosChanging(value);
-					this.SendPropertyChanging();
-					this._VotoPos = value;
-					this.SendPropertyChanged("VotoPos");
-					this.OnVotoPosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNeg", DbType="Int")]
-		public System.Nullable<int> VotoNeg
-		{
-			get
-			{
-				return this._VotoNeg;
-			}
-			set
-			{
-				if ((this._VotoNeg != value))
-				{
-					this.OnVotoNegChanging(value);
-					this.SendPropertyChanging();
-					this._VotoNeg = value;
-					this.SendPropertyChanged("VotoNeg");
-					this.OnVotoNegChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="VarChar(255)")]
-		public string Link
-		{
-			get
-			{
-				return this._Link;
-			}
-			set
-			{
-				if ((this._Link != value))
-				{
-					this.OnLinkChanging(value);
-					this.SendPropertyChanging();
-					this._Link = value;
-					this.SendPropertyChanged("Link");
-					this.OnLinkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Praia_Restaurantes", Storage="_Praia", ThisKey="IDpraia", OtherKey="IDpraia", IsForeignKey=true)]
-		public Praia Praia
-		{
-			get
-			{
-				return this._Praia.Entity;
-			}
-			set
-			{
-				Praia previousValue = this._Praia.Entity;
-				if (((previousValue != value) 
-							|| (this._Praia.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Praia.Entity = null;
-						previousValue.Restaurantes.Remove(this);
-					}
-					this._Praia.Entity = value;
-					if ((value != null))
-					{
-						value.Restaurantes.Add(this);
-						this._IDpraia = value.IDpraia;
-					}
-					else
-					{
-						this._IDpraia = default(int);
-					}
-					this.SendPropertyChanged("Praia");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Freguesias")]
 	public partial class Freguesias : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -875,6 +604,325 @@ namespace DbBeach
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hospedagem")]
+	public partial class Hospedagem : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IDhospe;
+		
+		private int _IDpraia;
+		
+		private string _NomeHospe;
+		
+		private string _MoradaHospe;
+		
+		private int _DistanPraia;
+		
+		private short _Classificacao;
+		
+		private System.Nullable<short> _Camping;
+		
+		private System.Nullable<int> _VotoPos;
+		
+		private System.Nullable<int> _VotoNeg;
+		
+		private string _HLink;
+		
+		private EntityRef<Praia> _Praia;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDhospeChanging(int value);
+    partial void OnIDhospeChanged();
+    partial void OnIDpraiaChanging(int value);
+    partial void OnIDpraiaChanged();
+    partial void OnNomeHospeChanging(string value);
+    partial void OnNomeHospeChanged();
+    partial void OnMoradaHospeChanging(string value);
+    partial void OnMoradaHospeChanged();
+    partial void OnDistanPraiaChanging(int value);
+    partial void OnDistanPraiaChanged();
+    partial void OnClassificacaoChanging(short value);
+    partial void OnClassificacaoChanged();
+    partial void OnCampingChanging(System.Nullable<short> value);
+    partial void OnCampingChanged();
+    partial void OnVotoPosChanging(System.Nullable<int> value);
+    partial void OnVotoPosChanged();
+    partial void OnVotoNegChanging(System.Nullable<int> value);
+    partial void OnVotoNegChanged();
+    partial void OnHLinkChanging(string value);
+    partial void OnHLinkChanged();
+    #endregion
+		
+		public Hospedagem()
+		{
+			this._Praia = default(EntityRef<Praia>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDhospe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IDhospe
+		{
+			get
+			{
+				return this._IDhospe;
+			}
+			set
+			{
+				if ((this._IDhospe != value))
+				{
+					this.OnIDhospeChanging(value);
+					this.SendPropertyChanging();
+					this._IDhospe = value;
+					this.SendPropertyChanged("IDhospe");
+					this.OnIDhospeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDpraia", DbType="Int NOT NULL")]
+		public int IDpraia
+		{
+			get
+			{
+				return this._IDpraia;
+			}
+			set
+			{
+				if ((this._IDpraia != value))
+				{
+					if (this._Praia.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIDpraiaChanging(value);
+					this.SendPropertyChanging();
+					this._IDpraia = value;
+					this.SendPropertyChanged("IDpraia");
+					this.OnIDpraiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomeHospe", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NomeHospe
+		{
+			get
+			{
+				return this._NomeHospe;
+			}
+			set
+			{
+				if ((this._NomeHospe != value))
+				{
+					this.OnNomeHospeChanging(value);
+					this.SendPropertyChanging();
+					this._NomeHospe = value;
+					this.SendPropertyChanged("NomeHospe");
+					this.OnNomeHospeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoradaHospe", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MoradaHospe
+		{
+			get
+			{
+				return this._MoradaHospe;
+			}
+			set
+			{
+				if ((this._MoradaHospe != value))
+				{
+					this.OnMoradaHospeChanging(value);
+					this.SendPropertyChanging();
+					this._MoradaHospe = value;
+					this.SendPropertyChanged("MoradaHospe");
+					this.OnMoradaHospeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DistanPraia", DbType="Int NOT NULL")]
+		public int DistanPraia
+		{
+			get
+			{
+				return this._DistanPraia;
+			}
+			set
+			{
+				if ((this._DistanPraia != value))
+				{
+					this.OnDistanPraiaChanging(value);
+					this.SendPropertyChanging();
+					this._DistanPraia = value;
+					this.SendPropertyChanged("DistanPraia");
+					this.OnDistanPraiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Classificacao", DbType="SmallInt NOT NULL")]
+		public short Classificacao
+		{
+			get
+			{
+				return this._Classificacao;
+			}
+			set
+			{
+				if ((this._Classificacao != value))
+				{
+					this.OnClassificacaoChanging(value);
+					this.SendPropertyChanging();
+					this._Classificacao = value;
+					this.SendPropertyChanged("Classificacao");
+					this.OnClassificacaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Camping", DbType="SmallInt")]
+		public System.Nullable<short> Camping
+		{
+			get
+			{
+				return this._Camping;
+			}
+			set
+			{
+				if ((this._Camping != value))
+				{
+					this.OnCampingChanging(value);
+					this.SendPropertyChanging();
+					this._Camping = value;
+					this.SendPropertyChanged("Camping");
+					this.OnCampingChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoPos", DbType="Int")]
+		public System.Nullable<int> VotoPos
+		{
+			get
+			{
+				return this._VotoPos;
+			}
+			set
+			{
+				if ((this._VotoPos != value))
+				{
+					this.OnVotoPosChanging(value);
+					this.SendPropertyChanging();
+					this._VotoPos = value;
+					this.SendPropertyChanged("VotoPos");
+					this.OnVotoPosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VotoNeg", DbType="Int")]
+		public System.Nullable<int> VotoNeg
+		{
+			get
+			{
+				return this._VotoNeg;
+			}
+			set
+			{
+				if ((this._VotoNeg != value))
+				{
+					this.OnVotoNegChanging(value);
+					this.SendPropertyChanging();
+					this._VotoNeg = value;
+					this.SendPropertyChanged("VotoNeg");
+					this.OnVotoNegChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HLink", DbType="VarChar(255)")]
+		public string HLink
+		{
+			get
+			{
+				return this._HLink;
+			}
+			set
+			{
+				if ((this._HLink != value))
+				{
+					this.OnHLinkChanging(value);
+					this.SendPropertyChanging();
+					this._HLink = value;
+					this.SendPropertyChanged("HLink");
+					this.OnHLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Praia_Hospedagem", Storage="_Praia", ThisKey="IDpraia", OtherKey="IDpraia", IsForeignKey=true)]
+		public Praia Praia
+		{
+			get
+			{
+				return this._Praia.Entity;
+			}
+			set
+			{
+				Praia previousValue = this._Praia.Entity;
+				if (((previousValue != value) 
+							|| (this._Praia.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Praia.Entity = null;
+						previousValue.Hospedagem.Remove(this);
+					}
+					this._Praia.Entity = value;
+					if ((value != null))
+					{
+						value.Hospedagem.Add(this);
+						this._IDpraia = value.IDpraia;
+					}
+					else
+					{
+						this._IDpraia = default(int);
+					}
+					this.SendPropertyChanged("Praia");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Praia")]
 	public partial class Praia : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -901,11 +949,11 @@ namespace DbBeach
 		
 		private System.Nullable<int> _VotoNeg;
 		
-		private string _Link;
-		
-		private EntitySet<Restaurantes> _Restaurantes;
+		private string _PLink;
 		
 		private EntitySet<Hospedagem> _Hospedagem;
+		
+		private EntitySet<Restaurantes> _Restaurantes;
 		
 		private EntityRef<Freguesias> _Freguesias;
 		
@@ -933,14 +981,14 @@ namespace DbBeach
     partial void OnVotoPosChanged();
     partial void OnVotoNegChanging(System.Nullable<int> value);
     partial void OnVotoNegChanged();
-    partial void OnLinkChanging(string value);
-    partial void OnLinkChanged();
+    partial void OnPLinkChanging(string value);
+    partial void OnPLinkChanged();
     #endregion
 		
 		public Praia()
 		{
-			this._Restaurantes = new EntitySet<Restaurantes>(new Action<Restaurantes>(this.attach_Restaurantes), new Action<Restaurantes>(this.detach_Restaurantes));
 			this._Hospedagem = new EntitySet<Hospedagem>(new Action<Hospedagem>(this.attach_Hospedagem), new Action<Hospedagem>(this.detach_Hospedagem));
+			this._Restaurantes = new EntitySet<Restaurantes>(new Action<Restaurantes>(this.attach_Restaurantes), new Action<Restaurantes>(this.detach_Restaurantes));
 			this._Freguesias = default(EntityRef<Freguesias>);
 			OnCreated();
 		}
@@ -1149,36 +1197,23 @@ namespace DbBeach
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="VarChar(255)")]
-		public string Link
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PLink", DbType="VarChar(255)")]
+		public string PLink
 		{
 			get
 			{
-				return this._Link;
+				return this._PLink;
 			}
 			set
 			{
-				if ((this._Link != value))
+				if ((this._PLink != value))
 				{
-					this.OnLinkChanging(value);
+					this.OnPLinkChanging(value);
 					this.SendPropertyChanging();
-					this._Link = value;
-					this.SendPropertyChanged("Link");
-					this.OnLinkChanged();
+					this._PLink = value;
+					this.SendPropertyChanged("PLink");
+					this.OnPLinkChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Praia_Restaurantes", Storage="_Restaurantes", ThisKey="IDpraia", OtherKey="IDpraia")]
-		public EntitySet<Restaurantes> Restaurantes
-		{
-			get
-			{
-				return this._Restaurantes;
-			}
-			set
-			{
-				this._Restaurantes.Assign(value);
 			}
 		}
 		
@@ -1192,6 +1227,19 @@ namespace DbBeach
 			set
 			{
 				this._Hospedagem.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Praia_Restaurantes", Storage="_Restaurantes", ThisKey="IDpraia", OtherKey="IDpraia")]
+		public EntitySet<Restaurantes> Restaurantes
+		{
+			get
+			{
+				return this._Restaurantes;
+			}
+			set
+			{
+				this._Restaurantes.Assign(value);
 			}
 		}
 		
@@ -1249,18 +1297,6 @@ namespace DbBeach
 			}
 		}
 		
-		private void attach_Restaurantes(Restaurantes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Praia = this;
-		}
-		
-		private void detach_Restaurantes(Restaurantes entity)
-		{
-			this.SendPropertyChanging();
-			entity.Praia = null;
-		}
-		
 		private void attach_Hospedagem(Hospedagem entity)
 		{
 			this.SendPropertyChanging();
@@ -1272,33 +1308,41 @@ namespace DbBeach
 			this.SendPropertyChanging();
 			entity.Praia = null;
 		}
+		
+		private void attach_Restaurantes(Restaurantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Praia = this;
+		}
+		
+		private void detach_Restaurantes(Restaurantes entity)
+		{
+			this.SendPropertyChanging();
+			entity.Praia = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hospedagem")]
-	public partial class Hospedagem : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Restaurantes")]
+	public partial class Restaurantes : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _IDhospe;
+		private int _IDrest;
 		
 		private int _IDpraia;
 		
-		private string _NomeHospe;
+		private string _NomeRest;
 		
-		private string _MoradaHospe;
+		private string _MoradaRest;
 		
 		private int _DistanPraia;
-		
-		private short _Classificacao;
-		
-		private System.Nullable<short> _Camping;
 		
 		private System.Nullable<int> _VotoPos;
 		
 		private System.Nullable<int> _VotoNeg;
 		
-		private string _Link;
+		private string _RLink;
 		
 		private EntityRef<Praia> _Praia;
 		
@@ -1306,50 +1350,46 @@ namespace DbBeach
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDhospeChanging(int value);
-    partial void OnIDhospeChanged();
+    partial void OnIDrestChanging(int value);
+    partial void OnIDrestChanged();
     partial void OnIDpraiaChanging(int value);
     partial void OnIDpraiaChanged();
-    partial void OnNomeHospeChanging(string value);
-    partial void OnNomeHospeChanged();
-    partial void OnMoradaHospeChanging(string value);
-    partial void OnMoradaHospeChanged();
+    partial void OnNomeRestChanging(string value);
+    partial void OnNomeRestChanged();
+    partial void OnMoradaRestChanging(string value);
+    partial void OnMoradaRestChanged();
     partial void OnDistanPraiaChanging(int value);
     partial void OnDistanPraiaChanged();
-    partial void OnClassificacaoChanging(short value);
-    partial void OnClassificacaoChanged();
-    partial void OnCampingChanging(System.Nullable<short> value);
-    partial void OnCampingChanged();
     partial void OnVotoPosChanging(System.Nullable<int> value);
     partial void OnVotoPosChanged();
     partial void OnVotoNegChanging(System.Nullable<int> value);
     partial void OnVotoNegChanged();
-    partial void OnLinkChanging(string value);
-    partial void OnLinkChanged();
+    partial void OnRLinkChanging(string value);
+    partial void OnRLinkChanged();
     #endregion
 		
-		public Hospedagem()
+		public Restaurantes()
 		{
 			this._Praia = default(EntityRef<Praia>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDhospe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IDhospe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDrest", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IDrest
 		{
 			get
 			{
-				return this._IDhospe;
+				return this._IDrest;
 			}
 			set
 			{
-				if ((this._IDhospe != value))
+				if ((this._IDrest != value))
 				{
-					this.OnIDhospeChanging(value);
+					this.OnIDrestChanging(value);
 					this.SendPropertyChanging();
-					this._IDhospe = value;
-					this.SendPropertyChanged("IDhospe");
-					this.OnIDhospeChanged();
+					this._IDrest = value;
+					this.SendPropertyChanged("IDrest");
+					this.OnIDrestChanged();
 				}
 			}
 		}
@@ -1378,42 +1418,42 @@ namespace DbBeach
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomeHospe", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string NomeHospe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomeRest", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string NomeRest
 		{
 			get
 			{
-				return this._NomeHospe;
+				return this._NomeRest;
 			}
 			set
 			{
-				if ((this._NomeHospe != value))
+				if ((this._NomeRest != value))
 				{
-					this.OnNomeHospeChanging(value);
+					this.OnNomeRestChanging(value);
 					this.SendPropertyChanging();
-					this._NomeHospe = value;
-					this.SendPropertyChanged("NomeHospe");
-					this.OnNomeHospeChanged();
+					this._NomeRest = value;
+					this.SendPropertyChanged("NomeRest");
+					this.OnNomeRestChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoradaHospe", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string MoradaHospe
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MoradaRest", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MoradaRest
 		{
 			get
 			{
-				return this._MoradaHospe;
+				return this._MoradaRest;
 			}
 			set
 			{
-				if ((this._MoradaHospe != value))
+				if ((this._MoradaRest != value))
 				{
-					this.OnMoradaHospeChanging(value);
+					this.OnMoradaRestChanging(value);
 					this.SendPropertyChanging();
-					this._MoradaHospe = value;
-					this.SendPropertyChanged("MoradaHospe");
-					this.OnMoradaHospeChanged();
+					this._MoradaRest = value;
+					this.SendPropertyChanged("MoradaRest");
+					this.OnMoradaRestChanged();
 				}
 			}
 		}
@@ -1434,46 +1474,6 @@ namespace DbBeach
 					this._DistanPraia = value;
 					this.SendPropertyChanged("DistanPraia");
 					this.OnDistanPraiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Classificacao", DbType="SmallInt NOT NULL")]
-		public short Classificacao
-		{
-			get
-			{
-				return this._Classificacao;
-			}
-			set
-			{
-				if ((this._Classificacao != value))
-				{
-					this.OnClassificacaoChanging(value);
-					this.SendPropertyChanging();
-					this._Classificacao = value;
-					this.SendPropertyChanged("Classificacao");
-					this.OnClassificacaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Camping", DbType="SmallInt")]
-		public System.Nullable<short> Camping
-		{
-			get
-			{
-				return this._Camping;
-			}
-			set
-			{
-				if ((this._Camping != value))
-				{
-					this.OnCampingChanging(value);
-					this.SendPropertyChanging();
-					this._Camping = value;
-					this.SendPropertyChanged("Camping");
-					this.OnCampingChanged();
 				}
 			}
 		}
@@ -1518,27 +1518,27 @@ namespace DbBeach
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Link", DbType="VarChar(255)")]
-		public string Link
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RLink", DbType="VarChar(255)")]
+		public string RLink
 		{
 			get
 			{
-				return this._Link;
+				return this._RLink;
 			}
 			set
 			{
-				if ((this._Link != value))
+				if ((this._RLink != value))
 				{
-					this.OnLinkChanging(value);
+					this.OnRLinkChanging(value);
 					this.SendPropertyChanging();
-					this._Link = value;
-					this.SendPropertyChanged("Link");
-					this.OnLinkChanged();
+					this._RLink = value;
+					this.SendPropertyChanged("RLink");
+					this.OnRLinkChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Praia_Hospedagem", Storage="_Praia", ThisKey="IDpraia", OtherKey="IDpraia", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Praia_Restaurantes", Storage="_Praia", ThisKey="IDpraia", OtherKey="IDpraia", IsForeignKey=true)]
 		public Praia Praia
 		{
 			get
@@ -1555,12 +1555,12 @@ namespace DbBeach
 					if ((previousValue != null))
 					{
 						this._Praia.Entity = null;
-						previousValue.Hospedagem.Remove(this);
+						previousValue.Restaurantes.Remove(this);
 					}
 					this._Praia.Entity = value;
 					if ((value != null))
 					{
-						value.Hospedagem.Add(this);
+						value.Restaurantes.Add(this);
 						this._IDpraia = value.IDpraia;
 					}
 					else

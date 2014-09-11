@@ -21,7 +21,7 @@ namespace AlgarveBeach
         private int mClassificacao;
         private int mCamping;
 
-               //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
+        //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
         public Hospedagem()
         {
         }
@@ -34,7 +34,7 @@ namespace AlgarveBeach
             this.DistanPraia = DistanPraia;
             this.Classificacao = Classificacao;
             this.Camping = Camping;
-            
+
         }
 
         //Método responsável por carregar os dados de um produto existente na base de dados
@@ -55,7 +55,7 @@ namespace AlgarveBeach
         public void ActualizarHospedagem(string IDhospe)
         {
             string[] campos = { "IDpraia", "NomeHospe", "MoradaHospe", "DistanPraia", "Classificacao", "Camping" };
-            string[] valores = { this.IDpraia.ToString().Replace(",", "."), this.NomeHospe, this.MoradaHospe, this.DistanPraia.ToString().Replace(",", "."), this.Classificacao.ToString().Replace(",", "."),this.Camping.ToString().Replace(",", ".") };
+            string[] valores = { this.IDpraia.ToString().Replace(",", "."), this.NomeHospe, this.MoradaHospe, this.DistanPraia.ToString().Replace(",", "."), this.Classificacao.ToString().Replace(",", "."), this.Camping.ToString().Replace(",", ".") };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             aBD.ActualizaTabela("Hospedagem", campos, valores, "IDhospe", IDhospe);
         }
@@ -73,7 +73,7 @@ namespace AlgarveBeach
         public string Caracteriza()
         {
             return "Esta Hospedagem chama-se " + this.NomeHospe + " e situa-se a: " + this.DistanPraia + " metros da praia! ";
-            
+
         }
 
 

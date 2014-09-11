@@ -22,8 +22,6 @@ namespace AlgarveBeach
         private int mBandeiraAzul;
         private int mTemperaturaAgua;
         private int mAcessoSoBarco;
-        private int mHospedagem;
-        private int mRestaurante;
 
 
         //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
@@ -31,7 +29,7 @@ namespace AlgarveBeach
         {
         }
 
-        public Praia(int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, int BandeiraAzul, int TemperaturaAgua, int AcessoSoBarco, int Hospedagem, int Restaurante)
+        public Praia(int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, int BandeiraAzul, int TemperaturaAgua, int AcessoSoBarco)
         {
             this.IDfreguesia = IDfreguesia;
             this.NomePraia = NomePraia;
@@ -40,14 +38,12 @@ namespace AlgarveBeach
             this.BandeiraAzul = BandeiraAzul;
             this.TemperaturaAgua = TemperaturaAgua;
             this.AcessoSoBarco = AcessoSoBarco;
-            this.Hospedagem = Hospedagem;
-            this.Restaurante = Restaurante;
         }
 
         //Método responsável por carregar os dados de um produto existente na base de dados
         public void CarregarPraia(string IDpraia)
         {
-            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
+            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             string[] valores = aBD.LerTabela("Praias", campos, "IDpraia", IDpraia);
             this.IDfreguesia = Convert.ToInt32(valores[0]);
@@ -57,8 +53,6 @@ namespace AlgarveBeach
             this.BandeiraAzul = Convert.ToInt16(valores[4]);
             this.TemperaturaAgua = Convert.ToInt16(valores[5]);
             this.AcessoSoBarco = Convert.ToInt16(valores[6]);
-            this.Hospedagem = Convert.ToInt16(valores[7]);
-            this.Restaurante = Convert.ToInt16(valores[8]);
         }
 
         public void CarregarPraiaID(string nomepraia)
@@ -72,8 +66,8 @@ namespace AlgarveBeach
         //Método responsável por actualizar um produto existente na base de dados
         public void ActualizarPraia(string IDpraia)
         {
-            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
-            string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", "."), this.Hospedagem.ToString(), this.Restaurante.ToString() };
+            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", ".") };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             aBD.ActualizaTabela("Praia", campos, valores, "IDpraia", IDpraia);
         }
@@ -81,8 +75,8 @@ namespace AlgarveBeach
         //Método responsável por inserir um novo produto na base de dados
         public void InserirPraia()
         {
-            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
-            string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", "."), this.Hospedagem.ToString(), this.Restaurante.ToString() };
+            string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
+            string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", ".") };
             AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
             aBD.InserirRegisto("Praia", campos, valores);
         }
@@ -152,18 +146,6 @@ namespace AlgarveBeach
         {
             get { return mAcessoSoBarco; }
             set { mAcessoSoBarco = value; }
-        }
-
-        public int Hospedagem
-        {
-            get { return mHospedagem; }
-            set { mHospedagem = value; }
-        }
-
-        public int Restaurante
-        {
-            get { return mRestaurante; }
-            set { mRestaurante = value; }
         }
 
     }

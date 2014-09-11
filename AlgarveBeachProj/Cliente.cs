@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace AlgarveBeach
 {
-   public class Cliente
+    public class Cliente
     {
-    //Campos da tabela clientes T_~ 
+        //Campos da tabela clientes T_~ 
         private string mUsername;
         private string mPassword;
         private string mNome;
         private string mEmail;
-        
+
 
         //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais
         public Cliente()
@@ -26,7 +26,7 @@ namespace AlgarveBeach
             this.Password = Password;
             this.Nome = Nome;
             this.Email = Email;
-            
+
         }
 
         //Método responsável por carregar os dados de um cliente existente na base de dados
@@ -38,7 +38,7 @@ namespace AlgarveBeach
             this.Username = valores[0];
             this.Password = valores[1];
             this.Nome = valores[2];
-            this.Email = valores[3];     
+            this.Email = valores[3];
         }
 
         //Método responsável por actualizar um cliente existente na base de dados
@@ -54,7 +54,7 @@ namespace AlgarveBeach
         public void InserirCliente()
         {
             string[] campos = { "Username", "Password", "Nomecliente", "Emailcliente" };
-            string[] valores = { this.Username, this.Password, this.Nome, this.Email }; 
+            string[] valores = { this.Username, this.Password, this.Nome, this.Email };
             AcessoBD aBD = new AcessoBD("ANDROID-PC", "ALGARCOM", "sa", "1234");
             aBD.InserirRegisto("Clientes", campos, valores);
         }
@@ -99,6 +99,6 @@ namespace AlgarveBeach
             get { return mEmail; }
             set { mEmail = value; }
         }
-        
+
     }
 }

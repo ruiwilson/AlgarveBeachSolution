@@ -116,7 +116,7 @@ namespace AlgarveBeach
         public Praia[] CarregarPraiaTeste(string IDpraia)
         {
 
-            string[] campos = { "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
+            string[] campos = { "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaConTeste1(campos, "Praia", "IDpraia", IDpraia);
             Praia[] arrPraia = new Praia[dt.Rows.Count];
@@ -131,8 +131,6 @@ namespace AlgarveBeach
                 p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
                 p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
                 p.AcessoSoBarco = Convert.ToInt16(rw["TemperaturaAgua"]);
-                p.Hospedagem = Convert.ToInt16(rw["Hospedagem"]);
-                p.Restaurante = Convert.ToInt16(rw["Restaurante"]);
 
                 arrPraia[i] = p;
                 i++;
@@ -147,7 +145,7 @@ namespace AlgarveBeach
         //Método responsável por carregar os dados de todos as praias
         public Praia[] CarregarPraia()
         {
-            string[] campos = { /*"IDfreguesia", */"NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco", "Hospedagem", "Restaurante" };
+            string[] campos = { /*"IDfreguesia", */"NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
             DataTable dt = aBD.LerTabelaCompletaConTeste2(campos, "Praia");
             Praia[] arrPraias = new Praia[dt.Rows.Count];
@@ -156,15 +154,13 @@ namespace AlgarveBeach
             {
                 Praia p = new Praia();
 
-              //p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
+                //p.IDfreguesia = Convert.ToInt32(rw["IDfreguesia"]);
                 p.NomePraia = rw["NomePraia"].ToString();
                 p.MoradaPraia = rw["MoradaPraia"].ToString();
                 p.ExtensaoPraia = Convert.ToInt16(rw["ExtensaoPraia"]);
                 p.BandeiraAzul = Convert.ToInt16(rw["BandeiraAzul"]);
                 p.TemperaturaAgua = Convert.ToInt16(rw["TemperaturaAgua"]);
                 p.AcessoSoBarco = Convert.ToInt16(rw["AcessoSoBarco"]);
-                p.Hospedagem = Convert.ToInt16(rw["Hospedagem"]);
-                p.Restaurante = Convert.ToInt16(rw["Restaurante"]);
 
 
                 arrPraias[i] = p;

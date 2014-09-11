@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace AlgarveBeach
 {
-   public class Restaurante
+    public class Restaurante
     {
         private int mIDpraia;
         private string mNomeRest;

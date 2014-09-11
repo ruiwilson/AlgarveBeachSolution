@@ -84,7 +84,7 @@ namespace MyApp
                          {
                              NomeHospedagem = h.NomeHospe,
                              NomePraia = p.NomePraia,
-                             DistanPraia = h.DistanPraia
+                             DistanPraia = h.DistanPraiaH
                          }).Where(x => x.DistanPraia < 500);
 
             var TudoEmList = query.ToList();

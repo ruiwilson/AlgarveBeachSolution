@@ -340,7 +340,7 @@ namespace AllgarveBeach
 
                     fre.CarregarFreguesiaID(Convert.ToString(DFreguesia.SelectedItem));
 
-                    Literal1.Text += query.VerTodasPraiasDeFreguesiaHospTempBand(fre.IDfreguesia, rest1, temp1, band1);
+                    Literal1.Text += query.VerTodasPraiasDeFreguesiaRestTempBand(fre.IDfreguesia, rest1, temp1, band1);
                     Literal1.Text += "</table>";
                 }
                 //SE QUALQUER PRAIA TEM RESTAURANTE E HOSPEDAGEM

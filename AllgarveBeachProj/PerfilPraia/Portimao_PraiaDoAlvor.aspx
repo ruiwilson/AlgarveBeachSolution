@@ -38,52 +38,64 @@
 		<li><img src="http://www.ingrina.com/wp-content/uploads/2013/03/PRAIA_DE_ROCHA_BEACH.jpg" alt="Praia do alvor" />
 		<li><img src="http://newmedia.thomson.co.uk/live/vol/2/a8ab8d3d6f7ee169626e01f4fddeb3c2abb61e78/1080x608/web/EUROPEMEDITERRANEANPORTUGALALGARVEALVOR.jpg" alt="Praia do alvor" />
 	</ul>
-<p>Dimensão: 300 metros</p>
+<p>
+    <asp:Table runat="server" BackColor="LightCyan" BorderStyle="Ridge">
+        <asp:TableRow>
+            <asp:TableCell><asp:Label ID="lblDimtxt" runat="server" BorderStyle="Outset" Text="Dimensão:"></asp:Label></asp:TableCell>
+            <asp:TableCell><asp:Label ID="lblDim" runat="server" BorderStyle="Inset" Text="111m"></asp:Label></asp:TableCell>
+            <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
+            <asp:TableCell><asp:ImageButton ID="Votopos" runat="server" ImageUrl="/images/pos.png" Height="35" Width="35"/></asp:TableCell>
+            <asp:TableCell><asp:Label ID="lblpos" runat="server" BorderStyle="Inset" Text="111"></asp:Label></asp:TableCell>
+            <asp:TableCell><asp:ImageButton ID="Votoneg" runat="server" ImageUrl="/images/neg.png" Height="35" Width="35"/></asp:TableCell>         
+            <asp:TableCell><asp:Label ID="lblneg" runat="server" BorderStyle="Inset" Text="111"></asp:Label></asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+</p>
 
 
-<asp:Table runat="server" BackColor="LightCyan">
+<asp:Table runat="server" BackColor="LightCyan" BorderStyle="Ridge">
     <asp:TableRow>
-        <asp:TableCell><img src="/images/bazul.jpg" />Bandeira azul:</asp:TableCell>
-        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell><img src="/images/bazul.jpg" />  <asp:Label ID="lblBdazultxt" runat="server" BorderStyle="Outset" Text="Bandeira Azul:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblBdazul" runat="server" BorderStyle="Inset" Text="Sim"></asp:Label></asp:TableCell>
         <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
-        <asp:TableCell><img src="/images/chuveiros.jpg" />Chuveiros:</asp:TableCell>
-        <asp:TableCell>Não</asp:TableCell>
+        <asp:TableCell><img src="/images/chuveiros.jpg" />  <asp:Label ID="lblChuveirostxt" runat="server" BorderStyle="Outset" Text="Chuveiros:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblChuveiros" runat="server" BorderStyle="Inset" Text="Não"></asp:Label></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>
-        <asp:TableCell><img src="/images/pedonal.jpg" />Acesso pedonal fácil:</asp:TableCell>
-        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell><img src="/images/pedonal.jpg" />  <asp:Label ID="lblPedonaltxt" runat="server" BorderStyle="Outset" Text="Acesso Pedonal:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblPedonal" runat="server" BorderStyle="Inset" Text="Sim:"></asp:Label></asp:TableCell>
         <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
-        <asp:TableCell><img src="/images/defi.jpg" />Acesso deficientes:</asp:TableCell>
-        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell><img src="/images/defi.jpg" />  <asp:Label ID="lblDeficientxt" runat="server" BorderStyle="Outset" Text="Acesso p/Inválidos:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblDeficien" runat="server" BorderStyle="Inset" Text="Sim"></asp:Label></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>
-        <asp:TableCell><img src="/images/parki.jpg" />Parking gratuito:</asp:TableCell>
-        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell><img src="/images/parkitxt.jpg" />  <asp:Label ID="lblpark" runat="server" BorderStyle="Outset" Text="Parking:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblparki" runat="server" BorderStyle="Inset" Text="Sim:"></asp:Label></asp:TableCell>
         <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
-        <asp:TableCell><img src="/images/resta.jpg" />Restaurante(-500metros):</asp:TableCell>
-        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell><img src="/images/resta.jpg" />  <asp:Label ID="lblrestaurtxt" runat="server" BorderStyle="Outset" Text="Restaurante(-500m):"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblrest" runat="server" BorderStyle="Inset" Text="Sim"></asp:Label></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>
-        <asp:TableCell><img src="/images/animais.jpg" />Permite animais:</asp:TableCell>
-        <asp:TableCell>Não</asp:TableCell>
+        <asp:TableCell><img src="/images/animais.jpg" />  <asp:Label ID="lblanimtxt" runat="server" BorderStyle="Outset" Text="Permite Animais:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblanim" runat="server" BorderStyle="Inset" Text="Não"></asp:Label></asp:TableCell>
         <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
-        <asp:TableCell><img src="/images/tolds.jpg" />Aluguer de toldos:</asp:TableCell>
-        <asp:TableCell>Não</asp:TableCell>
+        <asp:TableCell><img src="/images/tolds.jpg" />  <asp:Label ID="lbltoldtxt" runat="server" BorderStyle="Outset" Text="Aluguer de Toldos:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lbltold" runat="server" BorderStyle="Inset" Text="Não"></asp:Label></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>
-        <asp:TableCell><img src="/images/nadador.jpg" />Nadador salvador:</asp:TableCell>
-        <asp:TableCell>Sim</asp:TableCell>
+        <asp:TableCell><img src="/images/nadador.jpg" />  <asp:Label ID="lblnadadtxt" runat="server" BorderStyle="Outset" Text="Nadador Salvador:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="lblnadad" runat="server" BorderStyle="Inset" Text="Dimensão:"></asp:Label></asp:TableCell>
         <asp:TableCell>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</asp:TableCell>
-        <asp:TableCell><img src="/images/guardasolarea.jpg" />Área de guarda-sóis:</asp:TableCell>
-        <asp:TableCell>Não</asp:TableCell>
+        <asp:TableCell><img src="/images/guardasolarea.jpg" />  <asp:Label ID="lblguarsoltxt" runat="server" BorderStyle="Outset" Text="Area Guarda-Sol:"></asp:Label></asp:TableCell>
+        <asp:TableCell>  <asp:Label ID="Label1" runat="server" BorderStyle="Inset" Text="Não:"></asp:Label></asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>
-        <asp:TableCell><img src="/images/servicos.jpg" />Serviços:</asp:TableCell>
+        <asp:TableCell><img src="/images/servicos.jpg" /> <asp:Label ID="lblservitxt" runat="server" BorderStyle="Outset" Text="Serviços:"></asp:Label></asp:TableCell>
         <asp:TableCell></asp:TableCell>
-        <asp:TableCell>&nbsp&nbsp&nbspBar</asp:TableCell>
-        <asp:TableCell>&nbsp&nbsp&nbspWC</asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp<asp:Label ID="lblbar" runat="server" BorderStyle="Inset" Text="Bar"></asp:Label></asp:TableCell>
+        <asp:TableCell>&nbsp&nbsp&nbsp<asp:Label ID="lblwc" runat="server" BorderStyle="Inset" Text="WC"></asp:Label></asp:TableCell>
     </asp:TableRow>
- </asp:Table>
+</asp:Table>
 </div>
 <br />
     <hr size='1'/>

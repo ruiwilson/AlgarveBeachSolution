@@ -42,30 +42,31 @@ namespace AllgarveBeach
         {
             if (txtID.Text != "")
             {
-
+                ltresultados1.Text = "";
                 /*novoConcelho.CarregarConcelho(txtID.Text);
                 ltresultados.Text = novoConcelho.Caracteriza();
                 MessageBox("Concelho carregado com sucesso!");*/
-                ltresultados.Text += "<table align='center' border='1'><tr>" +
+                ltresultados1.Text += "<table align='center' border='1'><tr>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>NomeConcelho</b></td></tr>";
                 
-                ltresultados.Text = db.VerConcelho();
-                ltresultados.Text += "</table>";
-                MessageBox("Concelho carregado com sucesso!");
+                ltresultados1.Text = db.VerConcelho();
+                ltresultados1.Text += "</table>";
+                
             }
             else
             {
+                ltresultados1.Text = "";
                 /*ltresultados.Text = "";
                 foreach (Concelho c in concelho)
                 {
                     ltresultados.Text += c.NomeConcelho + "\r\n";
                 }*/
-                ltresultados.Text += "<table align='center' border='1'><tr>" +
+                ltresultados1.Text += "<table align='center' border='1'><tr>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>NomeConcelho</b></td></tr>";
                 
-                ltresultados.Text = db.VerConcelho();
-                ltresultados.Text += "</table>";
-                MessageBox("Concelhos carregados com sucesso!");
+                ltresultados1.Text += db.VerConcelho();
+                ltresultados1.Text += "</table>";
+                
             }
         }
 
@@ -75,16 +76,17 @@ namespace AllgarveBeach
         {
             if (txtID.Text != "")
             {
+                ltresultados2.Text = "";
                 /*novaFreguesia.CarregarFreguesia(txtID.Text);
                 ltresultados.Text = novaFreguesia.Caracteriza();
                 MessageBox("Freguesia carregada com sucesso!");*/
-                ltresultados.Text += "<table align='center' border='1'><tr>" +
+                ltresultados2.Text += "<table align='center' border='1'><tr>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>IDconcelho</b></td>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>NomeFreguesia</b></td><tr>";
                 
-                ltresultados.Text = db.VerFreguesias();
-                ltresultados.Text += "</table>";
-                MessageBox("Freguesias carregadas com sucesso!");
+                ltresultados2.Text += db.VerFreguesias();
+                ltresultados2.Text += "</table>";
+                
             }
             else
             {
@@ -93,13 +95,14 @@ namespace AllgarveBeach
                 {
                     ltresultados.Text += "IDconcelho: " + f.IDconcelho + "\r\n" + "NomeFreguesia: " + f.NomeFreguesia + "\r\n";
                 }*/
-                ltresultados.Text += "<table align='center' border='1'><tr>" +
+                ltresultados2.Text = "";
+                ltresultados2.Text += "<table align='center' border='1'><tr>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>IDconcelho</b></td>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>NomeFreguesia</b></td><tr>";
                 
-                ltresultados.Text = db.VerFreguesias();
-                ltresultados.Text += "</table>";
-                MessageBox("Freguesias carregadas com sucesso!");
+                ltresultados2.Text += db.VerFreguesias();
+                ltresultados2.Text += "</table>";
+                
             }
         }
 
@@ -109,21 +112,44 @@ namespace AllgarveBeach
             /*novaPraia.CarregarPraia(txtID.Text);
             ltresultados.Text = novaPraia.Caracteriza();
             MessageBox("Praia carregada com sucesso!");*/
-            ltresultados.Text += "<table align='center' border='1'><tr>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>IDfreguesia</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>NomePraia</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>MoradaPraia</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>ExtensaoPraia</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>BandeiraAzul</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>TemperaturaAgua</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>AcessoSoBarco</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>VotoPosP</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>VotoNegP</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>LinkP</b></td></tr>";
-            
-            ltresultados.Text = db.VerPraia();
-            ltresultados.Text += "</table>";
-            MessageBox("Praias carregadas com sucesso!");
+            if (txtID.Text != "")
+            {
+                /*ltresultados3.Text = "";
+                ltresultados3.Text += "<table align='center' border='1'><tr>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>IDfreguesia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>NomePraia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>MoradaPraia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>ExtensaoPraia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>BandeiraAzul</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>TemperaturaAgua</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>AcessoSoBarco</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>VotoPosP</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>VotoNegP</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>LinkP</b></td></tr>";*/
+                db.VerPraiaTeste(Convert.ToInt32(txtID.Text));
+                ltresultados3.Text = Convert.ToString(db.TemperaturaAgua);
+                /*ltresultados3.Text += db.VerPraia(Convert.ToInt32(txtID.Text));*/
+                /*ltresultados3.Text += "</table>";*/
+            }
+            else
+            {
+                ltresultados3.Text = "";
+                ltresultados3.Text += "<table align='center' border='1'><tr>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>IDfreguesia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>NomePraia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>MoradaPraia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>ExtensaoPraia</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>BandeiraAzul</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>TemperaturaAgua</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>AcessoSoBarco</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>VotoPosP</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>VotoNegP</b></td>" +
+                            "<td bgcolor=rgb(255,255,255) align=center><b>LinkP</b></td></tr>";
+
+                ltresultados3.Text += db.VerPraia();
+                ltresultados3.Text += "</table>";
+            }
+           
 
         }
 
@@ -133,7 +159,8 @@ namespace AllgarveBeach
             /*novaHospedagem.CarregarHospedagem(txtID.Text);
             ltresultados.Text = novaHospedagem.Caracteriza();
             MessageBox("Hospedagem carregada com sucesso!");*/
-            ltresultados.Text += "<table align='center' border='1'><tr>" +
+            ltresultados4.Text = "";
+            ltresultados4.Text += "<table align='center' border='1'><tr>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>IDpraia</b></td>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>NomeHospe</b></td>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>MoradaHospe</b></td>" +
@@ -144,9 +171,9 @@ namespace AllgarveBeach
                         "<td bgcolor=rgb(255,255,255) align=center><b>VotoNegH</b></td>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>LinkH</b></td></tr>";
             
-            ltresultados.Text = db.VerHospedagem();
-            ltresultados.Text += "</table>";
-            MessageBox("Hospedagens carregadas com sucesso!");
+            ltresultados4.Text += db.VerHospedagem();
+            ltresultados4.Text += "</table>";
+            
 
         }
 
@@ -156,20 +183,19 @@ namespace AllgarveBeach
             /*novoRestaurante.CarregarRestaurante(txtID.Text);
             ltresultados.Text = novoRestaurante.Caracteriza();
             MessageBox("Restaurante carregado com sucesso!");*/
-            ltresultados.Text += "<table align='center' border='1'><tr>" +
+            ltresultados5.Text = "";
+            ltresultados5.Text += "<table align='center' border='1'><tr>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>IDpraia</b></td>" +
                         "<td bgcolor=rgb(255,255,255) align=center><b>NomeRest</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>MoradaHospe</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>DistanPraiaH</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>Classificacao</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>Camping</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>VotoPosH</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>VotoNegH</b></td>" +
-                        "<td bgcolor=rgb(255,255,255) align=center><b>LinkH</b></td></tr>";
+                        "<td bgcolor=rgb(255,255,255) align=center><b>MoradaRest</b></td>" +
+                        "<td bgcolor=rgb(255,255,255) align=center><b>DistanPraiaR</b></td>" +
+                        "<td bgcolor=rgb(255,255,255) align=center><b>VotoPosR</b></td>" +
+                        "<td bgcolor=rgb(255,255,255) align=center><b>VotoNegR</b></td>" +
+                        "<td bgcolor=rgb(255,255,255) align=center><b>LinkR</b></td></tr>";
             
-            ltresultados.Text = db.VerRestaurantes();
-            ltresultados.Text += "</table>";
-            MessageBox("Restaurantes carregados com sucesso!");
+            ltresultados5.Text += db.VerRestaurantes();
+            ltresultados5.Text += "</table>";
+            
 
         }
 

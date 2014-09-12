@@ -14,6 +14,19 @@ namespace MyApp
 {
     public class BdQuery
     {
+        private int mIDpraia;
+        private int mIDfreguesia;
+        private string mNomePraia;
+        private string mMoradaPraia;
+        private int mExtensaoPraia;
+        private int mBandeiraAzul;
+        private int mTemperaturaAgua;
+        private int mAcessoSoBarco;
+        private int mVotoPosP;
+        private int mVotoNegP;
+        private string mLinkP;
+
+
         //INSERIR
 
         public void InserirCliente(string PrimeiroNome, string UltimoNome, string UserName, string Password, string EMail)
@@ -393,8 +406,8 @@ namespace MyApp
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
-            var TodasPraias = from f in db.Praia
-                                  select f;
+            var TodasPraias = from p in db.Praia
+                              select p;
 
             var TodosEmList = TodasPraias.ToList();
 
@@ -405,17 +418,91 @@ namespace MyApp
             foreach (var p in TodasPraias)
             {
                 a += "<tr><td bgcolor=#ccffcc align=center>" + p.IDfreguesia + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
-                a += "<tr><td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";
             }
             return a;
+        }
+
+        public string VerPraia(int idpraia)
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasPraias = from p in db.Praia
+                              where p.IDpraia == idpraia
+                                  select p;
+
+            var TodosEmList = TodasPraias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+            foreach (var p in TodasPraias)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.IDfreguesia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";
+            }
+            return a;
+        }
+
+        public void VerPraiaTeste(int idpraia)
+        {
+            //string a = "";
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasPraias = from p in db.Praia
+                              where p.IDpraia == idpraia
+                              select p;
+
+            var TodosEmList = TodasPraias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+            foreach (var p in TodasPraias)
+            {
+                /*a += "<tr><td bgcolor=#ccffcc align=center>" + p.IDfreguesia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";*/
+                this.IDfreguesia = p.IDfreguesia;
+                this.NomePraia = p.NomePraia;
+                this.MoradaPraia = p.MoradaPraia;
+                this.ExtensaoPraia = p.ExtensaoPraia;
+                this.BandeiraAzul = p.BandeiraAzul;
+                this.TemperaturaAgua = p.TemperaturaAgua;
+                this.AcessoSoBarco = p.AcessoSoBarco;
+                this.VotoPosP = Convert.ToInt32(p.VotoPosP);
+                this.VotoNegP = Convert.ToInt32(p.VotoNegP);
+                this.LinkP = p.LinkP;
+            }
+           // return a;
         }
 
         public string VerHospedagem()
@@ -1405,6 +1492,72 @@ namespace MyApp
              return a;
          }*/
 
+        //::::::::::::::::::::::Propriedades::::::::::::::::::::::::::::
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        public int IDpraia
+        {
+            get { return mIDpraia; }
+            set { mIDpraia = value; }
+        }
 
+        public int IDfreguesia
+        {
+            get { return mIDfreguesia; }
+            set { mIDfreguesia = value; }
+        }
+
+
+        public string NomePraia
+        {
+            get { return mNomePraia; }
+            set { mNomePraia = value; }
+        }
+
+        public string MoradaPraia
+        {
+            get { return mMoradaPraia; }
+            set { mMoradaPraia = value; }
+        }
+        public int ExtensaoPraia
+        {
+            get { return mExtensaoPraia; }
+            set { mExtensaoPraia = value; }
+        }
+
+        public int BandeiraAzul
+        {
+            get { return mBandeiraAzul; }
+            set { mBandeiraAzul = value; }
+        }
+
+        public int TemperaturaAgua
+        {
+            get { return mTemperaturaAgua; }
+            set { mTemperaturaAgua = value; }
+        }
+
+        public int AcessoSoBarco
+        {
+            get { return mAcessoSoBarco; }
+            set { mAcessoSoBarco = value; }
+        }
+
+        public int VotoPosP
+        {
+            get { return mVotoPosP; }
+            set { mVotoPosP = value; }
+        }
+
+        public int VotoNegP
+        {
+            get { return mVotoNegP; }
+            set { mVotoNegP = value; }
+        }
+
+        public string LinkP
+        {
+            get { return mLinkP; }
+            set { mLinkP = value; }
+        }
     }
 }

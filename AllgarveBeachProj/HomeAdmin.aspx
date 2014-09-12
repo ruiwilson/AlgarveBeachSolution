@@ -567,7 +567,11 @@
     </div>
         <br />
         <br />
-            <asp:Literal ID="ltresultados" runat="server"></asp:Literal>
+        <asp:Literal ID="ltresultados1" runat="server"></asp:Literal>
+        <asp:Literal ID="ltresultados2" runat="server"></asp:Literal>
+        <asp:Literal ID="ltresultados3" runat="server"></asp:Literal>
+        <asp:Literal ID="ltresultados4" runat="server"></asp:Literal>
+        <asp:Literal ID="ltresultados5" runat="server"></asp:Literal>
             
     </form>
     

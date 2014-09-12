@@ -688,12 +688,48 @@ namespace AllgarveBeach {
         protected global::System.Web.UI.WebControls.TextBox txtLinkR;
         
         /// <summary>
-        /// ltresultados control.
+        /// ltresultados1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltresultados;
+        protected global::System.Web.UI.WebControls.Literal ltresultados1;
+        
+        /// <summary>
+        /// ltresultados2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltresultados2;
+        
+        /// <summary>
+        /// ltresultados3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltresultados3;
+        
+        /// <summary>
+        /// ltresultados4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltresultados4;
+        
+        /// <summary>
+        /// ltresultados5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltresultados5;
     }
 }

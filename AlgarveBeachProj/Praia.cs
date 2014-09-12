@@ -22,6 +22,9 @@ namespace AlgarveBeach
         private int mBandeiraAzul;
         private int mTemperaturaAgua;
         private int mAcessoSoBarco;
+        private int mVotoPosP;
+        private int mVotoNegP;
+        private int mLinkP;
 
 
         //Método Construtor vazio permite construir um objecto carro sem propriedades iniciais

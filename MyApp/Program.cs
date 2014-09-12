@@ -20,7 +20,7 @@ namespace MyApp
 
 
             //abrimos ligação
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             //indicamos a base de dados
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
             //criamos via codigo um novo cliente
@@ -74,7 +74,7 @@ namespace MyApp
         {
             string a = "";
 
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             //indicamos a base de dados
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 

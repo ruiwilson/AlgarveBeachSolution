@@ -44,7 +44,7 @@ namespace AlgarveBeach
         public void CarregarPraia(string IDpraia)
         {
             string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
-            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             string[] valores = aBD.LerTabela("Praias", campos, "IDpraia", IDpraia);
             this.IDfreguesia = Convert.ToInt32(valores[0]);
             this.NomePraia = valores[1];
@@ -58,7 +58,7 @@ namespace AlgarveBeach
         public void CarregarPraiaID(string nomepraia)
         {
             string[] campos = { "IDpraia" };
-            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             string[] valores = aBD.LerTabela("Praia", campos, "NomePraia", nomepraia);
             this.IDpraia = Convert.ToInt32(valores[0]);
         }
@@ -68,7 +68,7 @@ namespace AlgarveBeach
         {
             string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", ".") };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.ActualizaTabela("Praia", campos, valores, "IDpraia", IDpraia);
         }
 
@@ -77,7 +77,7 @@ namespace AlgarveBeach
         {
             string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             string[] valores = { this.IDfreguesia.ToString().Replace(",", "."), this.NomePraia, this.MoradaPraia, this.ExtensaoPraia.ToString().Replace(",", "."), this.BandeiraAzul.ToString().Replace(",", "."), this.TemperaturaAgua.ToString().Replace(",", "."), this.AcessoSoBarco.ToString().Replace(",", ".") };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.InserirRegisto("Praia", campos, valores);
         }
 
@@ -92,7 +92,7 @@ namespace AlgarveBeach
         //Método responsável por apagar Produtos
         public void ApagarPraia(string IDpraia)
         {
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.ApagarRegisto("Praia", "IDpraia", IDpraia);
         }
 

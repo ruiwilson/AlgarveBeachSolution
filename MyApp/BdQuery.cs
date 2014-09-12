@@ -18,7 +18,7 @@ namespace MyApp
 
         public void InserirCliente(string PrimeiroNome, string UltimoNome, string UserName, string Password, string EMail)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             Clientes NewClientes = new Clientes()
@@ -38,7 +38,7 @@ namespace MyApp
 
         public void InserirConcelho(string NomeConcelho)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             Concelho NewConcelho = new Concelho()
@@ -55,7 +55,7 @@ namespace MyApp
 
         public void InserirFreguesia(int IDconcelho, string NomeFreguesia)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             Freguesias NewFreguesia = new Freguesias()
@@ -73,7 +73,7 @@ namespace MyApp
 
         public void InserirPraia(int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, Int16 BandeiraAzul, Int16 TemperaturaAgua, Int16 AcessoSoBarco, string Link)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             Praia NewPraia = new Praia()
@@ -97,7 +97,7 @@ namespace MyApp
 
         public void InserirHospedagem(int IDpraia, string NomeHospe, string MoradaHospe, int DistanPraia, Int16 Classificacao, Int16 Camping, string Link)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             Hospedagem NewHospedagem = new Hospedagem()
@@ -120,7 +120,7 @@ namespace MyApp
 
         public void InserirRestaurante(int IDpraia, string NomeRest, string MoradaRest, int DistanPraia, string Link)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             Restaurantes NewRestaurante = new Restaurantes()
@@ -143,7 +143,7 @@ namespace MyApp
 
         public void ApagarCliente(int IDcliente)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetCliente = db.Clientes.SingleOrDefault(x => x.IDcliente == IDcliente);
@@ -154,7 +154,7 @@ namespace MyApp
 
         public void ApagarConcelho(int IDconcelho)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetConcelho = db.Concelho.SingleOrDefault(x => x.IDconcelho == IDconcelho);
@@ -165,7 +165,7 @@ namespace MyApp
 
         public void ApagarFreguesia(int IDfreguesia)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetFreguesia = db.Freguesias.SingleOrDefault(x => x.IDfreguesia == IDfreguesia);
@@ -176,7 +176,7 @@ namespace MyApp
 
         public void ApagarPraia(int IDpraia)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetPraia = db.Praia.SingleOrDefault(x => x.IDpraia == IDpraia);
@@ -187,7 +187,7 @@ namespace MyApp
 
         public void ApagarHospe(int IDhospe)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetHospe = db.Hospedagem.SingleOrDefault(x => x.IDhospe == IDhospe);
@@ -198,7 +198,7 @@ namespace MyApp
 
         public void ApagarRestaurante(int IDrest)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetRestaurante = db.Restaurantes.SingleOrDefault(x => x.IDrest == IDrest);
@@ -211,7 +211,7 @@ namespace MyApp
 
         public void EditarCliente(int IDcliente, string PrimeiroNome, string UltimoNome, string UserName, string Password, string EMail)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetCliente = db.Clientes.SingleOrDefault(x => x.IDcliente == IDcliente);
@@ -228,7 +228,7 @@ namespace MyApp
 
         public void EditarConcelho(int IDconcelho, string NomeConcelho)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetConcelho = db.Concelho.SingleOrDefault(x => x.IDconcelho == IDconcelho);
@@ -241,7 +241,7 @@ namespace MyApp
 
         public void EditarFreguesia(int IDfreguesia, int IDconcelho, string NomeFreguesia)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetFreguesia = db.Freguesias.SingleOrDefault(x => x.IDfreguesia == IDfreguesia);
@@ -255,7 +255,7 @@ namespace MyApp
 
         public void EditarPraia(int IDpraia, int IDfreguesia, string NomePraia, string MoradaPraia, int ExtensaoPraia, Int16 BandeiraAzul, Int16 TemperaturaAgua, Int16 AcessoSoBarco, int VotoPos, int VotoNeg, string Link)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetPraia = db.Praia.SingleOrDefault(x => x.IDpraia == IDpraia);
@@ -277,7 +277,7 @@ namespace MyApp
 
         public void EditarHospedagem(int IDhospe, int IDpraia, string NomeHospe, string MoradaHospe, int DistanPraia, Int16 Classificacao, Int16 Camping, int VotoPos, int VotoNeg, string Link)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetHospedagem = db.Hospedagem.SingleOrDefault(x => x.IDhospe == IDhospe);
@@ -297,7 +297,7 @@ namespace MyApp
 
         public void EditarRestaurante(int IDrest, int IDpraia, string NomeRest, string MoradaRest, int DistanPraia, int VotoPos, int VotoNeg, string Link)
         {
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TargetRestaurante = db.Restaurantes.SingleOrDefault(x => x.IDrest == IDrest);
@@ -314,10 +314,11 @@ namespace MyApp
             db.Connection.Close();
         }
 
+        //VISUALIZAR TODAS AS TABELAS
         public string VerClientes()
         {
             string a = "";
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
             var TodosOsClientes = from c in db.Clientes
@@ -334,6 +335,145 @@ namespace MyApp
             {
                 a += Cliente.PNome + "<br />";
 
+            }
+            return a;
+        }
+
+        public string VerConcelho()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodosConcelho = from c in db.Concelho
+                                  select c;
+
+            var TodosEmList = TodosConcelho.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var c in TodosConcelho)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + c.NomeConcelho + "</td>";
+
+            }
+            return a;
+        }
+
+        public string VerFreguesias()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasFreguesias = from f in db.Freguesias
+                                  select f;
+
+            var TodosEmList = TodasFreguesias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var f in TodasFreguesias)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + f.IDconcelho + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + f.NomeFreguesia + "</td>";
+            }
+            return a;
+        }
+
+        public string VerPraia()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasPraias = from f in db.Praia
+                                  select f;
+
+            var TodosEmList = TodasPraias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+            foreach (var p in TodasPraias)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.IDfreguesia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";
+            }
+            return a;
+        }
+
+        public string VerHospedagem()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasHospedagens = from h in db.Hospedagem
+                              select h;
+
+            var TodosEmList = TodasHospedagens.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var h in TodasHospedagens)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.IDpraia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.NomeHospe + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.MoradaHospe + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.DistanPraiaH + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.Classificacao + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.Camping + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.VotoPosH + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.VotoNegH + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.LinkH + "</td>";
+            }
+            return a;
+        }
+
+        public string VerRestaurantes()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodosRestaurantes = from r in db.Restaurantes
+                              select r;
+
+            var TodosEmList = TodosRestaurantes.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var r in TodosRestaurantes)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.IDpraia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.NomeRest + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.MoradaRest + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.DistanPraiaR + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.VotoPosR + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.VotoNegR + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.LinkR + "</td>";
             }
             return a;
         }
@@ -378,8 +518,6 @@ namespace MyApp
                     Resultados.TempAgua + "</td>";
                 a += "<td bgcolor=#ccffcc align=center>" +
                     Resultados.Bandeira + "</td>";
-<<<<<<< HEAD
-=======
             }
             return a;
         }
@@ -388,112 +526,6 @@ namespace MyApp
 
         //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
         public string VerPraiasComRestTempBand(int IDPRAIA, int ValorDistancia, int ValorTemperatura, int ValorBandeira)
-        {
-            string a = "";
-
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
-            //indicamos a base de dados
-            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
-
-            var query = (from p in db.Praia
-                         join r in db.Restaurantes on p.IDpraia equals r.IDpraia
-                         where p.IDpraia == IDPRAIA && r.DistanPraiaR < ValorDistancia && p.TemperaturaAgua < ValorTemperatura && p.BandeiraAzul == ValorBandeira
-                         select new
-                         {
-                             NomeRestaurante = r.NomeRest,
-                             NomePraia = p.NomePraia,
-                             DistanPraiaR = r.DistanPraiaR,
-                             LinkP = p.LinkP,
-                             LinkR = r.LinkR,
-                             Bandeira = p.BandeiraAzul,
-                             TempAgua = p.TemperaturaAgua
-                         });
-
-            var TudoEmList = query.ToList();
-
-            foreach (var Resultados in query)
-            {
-                a += "<tr><td bgcolor=#ccffcc align=center>" +
-                  Resultados.NomePraia + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                  Resultados.LinkP + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeRestaurante + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkR + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.TempAgua + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.Bandeira + "</td>";
-            }
-            return a;
-        }
-
-
-
-        //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES E HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
-        public string VerPraiasHospRestTempBand(int IDPRAIA, int ValorDistanciaH, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
-        {
-            string a = "";
-
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
-            //indicamos a base de dados
-            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
-
-            var query = (from Hospedagem in db.Hospedagem
-                         from Restaurantes in db.Restaurantes
-                         where
-                         Hospedagem.Praia.IDpraia == IDPRAIA &&
-                         Hospedagem.DistanPraiaH < ValorDistanciaH &&
-                         Restaurantes.DistanPraiaR < ValorDistanciaR &&
-                         Hospedagem.Praia.TemperaturaAgua < ValorTemperatura &&
-                         Hospedagem.Praia.BandeiraAzul == ValorBandeira
-                         select new
-                         {
-                             Hospedagem.Praia.NomePraia,
-                             Hospedagem.Praia.LinkP,
-                             Restaurantes.NomeRest,
-                             Restaurantes.LinkR,
-                             Hospedagem.NomeHospe,
-                             Hospedagem.LinkH,
-                             Hospedagem.Praia.TemperaturaAgua,
-                             Hospedagem.Praia.BandeiraAzul
-                         });
-
-            var TudoEmList = query.ToList();
-
-            foreach (var Resultados in query)
-            {
-                a += "<tr><td bgcolor=#ccffcc align=center>" +
-                  Resultados.NomePraia + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                  Resultados.LinkP + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeRest + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkR + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeHospe + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkH + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.TemperaturaAgua + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.BandeiraAzul + "</td>";
->>>>>>> origin/devRui
-            }
-            return a;
-        }
-
-
-<<<<<<< HEAD
-
-        //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
-        public string VerPraiasComRestTempBand(int IDPRAIA, int ValorDistancia, int ValorTemperatura, int ValorBandeira)
-=======
-        //PROCURAR PRAIAS SABENDO SE HÁ HOSPEDAGEM À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
-        public string VerTodasPraiasComHospTempBand(int ValorDistancia, int ValorTemperatura, int ValorBandeira)
->>>>>>> origin/devRui
         {
             string a = "";
 
@@ -591,6 +623,49 @@ namespace MyApp
         }
 
 
+        //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        /*public string VerPraiasComRestTempBand(int IDPRAIA, int ValorDistancia, int ValorTemperatura, int ValorBandeira)
+            {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from p in db.Praia
+                         join r in db.Restaurantes on p.IDpraia equals r.IDpraia
+                         where p.IDpraia == IDPRAIA && r.DistanPraiaR < ValorDistancia && p.TemperaturaAgua < ValorTemperatura && p.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             NomeRestaurante = r.NomeRest,
+                             NomePraia = p.NomePraia,
+                             DistanPraiaR = r.DistanPraiaR,
+                             LinkP = p.LinkP,
+                             LinkR = r.LinkR,
+                             Bandeira = p.BandeiraAzul,
+                             TempAgua = p.TemperaturaAgua
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeRestaurante + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkR + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TempAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.Bandeira + "</td>";
+            }
+            return a;
+        }*/
+         
         //PROCURAR PRAIAS SABENDO SE HÁ HOSPEDAGEM À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
         public string VerTodasPraiasComHospTempBand(int ValorDistancia, int ValorTemperatura, int ValorBandeira)
         {
@@ -634,6 +709,103 @@ namespace MyApp
             return a;
         }
 
+        //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES E HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        /*public string VerPraiasHospRestTempBand(int IDPRAIA, int ValorDistanciaH, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from Hospedagem in db.Hospedagem
+                         from Restaurantes in db.Restaurantes
+                         where
+                         Hospedagem.Praia.IDpraia == IDPRAIA &&
+                         Hospedagem.DistanPraiaH < ValorDistanciaH &&
+                         Restaurantes.DistanPraiaR < ValorDistanciaR &&
+                         Hospedagem.Praia.TemperaturaAgua < ValorTemperatura &&
+                         Hospedagem.Praia.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             Hospedagem.Praia.NomePraia,
+                             Hospedagem.Praia.LinkP,
+                             Restaurantes.NomeRest,
+                             Restaurantes.LinkR,
+                             Hospedagem.NomeHospe,
+                             Hospedagem.LinkH,
+                             Hospedagem.Praia.TemperaturaAgua,
+                             Hospedagem.Praia.BandeiraAzul
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeRest + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkR + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeHospe + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkH + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.BandeiraAzul + "</td>";
+            }
+            return a;
+        }*/
+
+
+        //PROCURAR PRAIAS SABENDO SE HÁ HOSPEDAGEM À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        /*public string VerTodasPraiasComHospTempBand(int ValorDistancia, int ValorTemperatura, int ValorBandeira)
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from p in db.Praia
+                         join h in db.Hospedagem on p.IDpraia equals h.IDpraia
+                         where h.DistanPraiaH < ValorDistancia && p.TemperaturaAgua < ValorTemperatura && p.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             NomeHospedagem = h.NomeHospe,
+                             NomePraia = p.NomePraia,
+                             DistanPraiaH = h.DistanPraiaH,
+                             LinkP = p.LinkP,
+                             LinkH = h.LinkH,
+                             Bandeira = p.BandeiraAzul,
+                             TempAgua = p.TemperaturaAgua
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeHospedagem + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkH + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TempAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.Bandeira + "</td>";
+            }
+            return a;
+        }*/
+
 
 
         //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
@@ -641,11 +813,9 @@ namespace MyApp
         {
             string a = "";
 
-<<<<<<< HEAD
+
             var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
-=======
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
->>>>>>> origin/devRui
+
             //indicamos a base de dados
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 
@@ -679,8 +849,6 @@ namespace MyApp
                     Resultados.TempAgua + "</td>";
                 a += "<td bgcolor=#ccffcc align=center>" +
                     Resultados.Bandeira + "</td>";
-<<<<<<< HEAD
-=======
             }
             return a;
         }
@@ -689,166 +857,6 @@ namespace MyApp
 
         //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES E HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
         public string VerTodasPraiasHospRestTempBand(int ValorDistanciaH, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
-        {
-            string a = "";
-
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
-            //indicamos a base de dados
-            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
-
-            var query = (from Hospedagem in db.Hospedagem
-                         from Restaurantes in db.Restaurantes
-                         where
-                         Hospedagem.DistanPraiaH < ValorDistanciaH &&
-                         Restaurantes.DistanPraiaR < ValorDistanciaR &&
-                         Hospedagem.Praia.TemperaturaAgua < ValorTemperatura &&
-                         Hospedagem.Praia.BandeiraAzul == ValorBandeira
-                         select new
-                         {
-                             Hospedagem.Praia.NomePraia,
-                             Hospedagem.Praia.LinkP,
-                             Restaurantes.NomeRest,
-                             Restaurantes.LinkR,
-                             Hospedagem.NomeHospe,
-                             Hospedagem.LinkH,
-                             Hospedagem.Praia.TemperaturaAgua,
-                             Hospedagem.Praia.BandeiraAzul
-                         });
-
-            var TudoEmList = query.ToList();
-
-            foreach (var Resultados in query)
-            {
-                a += "<tr><td bgcolor=#ccffcc align=center>" +
-                  Resultados.NomePraia + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                  Resultados.LinkP + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeRest + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkR + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeHospe + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkH + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.TemperaturaAgua + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.BandeiraAzul + "</td>";
-            }
-            return a;
-        }
-
-
-        //PROCURAR PRAIAS DE DETERMINADA FREGUESIA SABENDO SE HÁ RESTAURANTES E HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
-        public string VerTodasPraiasDeFreguesiaRestHostTempBand(int IDfreguesia, int ValorDistanciaR, int ValorDistanciaH, int ValorTemperatura, int ValorBandeira)
-        {
-            string a = "";
-
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
-            //indicamos a base de dados
-            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
-
-            var query = (from Hospedagem in db.Hospedagem
-                         from Restaurantes in db.Restaurantes
-                         where
-                           Hospedagem.Praia.IDfreguesia == IDfreguesia &&
-                           Hospedagem.DistanPraiaH < ValorDistanciaH &&
-                           Restaurantes.DistanPraiaR < ValorDistanciaR &&
-                           Hospedagem.Praia.TemperaturaAgua < 22 &&
-                           Hospedagem.Praia.BandeiraAzul == 1
-                         select new
-                         {
-                             Hospedagem.Praia.IDfreguesia,
-                             Hospedagem.Praia.NomePraia,
-                             Hospedagem.Praia.LinkP,
-                             Restaurantes.NomeRest,
-                             Restaurantes.LinkR,
-                             Hospedagem.NomeHospe,
-                             Hospedagem.LinkH,
-                             Hospedagem.Praia.TemperaturaAgua,
-                             Hospedagem.Praia.BandeiraAzul
-                         });
-
-            var TudoEmList = query.ToList();
-
-            foreach (var Resultados in query)
-            {
-                a += "<tr><td bgcolor=#ccffcc align=center>" +
-                  Resultados.NomePraia + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                  Resultados.LinkP + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeRest + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkR + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeHospe + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkH + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.TemperaturaAgua + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.BandeiraAzul + "</td>";
-            }
-            return a;
-        }
-
-
-        //PROCURAR PRAIAS DE DETERMINADA FREGUESIA SABENDO SE HÁ RESTAURANTES À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
-        public string VerTodasPraiasDeFreguesiaRestTempBand(int IDfreguesia, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
-        {
-            string a = "";
-
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
-            //indicamos a base de dados
-            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
-
-            var query = (from p in db.Praia
-                         join r in db.Restaurantes on p.IDpraia equals r.IDpraia
-                         where p.IDfreguesia == IDfreguesia && r.DistanPraiaR < ValorDistanciaR && p.TemperaturaAgua < ValorTemperatura && p.BandeiraAzul == ValorBandeira
-                         select new
-                         {
-                             IDfreguesia = p.IDfreguesia,
-                             NomeRestaurante = r.NomeRest,
-                             NomePraia = p.NomePraia,
-                             DistanPraiaH = r.DistanPraiaR,
-                             LinkP = p.LinkP,
-                             LinkR = r.LinkR,
-                             Bandeira = p.BandeiraAzul,
-                             TempAgua = p.TemperaturaAgua
-                         });
-
-            var TudoEmList = query.ToList();
-
-            foreach (var Resultados in query)
-            {
-                a += "<tr><td bgcolor=#ccffcc align=center>" +
-                  Resultados.NomePraia + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                  Resultados.LinkP + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.NomeRestaurante + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.LinkR + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.TempAgua + "</td>";
-                a += "<td bgcolor=#ccffcc align=center>" +
-                    Resultados.Bandeira + "</td>";
->>>>>>> origin/devRui
-            }
-            return a;
-        }
-
-<<<<<<< HEAD
-
-
-        //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES E HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
-        public string VerTodasPraiasHospRestTempBand(int ValorDistanciaH, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
-=======
-        //PROCURAR PRAIAS DE DETERMINADA FREGUESIA SABENDO SE HÁ HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
-        public string VerTodasPraiasDeFreguesiaHospTempBand(int IDfreguesia, int ValorDistanciaH, int ValorTemperatura, int ValorBandeira)
->>>>>>> origin/devRui
         {
             string a = "";
 
@@ -998,6 +1006,59 @@ namespace MyApp
             }
             return a;
         }
+
+
+        //PROCURAR PRAIAS SABENDO SE HÁ RESTAURANTES E HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        /*public string VerTodasPraiasHospRestTempBand(int ValorDistanciaH, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
+            {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from Hospedagem in db.Hospedagem
+                         from Restaurantes in db.Restaurantes
+                         where
+                         Hospedagem.DistanPraiaH < ValorDistanciaH &&
+                         Restaurantes.DistanPraiaR < ValorDistanciaR &&
+                         Hospedagem.Praia.TemperaturaAgua < ValorTemperatura &&
+                         Hospedagem.Praia.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             Hospedagem.Praia.NomePraia,
+                             Hospedagem.Praia.LinkP,
+                             Restaurantes.NomeRest,
+                             Restaurantes.LinkR,
+                             Hospedagem.NomeHospe,
+                             Hospedagem.LinkH,
+                             Hospedagem.Praia.TemperaturaAgua,
+                             Hospedagem.Praia.BandeiraAzul
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeRest + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkR + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeHospe + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkH + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.BandeiraAzul + "</td>";
+            }
+            return a;
+        }*/
 
         //PROCURAR PRAIAS DE DETERMINADA FREGUESIA SABENDO SE HÁ HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
         public string VerTodasPraiasDeFreguesiaHospTempBand(int IDfreguesia, int ValorDistanciaH, int ValorTemperatura, int ValorBandeira)
@@ -1039,77 +1100,154 @@ namespace MyApp
                     Resultados.TempAgua + "</td>";
                 a += "<td bgcolor=#ccffcc align=center>" +
                     Resultados.Bandeira + "</td>";
-<<<<<<< HEAD
-=======
             }
             return a;
         }
 
-        /*      public string VerPraiasComHotelDistancia(int distancia)
-              {
-                  string a = "";
 
-                  var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
-                  //indicamos a base de dados
-                  var db = new DbBeach.BaseDeDadosDataContext(ConnString);
-
-                  var query = (from p in db.Praia
-                               join h in db.Hospedagem on p.IDpraia equals h.IDpraia
-                               select new
-                               {
-                                   NomeHospedagem = h.NomeHospe,
-                                   NomePraia = p.NomePraia,
-                                   DistanPraia = h.DistanPraiaH
-                               }).Where(x => x.DistanPraia < distancia);
-
-                  var TudoEmList = query.ToList();
-
-                  foreach (var Resultados in query)
-                  {
-                      a += "<tr><td bgcolor=#ccffcc align=center>" +
-                        Resultados.NomePraia + "</td>";
-                      a += "<td bgcolor=#ccffcc align=center>" +
-                          Resultados.NomeHospedagem + "</td>";
-                      a += "<td bgcolor=#ccffcc align=center>" +
-                          Resultados.DistanPraiaH + "</td>";
-                  }
-                  return a;
-              }*/
-
-
-        public string ProcurarTodosClientes()
+        //PROCURAR PRAIAS DE DETERMINADA FREGUESIA SABENDO SE HÁ RESTAURANTES E HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        /*public string VerTodasPraiasDeFreguesiaRestHostTempBand(int IDfreguesia, int ValorDistanciaR, int ValorDistanciaH, int ValorTemperatura, int ValorBandeira)
         {
             string a = "";
-            //abrimos ligação
-            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
             //indicamos a base de dados
             var db = new DbBeach.BaseDeDadosDataContext(ConnString);
-            var TodosOsClientes = from c in db.Clientes
-                                  select c;
-            //enviamos os resultados para uma lista para poder usar um foreach
-            var TodosEmList = TodosOsClientes.ToList();
-            //assim apareceria na consola os primeiros nomes de todos os clientes
 
-            foreach (var Cliente in TodosEmList)
+            var query = (from Hospedagem in db.Hospedagem
+                         from Restaurantes in db.Restaurantes
+                         where
+                           Hospedagem.Praia.IDfreguesia == IDfreguesia &&
+                           Hospedagem.DistanPraiaH < ValorDistanciaH &&
+                           Restaurantes.DistanPraiaR < ValorDistanciaR &&
+                           Hospedagem.Praia.TemperaturaAgua < 22 &&
+                           Hospedagem.Praia.BandeiraAzul == 1
+                         select new
+                         {
+                             Hospedagem.Praia.IDfreguesia,
+                             Hospedagem.Praia.NomePraia,
+                             Hospedagem.Praia.LinkP,
+                             Restaurantes.NomeRest,
+                             Restaurantes.LinkR,
+                             Hospedagem.NomeHospe,
+                             Hospedagem.LinkH,
+                             Hospedagem.Praia.TemperaturaAgua,
+                             Hospedagem.Praia.BandeiraAzul
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
             {
                 a += "<tr><td bgcolor=#ccffcc align=center>" +
-                  Convert.ToString(Cliente.IDcliente) +
-                  "</td><td bgcolor=#ccffcc align=center>" +
-                          Cliente.PNome + "</td>";
+                  Resultados.NomePraia + "</td>";
                 a += "<td bgcolor=#ccffcc align=center>" +
-                    Cliente.UNome + "</td>";
+                  Resultados.LinkP + "</td>";
                 a += "<td bgcolor=#ccffcc align=center>" +
-                    Cliente.Username + "</td>";
+                    Resultados.NomeRest + "</td>";
                 a += "<td bgcolor=#ccffcc align=center>" +
-                    Cliente.Password + "</td>";
+                    Resultados.LinkR + "</td>";
                 a += "<td bgcolor=#ccffcc align=center>" +
-                    Cliente.EMail + "</td>";
->>>>>>> origin/devRui
+                    Resultados.NomeHospe + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkH + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.BandeiraAzul + "</td>";
             }
             return a;
-        }
+        }*/
 
-<<<<<<< HEAD
+
+        //PROCURAR PRAIAS DE DETERMINADA FREGUESIA SABENDO SE HÁ RESTAURANTES À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        /*public string VerTodasPraiasDeFreguesiaRestTempBand(int IDfreguesia, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from p in db.Praia
+                         join r in db.Restaurantes on p.IDpraia equals r.IDpraia
+                         where p.IDfreguesia == IDfreguesia && r.DistanPraiaR < ValorDistanciaR && p.TemperaturaAgua < ValorTemperatura && p.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             IDfreguesia = p.IDfreguesia,
+                             NomeRestaurante = r.NomeRest,
+                             NomePraia = p.NomePraia,
+                             DistanPraiaH = r.DistanPraiaR,
+                             LinkP = p.LinkP,
+                             LinkR = r.LinkR,
+                             Bandeira = p.BandeiraAzul,
+                             TempAgua = p.TemperaturaAgua
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeRestaurante + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkR + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TempAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.Bandeira + "</td>";
+            }
+            return a;
+        }*/
+
+        //PROCURAR PRAIAS DE DETERMINADA FREGUESIA SABENDO SE HÁ HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        /*public string VerTodasPraiasDeFreguesiaHospTempBand(int IDfreguesia, int ValorDistanciaH, int ValorTemperatura, int ValorBandeira)
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from p in db.Praia
+                         join h in db.Hospedagem on p.IDpraia equals h.IDpraia
+                         where p.IDfreguesia == IDfreguesia && h.DistanPraiaH < ValorDistanciaH && p.TemperaturaAgua < ValorTemperatura && p.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             IDfreguesia = p.IDfreguesia,
+                             NomeHospedagem = h.NomeHospe,
+                             NomePraia = p.NomePraia,
+                             DistanPraiaH = h.DistanPraiaH,
+                             LinkP = p.LinkP,
+                             LinkH = h.LinkH,
+                             Bandeira = p.BandeiraAzul,
+                             TempAgua = p.TemperaturaAgua
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeHospedagem + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkH + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TempAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.Bandeira + "</td>";
+            }
+            return a;
+        }*/
+
         /*      public string VerPraiasComHotelDistancia(int distancia)
               {
                   string a = "";
@@ -1173,17 +1311,77 @@ namespace MyApp
             return a;
         }
 
-=======
->>>>>>> origin/devRui
+        /*      public string VerPraiasComHotelDistancia(int distancia)
+              {
+                  string a = "";
+
+                  var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+                  //indicamos a base de dados
+                  var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+                  var query = (from p in db.Praia
+                               join h in db.Hospedagem on p.IDpraia equals h.IDpraia
+                               select new
+                               {
+                                   NomeHospedagem = h.NomeHospe,
+                                   NomePraia = p.NomePraia,
+                                   DistanPraia = h.DistanPraiaH
+                               }).Where(x => x.DistanPraia < distancia);
+
+                  var TudoEmList = query.ToList();
+
+                  foreach (var Resultados in query)
+                  {
+                      a += "<tr><td bgcolor=#ccffcc align=center>" +
+                        Resultados.NomePraia + "</td>";
+                      a += "<td bgcolor=#ccffcc align=center>" +
+                          Resultados.NomeHospedagem + "</td>";
+                      a += "<td bgcolor=#ccffcc align=center>" +
+                          Resultados.DistanPraiaH + "</td>";
+                  }
+                  return a;
+              }*/
+
+
+        /*public string ProcurarTodosClientes()
+        {
+            string a = "";
+            //abrimos ligação
+            var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+            var TodosOsClientes = from c in db.Clientes
+                                  select c;
+            //enviamos os resultados para uma lista para poder usar um foreach
+            var TodosEmList = TodosOsClientes.ToList();
+            //assim apareceria na consola os primeiros nomes de todos os clientes
+
+            foreach (var Cliente in TodosEmList)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Convert.ToString(Cliente.IDcliente) +
+                  "</td><td bgcolor=#ccffcc align=center>" +
+                          Cliente.PNome + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Cliente.UNome + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Cliente.Username + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Cliente.Password + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Cliente.EMail + "</td>";
+            }
+            return a;
+        }*/
+
+
         /* public string VerPraiasComHotel()
          {
              string a = "";
 
-<<<<<<< HEAD
+
              var ConnString = new SqlConnection(@"Server=VAIO-TSANTOS\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=34419;");
-=======
-             var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
->>>>>>> origin/devRui
+
              //indicamos a base de dados
              var db = new DbBeach.BaseDeDadosDataContext(ConnString);
 

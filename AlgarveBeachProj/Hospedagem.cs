@@ -41,7 +41,7 @@ namespace AlgarveBeach
         public void CarregarHospedagem(string IDhospe)
         {
             string[] campos = { "IDpraia", "NomeHospe", "MoradaHospe", "DistanPraia", "Classificacao", "Camping" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             string[] valores = aBD.LerTabela("Hospedagem", campos, "IDhospe", IDhospe);
             this.IDpraia = Convert.ToInt32(valores[0]);
             this.NomeHospe = valores[1];
@@ -56,7 +56,7 @@ namespace AlgarveBeach
         {
             string[] campos = { "IDpraia", "NomeHospe", "MoradaHospe", "DistanPraia", "Classificacao", "Camping" };
             string[] valores = { this.IDpraia.ToString().Replace(",", "."), this.NomeHospe, this.MoradaHospe, this.DistanPraia.ToString().Replace(",", "."), this.Classificacao.ToString().Replace(",", "."), this.Camping.ToString().Replace(",", ".") };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.ActualizaTabela("Hospedagem", campos, valores, "IDhospe", IDhospe);
         }
 
@@ -65,7 +65,7 @@ namespace AlgarveBeach
         {
             string[] campos = { "IDpraia", "NomeHospe", "MoradaHospe", "DistanPraia", "Classificacao", "Camping" };
             string[] valores = { this.IDpraia.ToString().Replace(",", "."), this.NomeHospe, this.MoradaHospe, this.DistanPraia.ToString().Replace(",", "."), this.Classificacao.ToString().Replace(",", "."), this.Camping.ToString().Replace(",", ".") };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.InserirRegisto("Hospedagem", campos, valores);
         }
 
@@ -80,7 +80,7 @@ namespace AlgarveBeach
         //Método responsável por apagar Produtos
         public void ApagarHospedagem(string IDhospe)
         {
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.ApagarRegisto("Hospedagem", "IDhospe", IDhospe);
         }
 

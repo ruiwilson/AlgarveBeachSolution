@@ -37,7 +37,7 @@ namespace AlgarveBeach
         public void CarregarFreguesia(string IDfreguesia)
         {
             string[] campos = { "IDconcelho", "NomeFreguesia" };
-            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             string[] valores = aBD.LerTabela("Freguesias", campos, "IDfreguesia", IDfreguesia);
             this.IDconcelho = Convert.ToInt32(valores[0]);
             this.NomeFreguesia = valores[1];
@@ -46,7 +46,7 @@ namespace AlgarveBeach
         public void CarregarFreguesiaID(string nomefreguesia)
         {
             string[] campos = { "IDfreguesia" };
-            AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             string[] valores = aBD.LerTabela("Freguesias", campos, "NomeFreguesia", nomefreguesia);
             this.IDfreguesia = Convert.ToInt32(valores[0]);
         }
@@ -55,7 +55,7 @@ namespace AlgarveBeach
         /*public void CarregarFreguesiaIDcon(string IDconcelho)
         {
             string[] campos = { "NomeFreguesia" };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             string[] valores = aBD.LerTabelaCompletaCon(IDconcelho);
             this.NomeFreguesia = valores[0];
         }*/
@@ -66,7 +66,7 @@ namespace AlgarveBeach
         {
             string[] campos = { "IDconcelho", "NomeFreguesia" };
             string[] valores = { this.IDconcelho.ToString().Replace(",", "."), this.NomeFreguesia };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.ActualizaTabela("Freguesias", campos, valores, "IDfreguesia", IDfreguesia);
         }
 
@@ -75,7 +75,7 @@ namespace AlgarveBeach
         {
             string[] campos = { "IDconcelho", "NomeFreguesia" };
             string[] valores = { this.IDconcelho.ToString().Replace(",", "."), this.NomeFreguesia };
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.InserirRegisto("Freguesias", campos, valores);
         }
 
@@ -87,7 +87,7 @@ namespace AlgarveBeach
         //Método responsável por apagar Produtos
         public void ApagarFreguesia(string IDfreguesia)
         {
-            AcessoBD aBD = new AcessoBD("VAIO-TSANTOS" + "\\" + "SQLEXPRESS", "AlgarveBeach", "sa", "34419");
+            AcessoBD aBD = new AcessoBD(@"VAIO-TSANTOS\SQLEXPRESS", "AlgarveBeach", "sa", "34419;");
             aBD.ApagarRegisto("Freguesias", "IDfreguesia", IDfreguesia);
         }
 

@@ -436,103 +436,31 @@ namespace AllgarveBeach {
         protected global::System.Web.UI.WebControls.TextBox txtNomeConcelho;
         
         /// <summary>
-        /// txtPraiaMaProxR control.
+        /// txtIDconcelho control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPraiaMaProxR;
+        protected global::System.Web.UI.WebControls.TextBox txtIDconcelho;
         
         /// <summary>
-        /// txtNomeRest control.
+        /// txtNomeFreguesia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeRest;
+        protected global::System.Web.UI.WebControls.TextBox txtNomeFreguesia;
         
         /// <summary>
-        /// txtMoradaRest control.
+        /// txtIDfreguesia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMoradaRest;
-        
-        /// <summary>
-        /// txtDistPraiaRest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDistPraiaRest;
-        
-        /// <summary>
-        /// txtPraiaMaProxH control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPraiaMaProxH;
-        
-        /// <summary>
-        /// txtNomeHosp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeHosp;
-        
-        /// <summary>
-        /// txtMoradaHosp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMoradaHosp;
-        
-        /// <summary>
-        /// txtDistPraia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDistPraia;
-        
-        /// <summary>
-        /// txtClassifHosp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtClassifHosp;
-        
-        /// <summary>
-        /// txtCampingHosp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCampingHosp;
-        
-        /// <summary>
-        /// txtFregPraia control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFregPraia;
+        protected global::System.Web.UI.WebControls.TextBox txtIDfreguesia;
         
         /// <summary>
         /// txtNomePraia control.
@@ -553,76 +481,211 @@ namespace AllgarveBeach {
         protected global::System.Web.UI.WebControls.TextBox txtMoradaPraia;
         
         /// <summary>
-        /// txtExtenPraia control.
+        /// txtExtensaoPraia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtExtenPraia;
+        protected global::System.Web.UI.WebControls.TextBox txtExtensaoPraia;
         
         /// <summary>
-        /// txtBandAzul control.
+        /// txtBandeiraAzul control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBandAzul;
+        protected global::System.Web.UI.WebControls.TextBox txtBandeiraAzul;
         
         /// <summary>
-        /// txtTempAgua control.
+        /// txtTemperaturaAgua control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTempAgua;
+        protected global::System.Web.UI.WebControls.TextBox txtTemperaturaAgua;
         
         /// <summary>
-        /// txtSoBarco control.
+        /// txtAcessoSoBarco control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSoBarco;
+        protected global::System.Web.UI.WebControls.TextBox txtAcessoSoBarco;
         
         /// <summary>
-        /// txtPHospedagem control.
+        /// txtVotoPosP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPHospedagem;
+        protected global::System.Web.UI.WebControls.TextBox txtVotoPosP;
         
         /// <summary>
-        /// txtPRestaurante control.
+        /// txtVotoNegP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPRestaurante;
+        protected global::System.Web.UI.WebControls.TextBox txtVotoNegP;
         
         /// <summary>
-        /// txtNomeFreg control.
+        /// txtLinkP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNomeFreg;
+        protected global::System.Web.UI.WebControls.TextBox txtLinkP;
         
         /// <summary>
-        /// txtconcelhFreg control.
+        /// txtIDpraiaH control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtconcelhFreg;
+        protected global::System.Web.UI.WebControls.TextBox txtIDpraiaH;
+        
+        /// <summary>
+        /// txtNomeHospe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeHospe;
+        
+        /// <summary>
+        /// txtMoradaHospe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMoradaHospe;
+        
+        /// <summary>
+        /// txtDistanPraiaH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDistanPraiaH;
+        
+        /// <summary>
+        /// txtClassificacaoH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtClassificacaoH;
+        
+        /// <summary>
+        /// txtCamping control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCamping;
+        
+        /// <summary>
+        /// txtVotoPosH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVotoPosH;
+        
+        /// <summary>
+        /// txtVotoNegH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVotoNegH;
+        
+        /// <summary>
+        /// txtLinkH control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLinkH;
+        
+        /// <summary>
+        /// txtIDpraiaR control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIDpraiaR;
+        
+        /// <summary>
+        /// txtNomeRest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeRest;
+        
+        /// <summary>
+        /// txtMoradaRest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMoradaRest;
+        
+        /// <summary>
+        /// txtDistanPraiaR control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDistanPraiaR;
+        
+        /// <summary>
+        /// txtVotoPosR control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVotoPosR;
+        
+        /// <summary>
+        /// txtVotoNegR control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVotoNegR;
+        
+        /// <summary>
+        /// txtLinkR control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLinkR;
         
         /// <summary>
         /// ltresultados control.

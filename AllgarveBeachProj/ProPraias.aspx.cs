@@ -15,7 +15,6 @@ namespace AllgarveBeach
         AlgarveBeach.Freguesia fre;
         AlgarveBeach.Praia pra;
         AlgarveBeach.GestaoPraias GP1, GP2, GP3, GP4;
-        AlgarveBeach.Praia Bitch;
 
         AlgarveBeach.Concelho[] concelho;
         AlgarveBeach.Freguesia[] freguesia;
@@ -171,17 +170,18 @@ namespace AllgarveBeach
 
                 foreach (AlgarveBeach.Praia p in praiateste)
                 {
-                    Literal1.Text = Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco + "<br>Hospedagem: ");
+                    Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco);
                 }
             }
             else
             {
-
                 praiateste = GP4.CarregarPraia();
 
-
+                foreach (AlgarveBeach.Praia p in praiateste)
+                {
+                    Literal1.Text += Convert.ToString("Nome: " + p.NomePraia + "<br>Morada: " + p.MoradaPraia + "<br>Tamanho: " + p.ExtensaoPraia + "<br>Bandeira: " + p.BandeiraAzul + "<br>Temperatura: " + p.TemperaturaAgua + "<br>Acesso por Barco: " + p.AcessoSoBarco);
+                }
             }
-
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -214,11 +214,10 @@ namespace AllgarveBeach
 
 
             //UMA DETERMINADA PRAIA COM UMA DETERMINADA FREGUESIA E UM DETERMINADO CONCELHO
-<<<<<<< HEAD
+
             if (DPraia.SelectedIndex > 0)
-=======
+
             if (DPraia.SelectedIndex > 0 && DFreguesia.SelectedIndex > 0 && DConcelho.SelectedIndex > 0)
->>>>>>> origin/devRui
             {
                 //SE DETERMINADA PRAIA TEM HOSPEDAGEM MAS NAO TEM RESTAURANTE
                 if (DHospedagem.SelectedIndex > 0 && DRestaurante.SelectedIndex == 0)
@@ -263,9 +262,6 @@ namespace AllgarveBeach
                 }
             }
             //FIM DE UMA DETERMINADA PRAIA COM UMA DETERMINADA FREGUESIA E UM DETERMINADO CONCELHO
-
-<<<<<<< HEAD
-=======
 
             if (DPraia.SelectedIndex == 0 && DFreguesia.SelectedIndex == 0 && DConcelho.SelectedIndex == 0)
             {
@@ -363,12 +359,6 @@ namespace AllgarveBeach
                 }
                 //FIM DE SE QUALQUER PRAIA DE QUALQUER CONCELHO E DE DETERMINADA FREGUESIA TEM HOSPEDAGEM E RESTAURANTE
             }
-
-
-
-
->>>>>>> origin/devRui
-
 
 
             //INICIO DE QUALQUER PRAIA DE QUALQUER CONCELHO E DE QUALQUER FREGUESIA

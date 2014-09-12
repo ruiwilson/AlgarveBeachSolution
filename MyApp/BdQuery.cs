@@ -769,6 +769,144 @@ namespace MyApp
             return a;
         }
 
+
+        //PROCURAR PRAIAS DE DETERMINADO CONCELHO SABENDO SE HÁ HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+
+        public string VerTodasPraiasDeConcelhoRestHostTempBand(int IDconcelho, int ValorDistanciaR, int ValorDistanciaH, int ValorTemperatura, int ValorBandeira)
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from Hospedagem in db.Hospedagem
+                         from Restaurantes in db.Restaurantes
+                         where Restaurantes.Praia.Freguesias.Concelho.IDconcelho == IDconcelho && Hospedagem.DistanPraiaH < ValorDistanciaH && Restaurantes.DistanPraiaR < ValorDistanciaR && Restaurantes.Praia.TemperaturaAgua < ValorTemperatura && Restaurantes.Praia.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             Hospedagem.Praia.IDfreguesia,
+                             Hospedagem.Praia.NomePraia,
+                             Hospedagem.Praia.LinkP,
+                             Restaurantes.NomeRest,
+                             Restaurantes.LinkR,
+                             Hospedagem.NomeHospe,
+                             Hospedagem.LinkH,
+                             Hospedagem.Praia.TemperaturaAgua,
+                             Hospedagem.Praia.BandeiraAzul
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeRest + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkR + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeHospe + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkH + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.BandeiraAzul + "</td>";
+            }
+            return a;
+        }
+
+
+        //PROCURAR PRAIAS DE DETERMINADO CONCELHO SABENDO SE HÁ RESTAURANTES À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        public string VerTodasPraiasDeConcelhoRestTempBand(int IDconcelho, int ValorDistanciaR, int ValorTemperatura, int ValorBandeira)
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from Restaurantes in db.Restaurantes
+                         where
+                           Restaurantes.Praia.Freguesias.Concelho.IDconcelho == IDconcelho && Restaurantes.DistanPraiaR < ValorDistanciaR && Restaurantes.Praia.TemperaturaAgua < ValorTemperatura && Restaurantes.Praia.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             Restaurantes.Praia.NomePraia,
+                             Restaurantes.Praia.LinkP,
+                             Restaurantes.NomeRest,
+                             Restaurantes.LinkR,
+                             Restaurantes.Praia.TemperaturaAgua,
+                             Restaurantes.Praia.BandeiraAzul
+
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeRest + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkR + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.BandeiraAzul + "</td>";
+            }
+            return a;
+        }
+
+        //PROCURAR PRAIAS DE DETERMINADO CONCELHO SABENDO SE HÁ HOSPEDAGENS À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
+        public string VerTodasPraiasDeConcelhoHospTempBand(int IDconcelho, int ValorDistanciaH, int ValorTemperatura, int ValorBandeira)
+        {
+            string a = "";
+
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            //indicamos a base de dados
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var query = (from Hospedagem in db.Hospedagem
+                         where
+                           Hospedagem.Praia.Freguesias.Concelho.IDconcelho == IDconcelho && Hospedagem.DistanPraiaH < ValorDistanciaH && Hospedagem.Praia.TemperaturaAgua < ValorTemperatura && Hospedagem.Praia.BandeiraAzul == ValorBandeira
+                         select new
+                         {
+                             Hospedagem.Praia.NomePraia,
+                             Hospedagem.Praia.LinkP,
+                             Hospedagem.NomeHospe,
+                             Hospedagem.LinkH,
+                             Hospedagem.Praia.TemperaturaAgua,
+                             Hospedagem.Praia.BandeiraAzul
+
+                         });
+
+            var TudoEmList = query.ToList();
+
+            foreach (var Resultados in query)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" +
+                  Resultados.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                  Resultados.LinkP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.NomeHospe + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.LinkH + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" +
+                    Resultados.BandeiraAzul + "</td>";
+            }
+            return a;
+        }
+
         /*      public string VerPraiasComHotelDistancia(int distancia)
               {
                   string a = "";

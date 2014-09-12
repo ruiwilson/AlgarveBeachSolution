@@ -935,7 +935,7 @@ namespace MyApp
                       a += "<td bgcolor=#ccffcc align=center>" +
                           Resultados.DistanPraiaH + "</td>";
                   }
-                  return a;
+                  return a
               }*/
 
 

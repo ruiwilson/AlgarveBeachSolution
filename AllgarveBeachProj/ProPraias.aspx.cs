@@ -15,7 +15,6 @@ namespace AllgarveBeach
         AlgarveBeach.Freguesia fre;
         AlgarveBeach.Praia pra;
         AlgarveBeach.GestaoPraias GP1, GP2, GP3, GP4;
-        AlgarveBeach.Praia Bitch;
 
         AlgarveBeach.Concelho[] concelho;
         AlgarveBeach.Freguesia[] freguesia;

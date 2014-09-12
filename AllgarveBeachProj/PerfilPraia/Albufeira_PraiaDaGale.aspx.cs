@@ -13,11 +13,14 @@ namespace AllgarveBeach.PerfilPraia
     public partial class Albufeira_PraiaDaGale : System.Web.UI.Page
     {
         Ficheiros novoficheiro = new Ficheiros();
+        Praia pra = new Praia();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            pra.CarregarPraia(Convert.ToString(3));
+            lblDim.Text = Convert.ToString(pra.ExtensaoPraia);
         }
+
         protected void EnviarTesos_Click(object sender, EventArgs e)
         {
             btnvertesos.Visible = true;

@@ -45,14 +45,14 @@ namespace AlgarveBeach
         {
             string[] campos = { "IDfreguesia", "NomePraia", "MoradaPraia", "ExtensaoPraia", "BandeiraAzul", "TemperaturaAgua", "AcessoSoBarco" };
             AcessoBD aBD = new AcessoBD("LAP-TSUNAMI\\SQLEXPRESS", "AlgarveBeach", "sa", "1234");
-            string[] valores = aBD.LerTabela("Praias", campos, "IDpraia", IDpraia);
+            string[] valores = aBD.LerTabela("Praia", campos, "IDpraia", IDpraia);
             this.IDfreguesia = Convert.ToInt32(valores[0]);
             this.NomePraia = valores[1];
             this.MoradaPraia = valores[2];
             this.ExtensaoPraia = Convert.ToInt32(valores[3]);
             this.BandeiraAzul = Convert.ToInt16(valores[4]);
             this.TemperaturaAgua = Convert.ToInt16(valores[5]);
-            this.AcessoSoBarco = Convert.ToInt16(valores[6]);
+            this.AcessoSoBarco = Convert.ToInt16(valores[6]);         
         }
 
         public void CarregarPraiaID(string nomepraia)

@@ -14,6 +14,21 @@ namespace MyApp
 {
     public class BdQuery
     {
+
+        private int mIDpraia;
+        private int mIDfreguesia;
+        private string mNomePraia;
+        private string mMoradaPraia;
+        private int mExtensaoPraia;
+        private int mBandeiraAzul;
+        private int mTemperaturaAgua;
+        private int mAcessoSoBarco;
+        private int mVotoPosP;
+        private int mVotoNegP;
+        private string mLinkP;
+
+
+
         //INSERIR
 
         public void InserirCliente(string PrimeiroNome, string UltimoNome, string UserName, string Password, string EMail)
@@ -338,6 +353,296 @@ namespace MyApp
             return a;
         }
 
+
+
+
+
+        public string VerConcelho()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodosConcelho = from c in db.Concelho
+                                select c;
+
+            var TodosEmList = TodosConcelho.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var c in TodosConcelho)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + c.NomeConcelho + "</td>";
+
+            }
+            return a;
+        }
+
+        public string VerFreguesias()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasFreguesias = from f in db.Freguesias
+                                  select f;
+
+            var TodosEmList = TodasFreguesias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var f in TodasFreguesias)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + f.IDconcelho + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + f.NomeFreguesia + "</td>";
+            }
+            return a;
+        }
+
+        public string VerPraia()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasPraias = from p in db.Praia
+                              select p;
+
+            var TodosEmList = TodasPraias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+            foreach (var p in TodasPraias)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.IDfreguesia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";
+            }
+            return a;
+        }
+
+        public string VerPraia(int idpraia)
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasPraias = from p in db.Praia
+                              where p.IDpraia == idpraia
+                              select p;
+
+            var TodosEmList = TodasPraias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+            foreach (var p in TodasPraias)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + p.IDfreguesia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";
+            }
+            return a;
+        }
+
+        public void VerPraiaTeste(int idpraia)
+        {
+            //string a = "";
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasPraias = from p in db.Praia
+                              where p.IDpraia == idpraia
+                              select p;
+
+            var TodosEmList = TodasPraias.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+            foreach (var p in TodasPraias)
+            {
+                /*a += "<tr><td bgcolor=#ccffcc align=center>" + p.IDfreguesia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.NomePraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.MoradaPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.ExtensaoPraia + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.BandeiraAzul + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.TemperaturaAgua + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.AcessoSoBarco + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoPosP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.VotoNegP + "</td>";
+                a += "<td bgcolor=#ccffcc align=center>" + p.LinkP + "</td>";*/
+                this.IDfreguesia = p.IDfreguesia;
+                this.NomePraia = p.NomePraia;
+                this.MoradaPraia = p.MoradaPraia;
+                this.ExtensaoPraia = p.ExtensaoPraia;
+                this.BandeiraAzul = p.BandeiraAzul;
+                this.TemperaturaAgua = p.TemperaturaAgua;
+                this.AcessoSoBarco = p.AcessoSoBarco;
+                this.VotoPosP = Convert.ToInt32(p.VotoPosP);
+                this.VotoNegP = Convert.ToInt32(p.VotoNegP);
+                this.LinkP = p.LinkP;
+            }
+            // return a;
+        }
+
+        public string VerHospedagem()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodasHospedagens = from h in db.Hospedagem
+                                   select h;
+
+            var TodosEmList = TodasHospedagens.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var h in TodasHospedagens)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.IDpraia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.NomeHospe + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.MoradaHospe + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.DistanPraiaH + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.Classificacao + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.Camping + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.VotoPosH + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.VotoNegH + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + h.LinkH + "</td>";
+            }
+            return a;
+        }
+
+        public string VerRestaurantes()
+        {
+            string a = "";
+            var ConnString = new SqlConnection(@"Server=LAP-TSUNAMI\SQLEXPRESS; Database=AlgarveBeach; User id=sa; Password=1234;");
+            var db = new DbBeach.BaseDeDadosDataContext(ConnString);
+
+            var TodosRestaurantes = from r in db.Restaurantes
+                                    select r;
+
+            var TodosEmList = TodosRestaurantes.ToList();
+
+            /*TodosEmList.ForEach(x =>
+            {
+                Console.WriteLine(x.PNome);
+            });*/
+
+            foreach (var r in TodosRestaurantes)
+            {
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.IDpraia + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.NomeRest + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.MoradaRest + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.DistanPraiaR + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.VotoPosR + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.VotoNegR + "</td>";
+                a += "<tr><td bgcolor=#ccffcc align=center>" + r.LinkR + "</td>";
+            }
+            return a;
+        }
+
+        //::::::::::::::::::::::Propriedades::::::::::::::::::::::::::::
+        //::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+        public int IDpraia
+        {
+            get { return mIDpraia; }
+            set { mIDpraia = value; }
+        }
+
+        public int IDfreguesia
+        {
+            get { return mIDfreguesia; }
+            set { mIDfreguesia = value; }
+        }
+
+
+        public string NomePraia
+        {
+            get { return mNomePraia; }
+            set { mNomePraia = value; }
+        }
+
+        public string MoradaPraia
+        {
+            get { return mMoradaPraia; }
+            set { mMoradaPraia = value; }
+        }
+        public int ExtensaoPraia
+        {
+            get { return mExtensaoPraia; }
+            set { mExtensaoPraia = value; }
+        }
+
+        public int BandeiraAzul
+        {
+            get { return mBandeiraAzul; }
+            set { mBandeiraAzul = value; }
+        }
+
+        public int TemperaturaAgua
+        {
+            get { return mTemperaturaAgua; }
+            set { mTemperaturaAgua = value; }
+        }
+
+        public int AcessoSoBarco
+        {
+            get { return mAcessoSoBarco; }
+            set { mAcessoSoBarco = value; }
+        }
+
+        public int VotoPosP
+        {
+            get { return mVotoPosP; }
+            set { mVotoPosP = value; }
+        }
+
+        public int VotoNegP
+        {
+            get { return mVotoNegP; }
+            set { mVotoNegP = value; }
+        }
+
+        public string LinkP
+        {
+            get { return mLinkP; }
+            set { mLinkP = value; }
+        }
+
+
+
+
+
+        ///////JOINS
 
         //PROCURAR PRAIAS SABENDO SE HÁ HOSPEDAGEM À DISTANCIA PRETENDIDA, SE TEM BANDEIRA OU NAO E A TEMPERATURA DA AGUA NO MOMENTO
         public string VerPraiasComHospTempBand(int IDPRAIA, int ValorDistancia, int ValorTemperatura, int ValorBandeira)
